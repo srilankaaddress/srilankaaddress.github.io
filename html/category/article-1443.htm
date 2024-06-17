@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1443.htm" />
+    <title>Vue3实现跑马灯效果_vue.js - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">Vue3实现跑马灯效果_vue.js</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<p>本文实例为大家分享了Vue3实现跑马灯效果的具体代码，供大家参考，具体内容如下</p> <p>先看效果：</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220427/581f314412d74ea85ba899b38ffcd8ef.jpg"></p> <p><strong>html部分代码</strong></p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;div class="app"&gt;              &lt;p :class="{tabcolor:color}"&gt;{{str}}&lt;/p&gt;              &lt;button @click="play"&gt;开始&lt;/button&gt;              &lt;button @click="stop"&gt;停止&lt;/button&gt;  &lt;/div&gt;</pre> </div> <blockquote> <p>注意： :class="{tabcolor:color}" 是给&lt;p&gt;&lt;/p&gt;标签内的文字加上一个颜色，当我们点击开始按钮的时候。 </p> </blockquote> <p><strong>CSS部分代码</strong></p> <div class="ay1code"> <pre class="brush:css;">.tabcolor {                  color: cornflowerblue;              }</pre> </div> <p>CSS部分的代码很简单，就是给了一个添加颜色的类。</p> <p><strong>Vue部分代码</strong></p> <div class="ay1code"> <pre class="brush:js;">Vue.createApp({              data() {                  return {                      str: "你好啊，我是稳重聪头~",                      id: null,                      color: false,                  }              },              methods: {                  play() {                      clearInterval(this.id);                      this.color = !this.color;                      this.id = setInterval(() =&gt; {                          this.str = this.str.slice(1) + this.str.slice(0, 1)                      }, 800)                  },                  stop() {                      clearInterval(this.id);                      this.color = false;                  }              }          }).mount(".app")</pre> </div> <p><strong>分析：</strong></p> <p>1、data上定义一个字符串，这个字符串就是要在&lt;p&gt;&lt;/p&gt;标签里进行滚动的。<br />2、给开始和关闭按钮，绑定事件：v-on; @cliick就是v-on的简写。<br />3、在按钮的事件函数中，写相关的业务逻辑代码：拿到str字符串，然后 调用字符串 slice 来进行字符串的截取操作，把第一个字符截取出来，放到最后一个位置即可。<br />4、为了实现最终结果，自动截取的功能，需要把步骤三的代码放到一个定时器中去。</p> <p>最后在送上完整代码 </p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;!DOCTYPE html&gt;  &lt;html lang="en"&gt;         &lt;head&gt;          &lt;meta charset="UTF-8"&gt;          &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;          &lt;title&gt;Document&lt;/title&gt;          &lt;script src="./js/vue.js"&gt;&lt;/script&gt;          &lt;style type="text/css"&gt;              .tabcolor {                  color: cornflowerblue;              }          &lt;/style&gt;      &lt;/head&gt;         &lt;body&gt;          &lt;div class="app"&gt;              &lt;p :class="{tabcolor:color}"&gt;{{str}}&lt;/p&gt;              &lt;button @click="play"&gt;开始&lt;/button&gt;              &lt;button @click="stop"&gt;停止&lt;/button&gt;          &lt;/div&gt;      &lt;/body&gt;      &lt;script&gt;          Vue.createApp({              data() {                  return {                      str: "你好啊，我是稳重聪头~",                      id: null,                      color: false,                  }              },              methods: {                  play() {                      clearInterval(this.id);                      this.color = !this.color;                      this.id = setInterval(() =&gt; {                          this.str = this.str.slice(1) + this.str.slice(0, 1)                      }, 800)                  },                  stop() {                      clearInterval(this.id);                      this.color = false;                  }              }          }).mount(".app")      &lt;/script&gt;  &lt;/html&gt;</pre> </div> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1442.htm">SpringBoot整合Shiro和Redis的示例代码_java</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1444.htm">vue实现列表拖拽排序的示例代码_vue.js</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1572.htm" title="IDEA部署Tomcat(超详细)">IDEA部署Tomcat(超详细)</a></li>
+                        <li class="py-2"><a href="/html/category/article-1601.htm" title="java数组去重">java数组去重</a></li>
+                        <li class="py-2"><a href="/html/category/article-1615.htm" title="使用 Docker 搭建 Confluence">使用 Docker 搭建 Confluence</a></li>
+                        <li class="py-2"><a href="/html/category/article-1588.htm" title="JavaScript实现计数器、计时器——setTimeout与setInterval的区别">JavaScript实现计数器、计时器——setTimeout与setInterval的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-1617.htm" title="C#和TS/JS的对比学习02：函数与方法">C#和TS/JS的对比学习02：函数与方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-1604.htm" title="go语言panic函数详解">go语言panic函数详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1582.htm" title="Qt 实现文字输入框，带字数限制">Qt 实现文字输入框，带字数限制</a></li>
+                        <li class="py-2"><a href="/html/category/article-1581.htm" title="SpringBoot导入导出数据">SpringBoot导入导出数据</a></li>
+                        <li class="py-2"><a href="/html/category/article-1577.htm" title="springboot 中注解@Async失效的情况">springboot 中注解@Async失效的情况</a></li>
+                        <li class="py-2"><a href="/html/category/article-1618.htm" title="vue3中获取ref元素的几种方式">vue3中获取ref元素的几种方式</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

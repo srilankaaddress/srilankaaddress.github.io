@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1520.htm" />
+    <title>通过 SingleFlight 模式学习 Go 并发编程 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">通过 SingleFlight 模式学习 Go 并发编程</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<p>最近接触到微服务框架<code>go-zero</code>，翻看了整个框架代码，发现结构清晰、代码简洁，所以决定阅读源码学习下，本次阅读的源码位于<code>core/syncx/singleflight.go</code>。</p> <p>在<code>go-zero</code>中<code>SingleFlight</code>的作用是：<strong>将并发请求合并成一个请求，以减少对下层服务的压力。</strong></p> <h2 id="应用场景">应用场景</h2> <ol> <li>查询缓存时，合并请求，提升服务性能。<br /> 假设有一个 IP 查询的服务，每次用户请求先在缓存中查询一个 IP 的归属地，如果缓存中有结果则直接返回，不存在则进行 IP 解析操作。</li> </ol> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/171d3b8b270132c88565a935e6a4643f.jpg" alt="通过 SingleFlight 模式学习 Go 并发编程"></p> <p>如上图所示，n 个用户请求查询同一个 IP（8.8.8.8）就会对应 n 个 Redis 的查询，在高并发场景下，如果能将 n 个 Redis 查询合并成一个 Redis 查询，那么性能肯定会提升很多，而<code>SingleFlight</code>就是用来实现请求合并的，效果如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/18abbec1780640f5af3594b27f9100cf.jpg" alt="通过 SingleFlight 模式学习 Go 并发编程"></p> <ol> <li>防止缓存击穿。</li> </ol> <blockquote> <p>缓存击穿问题是指：在高并发的场景中，大量的请求同时查询一个 key ，如果这个 key 正好过期失效了，就会导致大量的请求都打到数据库，导致数据库的连接增多，负载上升。</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/ff1e68b4962cd886602bf7579d104a1f.jpg" alt="通过 SingleFlight 模式学习 Go 并发编程"></p> <p>通过<code>SingleFlight</code>可以将对同一个Key的并发请求进行合并，只让其中一个请求到数据库进行查询，其他请求共享同一个结果，可以很大程度提升并发能力。</p> <h2 id="应用方式">应用方式</h2> <p>直接上代码：</p> <pre><code class="language-go">func main() {   round := 10   var wg sync.WaitGroup   barrier := syncx.NewSingleFlight()   wg.Add(round)   for i := 0; i &lt; round; i++ {     go func() {       defer wg.Done()       // 启用10个协程模拟获取缓存操作       val, err := barrier.Do("get_rand_int", func() (interface{}, error) {         time.Sleep(time.Second)         return rand.Int(), nil       })       if err != nil {         fmt.Println(err)       } else {         fmt.Println(val)       }     }()   }   wg.Wait() }</code></pre> <p>以上代码，模拟 10 个协程请求 Redis 获取一个 key 的内容，代码很简单，就是执行<code>Do()</code>方法。其中，接收两个参数，第一个参数是获取资源的标识，可以是 redis 中缓存的 key，第二个参数就是一个匿名函数，封装好要做的业务逻辑。最终获得的结果如下：</p> <pre><code class="language-shell">5577006791947779410 5577006791947779410 5577006791947779410 5577006791947779410 5577006791947779410 5577006791947779410 5577006791947779410 5577006791947779410 5577006791947779410 5577006791947779410</code></pre> <p>从上看出，10个协程都获得了同一个结果，也就是只有一个协程真正执行了<code>rand.Int()</code>获取了随机数，其他的协程都共享了这个结果。</p> <h2 id="源码解析">源码解析</h2> <p>先看代码结构：</p> <pre><code class="language-go">type (   // 定义接口，有2个方法 Do 和 DoEx，其实逻辑是一样的，DoEx 多了一个标识，主要看Do的逻辑就够了   SingleFlight interface {     Do(key string, fn func() (interface{}, error)) (interface{}, error)     DoEx(key string, fn func() (interface{}, error)) (interface{}, bool, error)   }   // 定义 call 的结构   call struct {     wg  sync.WaitGroup // 用于实现通过1个 call，其他 call 阻塞     val interface{}    // 表示 call 操作的返回结果     err error          // 表示 call 操作发生的错误   }   // 总控结构，实现 SingleFlight 接口   flightGroup struct {     calls map[string]*call // 不同的 call 对应不同的 key     lock  sync.Mutex       // 利用锁控制请求   } )</code></pre> <p>然后看最核心的<code>Do方法</code>做了什么事情：</p> <pre><code class="language-go">func (g *flightGroup) Do(key string, fn func() (interface{}, error)) (interface{}, error) {   c, done := g.createCall(key)   if done {     return c.val, c.err   }    g.makeCall(c, key, fn)   return c.val, c.err }</code></pre> <p>代码很简洁，利用<code>g.createCall(key)</code>对 key 发起 call 请求（其实就是做一件事情），如果此时已经有其他协程已经在发起 call 请求就阻塞住（done 为 true 的情况），等待拿到结果后直接返回。如果 done 是 false，说明当前协程是第一个发起 call 的协程，那么就执行<code>g.makeCall(c, key, fn)</code>真正地发起 call 请求（此后的其他协程就阻塞在了<code>g.createCall(key)</code>)。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/77b9472983d0d58eba3f95c50a841975.jpg" alt="通过 SingleFlight 模式学习 Go 并发编程"></p> <p>从上图可知，其实关键就两步：</p> <ol> <li>判断是第一个请求的协程（利用map）</li> <li>阻塞住其他所有协程（利用 sync.WaitGroup）</li> </ol> <p>来看下<code>g.createCall(key)</code>如何实现的：</p> <pre><code class="language-go">func (g *flightGroup) createCall(key string) (c *call, done bool) {   g.lock.Lock()   if c, ok := g.calls[key]; ok {     g.lock.Unlock()     c.wg.Wait()     return c, true   }    c = new(call)   c.wg.Add(1)   g.calls[key] = c   g.lock.Unlock()    return c, false }</code></pre> <p>先看第一步：判断是第一个请求的协程（利用map）</p> <pre><code class="language-go">g.lock.Lock() if c, ok := g.calls[key]; ok {   g.lock.Unlock()   c.wg.Wait()   return c, true }</code></pre> <p>此处判断 map 中的 key 是否存在，如果已经存在，说明已经有其他协程在请求了，当前这个协程只需要等待，等待是利用了<code>sync.WaitGroup</code>的<code>Wait()</code>方法实现的，此处还是很巧妙的。<strong>要注意的是，map 在 Go 中是非并发安全的，所以需要加锁。</strong></p> <p>再看第二步：阻塞住其他所有协程（利用 sync.WaitGroup）</p> <pre><code class="language-go">c = new(call) c.wg.Add(1) g.calls[key] = c</code></pre> <p>因为是第一个发起 call 的协程，所以需要 new 这个 call，然后将<code>wg.Add(1)</code>，这样就对应了上面的<code>wg.Wait()</code>，阻塞剩下的协程。随后将 new 的 call 放入 map 中，注意此时只是完成了初始化，并没有真正去执行call请求，真正的处理逻辑在<code>g.makeCall(c, key, fn)</code>中。</p> <pre><code class="language-go">func (g *flightGroup) makeCall(c *call, key string, fn func() (interface{}, error)) {   defer func() {     g.lock.Lock()     delete(g.calls, key)     g.lock.Unlock()     c.wg.Done()   }()    c.val, c.err = fn() }</code></pre> <p>这个方法中做的事情很简单，就是执行了传递的匿名函数<code>fn()</code>（也就是真正call请求要做的事情）。最后处理收尾的事情（通过defer），也是分成两步：</p> <ol> <li>删除 map 中的 key，使得下次发起请求可以获取新的值。</li> <li>调用<code>wg.Done()</code>，让之前阻塞的协程全部获得结果并返回。</li> </ol> <p>至此，<code>SingleFlight</code> 的核心代码就解析完毕了，虽然代码不长，但是这个思想还是很棒的，可以在实际工作中借鉴。</p> <h2 id="总结">总结</h2> <ul> <li>map 非并发安全，记得加锁。</li> <li>巧用 sync.WaitGroup 去完成<code>需要阻塞控制协程</code>的应用场景。</li> <li>通过匿名函数 fn 去封装传递具体业务逻辑，在调用 fn 的上层函数中去完成统一的逻辑处理。</li> </ul> <h2 id="项目地址">项目地址</h2> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/zeromicro/go-zero"  target="_blank" rel="nofollow">https://github.com/zeromicro/go-zero</a></p> <p>欢迎使用<code>go-zero</code> 并<strong>star</strong> 支持我们！</p> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1519.htm">电脑上查看已连接过的WiFi密码</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1521.htm">echarts实现动态折线图</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1614.htm" title="我们如何更改MySQL AUTO_INCREMENT起始号码？">我们如何更改MySQL AUTO_INCREMENT起始号码？</a></li>
+                        <li class="py-2"><a href="/html/category/article-1573.htm" title="大数据系列(3)-HDFS 常用命令">大数据系列(3)-HDFS 常用命令</a></li>
+                        <li class="py-2"><a href="/html/category/article-1572.htm" title="IDEA部署Tomcat(超详细)">IDEA部署Tomcat(超详细)</a></li>
+                        <li class="py-2"><a href="/html/category/article-1608.htm" title="linux下安装tomcat9,linux tomcat 9 安装及配置教程">linux下安装tomcat9,linux tomcat 9 安装及配置教程</a></li>
+                        <li class="py-2"><a href="/html/category/article-1582.htm" title="Qt 实现文字输入框，带字数限制">Qt 实现文字输入框，带字数限制</a></li>
+                        <li class="py-2"><a href="/html/category/article-1620.htm" title="Spring如何快速上手">Spring如何快速上手</a></li>
+                        <li class="py-2"><a href="/html/category/article-1578.htm" title="如何离线安装VSCode插件">如何离线安装VSCode插件</a></li>
+                        <li class="py-2"><a href="/html/category/article-1600.htm" title="xpath的使用">xpath的使用</a></li>
+                        <li class="py-2"><a href="/html/category/article-1616.htm" title="C ++程序进行Fermat原始性测试">C ++程序进行Fermat原始性测试</a></li>
+                        <li class="py-2"><a href="/html/category/article-1594.htm" title="Vue watch中监听值的变化,判断后修改值方式_vue.js_">Vue watch中监听值的变化,判断后修改值方式_vue.js_</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

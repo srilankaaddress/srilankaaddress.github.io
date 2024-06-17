@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1466.htm" />
+    <title>asyncio 异步编程_在线工具 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">asyncio 异步编程_在线工具</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<p>首先了解一下协程，协程的本质就是一条线程，多个任务在一条线程上来回切换，协程的所有切换都是基于用户，只有在用户级别才能感知到的 IO 才会用协程模块来规避，在 python 中主要使用的协程模块是 asyncio，并且基于 async 和 await 关键字的协程可以实现异步编程，这也是目前 python 异步相关的主流技术。</p> <h1 id="1事件循环">1.事件循环</h1> <p>事件循环它其实是异步编程中的一个非常重要的环节，可以把它当成一个死循环，它会去检查并执行一些代码。</p> <p><strong>示例：</strong>伪代码</p> <pre><code>任务列表 = [ 任务1, 任务2, 任务3,... ]  while True:     可执行的任务列表，已完成的任务列表 = 去任务列表中检查所有的任务，将'可执行'和'已完成'的任务返回          for 就绪任务 in 已准备就绪的任务列表:         执行已就绪的任务          for 已完成的任务 in 已完成的任务列表:         在任务列表中移除 已完成的任务          如果 任务列表 中的任务都已完成，则终止循环 </code></pre> <blockquote> <p>通过上述伪代码就会发现这个事件循环就是可以理解成一个死循环在检查一个列表里的任务，如果列表里面的任务是可执行的，那就去执行这个任务，如果是不可执行（指的是遇到 IO 操作）的，那么在检查的时候就根本检查不到，相当于把 这个任务忽略掉，认为它不需要被执行，让它一直在等待着 IO 请求，当 IO 完成之后在去执行这个任务。</p> </blockquote> <p>获取和创建事件循环</p> <pre><code class="language-python">import asyncio  # 生成和获取一个事件循环 loop = asyncio.get_event_loop()  # 给事件循环添加任务，让事件循环去检测这个任务的状态是否可运行 loop.run_until_complete(任务) </code></pre> <h1 id="2async">2.async</h1> <p>async 是一个关键字，用于定义一个协程函数。</p> <p>协程函数：定义函数的时候使用 <code>async def 函数名</code>。</p> <p>协程对象：执行 <code>协程函数()</code> 得到的协程对象。</p> <pre><code class="language-python"># 定义一个协程函数 async def func():     pass  # 调用协程函数，返回一个协程对象 result = func() </code></pre> <p>调用协程函数的时候，函数内部的代码不会执行，只会返回一个协程对象。</p> <p>如果想要运行协程函数内部代码，必须要将协程对象交给事件循环来处理。</p> <pre><code class="language-python">import asyncio  async def func():     print('这是一个协程函数！')           result = func  # 方式一： loop = asyncio.get_event_loop()   # 生成一个事件循环 loop.run_until_complete( result ) # 将协程对象添加到事件循环执行   # 方式二：python 3.7 之后使用，本质上还是和上面一样，但是比较简单 asyncio.run( result ) </code></pre> <h1 id="3await">3.await</h1> <p>await 也是一个关键字，它主要是在当前任务1遇到 IO 操作的时候切到其他没有 IO 操作的任务2去执行，让事件循环可以去执行其他任务，当任务1的 IO 操作执行完后再切换回来执行 await 之后的内容。</p> <p>await 的后面只能加可等待的对象（协程对象、Task对象 ....）</p> <p><strong>示例：</strong></p> <pre><code class="language-python">import asyncio   async def others():     print('others -----&gt; start')     await asyncio.sleep(2)     print('others -----&gt; end')     return '返回值'   async def fun():     print('执行协程函数内部代码！')          # 遇到IO操作挂起当前协程（任务），等IO操作完成之后再继续往下执行。当前协程挂起时，事件循环可以去执行其他协程（任务）。     response = await others()	# 它会等有返回值了才会继续往下执行     print('IO请求结束，结果为：', response)  asyncio.run(fun())   # 输出： 执行协程函数内部代码！ others -----&gt; start others -----&gt; end IO请求结束，结果为： 返回值 </code></pre> <blockquote> <p>从上面这个示例可以看出来 await 就是等待对应后面的值得到结果之后，在向下继续执行！</p> <p>由于在这个示例中事件循环列表中只有一个任务，所以在 IO 等待时无法演示切换到其他任务的执行效果，在程序中如果想要创建多个任务对象，需要使用 Task 对象来实现。</p> </blockquote> <h1 id="4task对象">4.Task对象</h1> <p>Task 用于并发调度协程，在事件循环中添加多个任务。</p> <p>本质上是将协程对象封装成 Task 对象，并将该协程加入事件循环，同时追踪协程的状态。</p> <p><strong>示例1：</strong>通过<code>asyncio.create_task(协程对象)</code>添加任务。</p> <pre><code class="language-python">import asyncio   async def func(i):     print(i, '---&gt;start')     await asyncio.sleep(1)     print(i, '---&gt;end')     return f'返回值{i}'   async def main():     print('main start')      # 创建 Task 对象并添加到事件循环中     task1 = asyncio.create_task(func(1))     task2 = asyncio.create_task(func(2))      print('main end') 	     # 此处await会自动切换执行其他任务。例如：task1，task2     ret1 = await task1     ret2 = await task2     print(ret1, ret2)  asyncio.run(main())  # 输出： main start main end 1 ---&gt;start 2 ---&gt;start 1 ---&gt;end 2 ---&gt;end 返回值1 返回值2 </code></pre> <p><strong>示例2：</strong>通过<code>asyncio.wait(协程对象列表)</code>添加任务，在它的源码中会通过 <code>ensure_future</code> 把每个协程封装成 Task 对象。</p> <pre><code class="language-python">import asyncio   async def func(i):     print(i, '---&gt;start')     await asyncio.sleep(1)  # 当遇到IO操作挂起当前协程并切换其他协程     print(i, '---&gt;end')     return f'返回值{i}'   task_list = [func(1), func(2)]  # 如果设置了 timeout 值，则意味着此处最多等待的秒，完成的协程返回值写入done中，未完成的写入pending done, pending = asyncio.run(asyncio.wait(task_list, timeout=None))   # 输出： 1 ---&gt;start 2 ---&gt;start 1 ---&gt;end 2 ---&gt;end </code></pre> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1465.htm">AOT和单文件发布对程序性能的影响</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1467.htm">【impala】python通过kerberos连接impala操作hive，及解决遇到的问题</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1600.htm" title="xpath的使用">xpath的使用</a></li>
+                        <li class="py-2"><a href="/html/category/article-1584.htm" title="access update语句执行_用pymysql实现对多行数据的insert和update加速">access update语句执行_用pymysql实现对多行数据的insert和update加速</a></li>
+                        <li class="py-2"><a href="/html/category/article-1573.htm" title="大数据系列(3)-HDFS 常用命令">大数据系列(3)-HDFS 常用命令</a></li>
+                        <li class="py-2"><a href="/html/category/article-1582.htm" title="Qt 实现文字输入框，带字数限制">Qt 实现文字输入框，带字数限制</a></li>
+                        <li class="py-2"><a href="/html/category/article-1620.htm" title="Spring如何快速上手">Spring如何快速上手</a></li>
+                        <li class="py-2"><a href="/html/category/article-1592.htm" title="SpringBoot时区问题解决，彻底解决时差问题">SpringBoot时区问题解决，彻底解决时差问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-1604.htm" title="go语言panic函数详解">go语言panic函数详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1616.htm" title="C ++程序进行Fermat原始性测试">C ++程序进行Fermat原始性测试</a></li>
+                        <li class="py-2"><a href="/html/category/article-1578.htm" title="如何离线安装VSCode插件">如何离线安装VSCode插件</a></li>
+                        <li class="py-2"><a href="/html/category/article-1571.htm" title="kafka集群安全化之启用kerberos与acl">kafka集群安全化之启用kerberos与acl</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

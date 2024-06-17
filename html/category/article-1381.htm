@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1381.htm" />
+    <title>python数据可视化-matplotlib入门条形图和直方图 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">python数据可视化-matplotlib入门条形图和直方图</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<p>摘要：先介绍条形图直方图，然后用随机数生成一系列数据，保存到列表中，最后统计出相关随机数据的概率并展示</p> <p>&nbsp; &nbsp; 前述介绍了由点进行划线形成的拆线图和散点形成的曲线图，连点成线，主要用到了matplotlib中的plot()和scatter()这个函数，但在实际生活工作中，不仅有折线图，还经常会出现月份经济数据对比图，身高统计图等，制成图表就很容易对比看出差异。</p> <p>下面用matplotlib中bar()函数和hist()来实现条形图和直方图。</p> <p>一、bar()函数</p> <p>bar()函数的最主要的几个参数如下：</p> <p>bar(x, height, width=0.8, bottom=None, *, align='center', data=None, **kwargs)<br />参数1：<span style="color: rgba(255, 0, 0, 1)">x</span> : 标量型，x轴上的坐标。浮点数或类数组结构。注意x可以为字符串数组<br />参数2：<span style="color: rgba(255, 0, 0, 1)">height</span>：y轴上的坐标。浮点数或类数组结构<br />参数3：<span style="color: rgba(255, 0, 0, 1)">width</span>：指定柱形图的宽度。浮点数或类数组结构。默认值为0.8<br />参数4：<span style="color: rgba(255, 0, 0, 1)">bottom</span>：标量或标量类数组型，y坐标的起始高度<br />参数5：<span style="color: rgba(255, 0, 0, 1)">align</span>：柱状图在x轴上的对齐方式，可选{‘center’, ‘edge’}  center：中心对称 edge：边缘对称<br />参数6：<span style="color: rgba(255, 0, 0, 1)">**kwargs</span>：接收的关键字参数传递给关联的Rectangle。  返回值：BarContainer实例，其patches属性是柱体的列表</p> <p>条形图（柱状图）一个简单的示例，随便设置12个月份，并给定某些数据，代码如下：</p> <div class="cnblogs_code"> <pre>plt.bar([1,2,3,4,5,6,7,8,9,10,11,12,13],[5,2,7,8,2,1,8,6,2,5,6,7,10], label=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">Test one</span><span style="color: rgba(128, 0, 0, 1)">"</span>, color=<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">red</span><span style="color: rgba(128, 0, 0, 1)">'</span>)<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">x位置上数列</span>[1,2,3,4,5,6,7,8,9,10,11,12,13]<span style="color: rgba(0, 128, 0, 1)">，表示为相对y轴，柱状图在X轴的位置，后面一列为对应y轴的高度。</span><br/>plt.legend()<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">运行结果里图例名称显示出来</span></pre> <pre>plt.xlabel(<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">bar number</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">)<br/>plt.ylabel(</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">bar height</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">)<br/>plt.title(</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">TEST</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">)<br/>plt.show()</span></pre> </div> <p>第一行中的color=‘red’表示柱状图全部显示为红，为显示区别，做以下修改：</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">import</span><span style="color: rgba(0, 0, 0, 1)"> matplotlib.pyplot as plt    plt.bar([</span>1,3,5,7,9,11],[5,7,8,6,7,10], label=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">Test one</span><span style="color: rgba(128, 0, 0, 1)">"</span>, color=<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">#202204</span><span style="color: rgba(128, 0, 0, 1)">'</span>)     plt.bar([2,4,6,8,10,12],[8,6,2,5,6,7], label=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">Test two</span><span style="color: rgba(128, 0, 0, 1)">"</span>, color=<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">g</span><span style="color: rgba(128, 0, 0, 1)">'</span>)<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)"> color也可是16进制，如上显示的  #202204</span> plt.legend()<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">运行结果里图例名称显示出来</span> plt.xlabel(<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">bar number</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">)  plt.ylabel(</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">bar height</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">) plt.title(</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">TEST</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">) plt.show()</span></pre> </div> <p>具体显示结果如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/3de82c8660aed4f743850ef32be80374.jpg" alt="python数据可视化-matplotlib入门条形图和直方图"></p> <p>二，hist()函数</p> <p>hist(x，bins=None，range=None，density=None，weights=None，cumulative=False，bottom=None，histtype=“bar”， align=“mid”，orientation=“vertical”，rwidth=None，log=False，color=None，label=None，stacked=False，normed=None， hold=None，data=None，**kwargs）</p> <p>hist()函数的基础参数如下：</p> <p><span style="color: rgba(255, 0, 0, 1)">x ：表示输入值，可以是单个数组，或者不需要相同长度的数组序列。</span><br /><span style="color: rgba(255, 0, 0, 1)">bins：表示绘制条柱的个数。若给定一个整数，则返回 “bins+1” 个条柱，默认为10。</span><br /><span style="color: rgba(255, 0, 0, 1)">range：bins的上下范围（最大和最小值）。</span><br /><span style="color: rgba(255, 0, 0, 1)">color：表示条柱的颜色，默认为None。</span><br />facecolor #直方图颜色<br />edgecolor #直方图边框颜色<br />alpha  # 透明度<br />histtype    #直方图类型，‘bar’, ‘barstacked’, ‘step’, ‘stepfilled’<br />orientation # 水平或垂直方向<br />rwidth #柱子与柱子之间的距离，默认是0</p> <p>下面通过一个例子来说明hist()函数的作用：</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">import</span><span style="color: rgba(0, 0, 0, 1)"> matplotlib.pyplot as plt    population_ages</span>= [18,34,23,56,32,45,78,23,45,12,31,25,61,27,34,57,54,26,45,37,36,8,14,17,13,88,99,49,63,105,121,116]<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">设定一组年龄</span><span style="color: rgba(0, 0, 0, 1)"> bins</span>= [0,10,20,30,40,50,60,80,90,100,130]<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">年龄分段</span><span style="color: rgba(0, 0, 0, 1)"> plt.hist(population_ages, bins, histtype</span>=<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">bar</span><span style="color: rgba(128, 0, 0, 1)">'</span>, rwidth=0.8,color=<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">#199209</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">)  plt.xlabel(</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">The Age Group</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">) plt.ylabel(</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">The number</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">) plt.title(</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">The Age Range</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">) plt.legend() plt.show()</span></pre> </div> <p><span style="color: rgba(255, 0, 0, 1)">注意：bins[]中60，80和100,130中间缺少是故意为之，见下实际运行图中的差别</span></p> <p>运行结果如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/72e5ad5038d9a486dfc7d07f09c53d1b.jpg" alt="python数据可视化-matplotlib入门条形图和直方图"></p> <p>很明显，<span style="color: rgba(255, 0, 0, 1)">hist()函数会自动根据参数bins中的区分将参数x中的数据自动进行统计。</span></p> <p>搞事情，既然参数x(如例子中的population_ages)可能是数列，那能否用随机函数自动生成数组，然后在进行统计呢？当然可以。</p> <p>三、数据统计</p> <p>色子经常用来娱乐（用作他途造成后果与我无关），它有6个面，分别点数为1，2，3，4，5，6，可利用随机函数（上篇中的choice函数）来随机产生，比如choice([1,2,3,4,5,6])，产生N次（比如20万次）并将每次结果保存到列表中，最后统计出各点的总数或所点比例。</p> <p>分析：</p> <p>1）先建一个类，其功能就是运行一次，就随机选择6个面（点数）</p> <p>2）将色子实例化，并给定一个参数（运行的次数），图形化显示出来。</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">class</span><span style="color: rgba(0, 0, 0, 1)"> Sezi():</span><span style="color: rgba(0, 0, 255, 1)">def</span><span style="color: rgba(128, 0, 128, 1)">__init__</span>(self,sides):<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">给自身定义一个面数，方便后面修改参数进行其他操作</span>         self.sides = sides<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">色子可以是6面，也可以是8面，10面，12面，需要给定</span><span style="color: rgba(0, 0, 255, 1)">def</span><span style="color: rgba(0, 0, 0, 1)"> roll(self):</span><span style="color: rgba(0, 0, 255, 1)">return</span> choice([1,2,3,4,5,6])<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">每投一次，随机选择一个点数</span><span style="color: rgba(0, 0, 0, 1)"> testsezi</span>= Sezi(6)<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">实例化，6个面</span> results = []<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)"> 定义一个空的数列，用来保存每次投掷的点数</span><span style="color: rgba(0, 0, 255, 1)">for</span> roll_num<span style="color: rgba(0, 0, 255, 1)">in</span> range(100):<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">循环，投100次</span>     result = testsezi.roll()<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">将每次投掷结果保存到变量result中</span>     results.append(result)<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">存入到数列results</span><span style="color: rgba(0, 0, 255, 1)">print</span>(results)<span style="color: rgba(0, 128, 0, 1)">#直接打印出来</span></pre> </div> <p>运行结果：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/d3ec077e25906a1cdd9d687c92449dfe.jpg" alt="python数据可视化-matplotlib入门条形图和直方图"></p> <p>与此同时，为了后面方便，引入另一个<span style="color: rgba(255, 0, 0, 1)">随机函数randint(x, y)，这个函数的作用是产生x-y之间的数字，比如randint(1,10)，就产生1到10之间的数字。</span></p> <pre><span style="color: rgba(0, 0, 0, 1)">choice([1,2,3,4,5,6])可以修改为randint(1,self.sides)，这样实例化后，需要输入随意一个面数，就会随机产生对应的数字。</span><br/><span style="color: rgba(0, 0, 0, 1)">上述还只是打印在交互栏，且类、实例还是在一个文件中，分成不同的文件，并数据统计用图的形式显示。</span><br/><span style="color: rgba(0, 0, 0, 1)">1，重新修改色子类</span><br/>文件名sezi.py，里面代码如下：</pre> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">from</span> random<span style="color: rgba(0, 0, 255, 1)">import</span> *<span style="color: rgba(0, 0, 255, 1)">class</span><span style="color: rgba(0, 0, 0, 1)"> Sezi():</span><span style="color: rgba(0, 0, 255, 1)">def</span><span style="color: rgba(128, 0, 128, 1)">__init__</span>(self,sides):<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">给自身定义一个面数,面数对应点数</span>         self.sides = sides<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">色子可以是6面，也可以是8面，10面，12面，需要给定</span>         self.side=<span style="color: rgba(0, 0, 0, 1)">0         self.bins</span>=<span style="color: rgba(0, 0, 0, 1)">[]</span><span style="color: rgba(0, 0, 255, 1)">while</span> self.side &lt; self.sides:<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">获取面数，并得到一个面数的bins,可直接调用。</span>             self.side += 1<span style="color: rgba(0, 0, 0, 1)">              self.bins.append(self.side)</span><span style="color: rgba(0, 0, 255, 1)">def</span><span style="color: rgba(0, 0, 0, 1)"> roll(self):</span><span style="color: rgba(0, 0, 255, 1)">return</span> randint(1,self.sides)<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">每投一次，随机选择一个点数</span></pre> </div> <p>2、新建一个名称sezigame.py的文件，代码如下</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">import</span><span style="color: rgba(0, 0, 0, 1)"> matplotlib.pyplot as plt</span><span style="color: rgba(0, 0, 255, 1)">from</span> sezi<span style="color: rgba(0, 0, 255, 1)">import</span> *<span style="color: rgba(0, 0, 0, 1)">   testsezi</span>= Sezi(8)<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">实例化，8个点</span> results = []<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)"> 定义一个空的数列，用来保存每次投掷的点数</span><span style="color: rgba(0, 0, 255, 1)">for</span> roll_num<span style="color: rgba(0, 0, 255, 1)">in</span> range(50000):<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">循环，投50000次</span>     result = testsezi.roll()<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">将每次投掷结果保存到变量result中</span>     results.append(result)<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">存入到数列results</span><span style="color: rgba(0, 0, 0, 1)"> plt.hist(results, testsezi.bins, histtype</span>=<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">bar</span><span style="color: rgba(128, 0, 0, 1)">'</span>, rwidth=0.8,color=<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">#199209</span><span style="color: rgba(128, 0, 0, 1)">'</span>)<span style="color: rgba(0, 128, 0, 1)"> #直接调用testsezi.bins</span></pre> <pre></pre> </div> <p>运行结果：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/e29b177864952b01d6dbdc5a4321c8b3.jpg" alt="python数据可视化-matplotlib入门条形图和直方图"></p> <p>&nbsp;如果有2个相同的色子呢？</p> <p>同时掷两个骰子，最小为2，最大为12，结果分布情况自然也就不同。</p> <p>将名称sezigame.py的文件修改，改动后的代码如下：</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">import</span><span style="color: rgba(0, 0, 0, 1)"> matplotlib.pyplot as plt</span><span style="color: rgba(0, 0, 255, 1)">from</span> sezi<span style="color: rgba(0, 0, 255, 1)">import</span> *<span style="color: rgba(0, 0, 0, 1)"> sezi_1</span>= Sezi(6)<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">实例化，6个面</span> sezi_2 = Sezi(6<span style="color: rgba(0, 0, 0, 1)">)  results</span>= []<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)"> 定义一个空的数列，用来保存每次投掷的点数</span><span style="color: rgba(0, 0, 255, 1)">for</span> roll_num<span style="color: rgba(0, 0, 255, 1)">in</span> range(50000):<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">循环，投50000次</span>     result = sezi_1.roll()+sezi_2.roll()<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">将两次投掷结果保存到变量result中</span>     results.append(result)<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">存入到数列results</span><span style="color: rgba(0, 0, 0, 1)"> max_result</span>= sezi_1.sides+sezi_2.sides<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">2个最大值为12，最小为2</span> side =<span style="color: rgba(0, 0, 0, 1)"> 0  new_bins</span>=<span style="color: rgba(0, 0, 0, 1)"> []</span><span style="color: rgba(0, 0, 255, 1)">while</span> side &lt;=<span style="color: rgba(0, 0, 0, 1)"> max_result:      side</span>+= 1<span style="color: rgba(0, 0, 0, 1)">      new_bins.append(side)   plt.xlabel(</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">The sides</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">) plt.ylabel(</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">The numbers</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">) plt.title(</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">The frequency</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">) plt.hist(results,new_bins, histtype</span>=<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">bar</span><span style="color: rgba(128, 0, 0, 1)">'</span>,color=<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">#199209</span><span style="color: rgba(128, 0, 0, 1)">'</span>,rwidth=0.618)</pre> </div> <p>运行结果如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/f685049bf1a06f316940b65d2b54cf14.jpg" alt="python数据可视化-matplotlib入门条形图和直方图"></p> <p>&nbsp;是不是有点正态分布的感觉了？</p> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1380.htm">egg-socket.io搭配socket.io-client的坑</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1382.htm">dubbo发送过程编码失败，会唤醒发送线程吗？_在线工具</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1587.htm" title="如何在vue3使用骨架屏">如何在vue3使用骨架屏</a></li>
+                        <li class="py-2"><a href="/html/category/article-1586.htm" title="tensorflow基础流程">tensorflow基础流程</a></li>
+                        <li class="py-2"><a href="/html/category/article-1611.htm" title="Druid10 监控">Druid10 监控</a></li>
+                        <li class="py-2"><a href="/html/category/article-1627.htm" title="go语言编译过程概述">go语言编译过程概述</a></li>
+                        <li class="py-2"><a href="/html/category/article-1585.htm" title="pymysql增删改查之insert操作">pymysql增删改查之insert操作</a></li>
+                        <li class="py-2"><a href="/html/category/article-1569.htm" title="微信小程序自定义导航栏组件(完美适配手机),可自定义实现任何你想要的功能">微信小程序自定义导航栏组件(完美适配手机),可自定义实现任何你想要的功能</a></li>
+                        <li class="py-2"><a href="/html/category/article-1584.htm" title="access update语句执行_用pymysql实现对多行数据的insert和update加速">access update语句执行_用pymysql实现对多行数据的insert和update加速</a></li>
+                        <li class="py-2"><a href="/html/category/article-1572.htm" title="IDEA部署Tomcat(超详细)">IDEA部署Tomcat(超详细)</a></li>
+                        <li class="py-2"><a href="/html/category/article-1592.htm" title="SpringBoot时区问题解决，彻底解决时差问题">SpringBoot时区问题解决，彻底解决时差问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-1606.htm" title="RabbitMQ链接不上异常">RabbitMQ链接不上异常</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1540.htm" />
+    <title>SpringBoot扩展点EnvironmentPostProcessor_在线工具 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">SpringBoot扩展点EnvironmentPostProcessor_在线工具</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<h1 id="一背景">一、背景</h1> <p>之前项目中用到了<code>Apollo</code>配置中心，对接Apollo配置中心后，配置中心的属性就可以在程序中使用了，那么这个是怎么实现的呢？配置中心的属性又是何时加载到程序中的呢？<strong>那么我们如果找到了这个是怎么实现的是否就可以 <code>从任何地方加载配置属性</code>、<code>配置属性的加解密功能呢</code>？</strong></p> <h1 id="二需求">二、需求</h1> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/7a9c91181f35ceb17bd484a553105237.jpg" alt="SpringBoot扩展点EnvironmentPostProcessor_在线工具"><br /><code>从上图中得知，我们的需求很简单，即我们自己定义的属性需要比配置文件中的优先级更高。</code></p> <h1 id="三分析">三、分析</h1> <h2 id="1什么时候向springboot中加入我们自己的配置属性">1、什么时候向SpringBoot中加入我们自己的配置属性</h2> <p>当我们想在Bean中使用配置属性时，那么我们的配置属性必须在Bean实例化之前就放入到Spring到Environment中。即我们的接口需要在 <code>application context  refreshed</code> 之前进行调用，而 <code>EnvironmentPostProcessor</code> 正好可以实现这个功能。</p> <h2 id="2获取配置属性的优先级">2、获取配置属性的优先级</h2> <p>我们知道在 Spring中获取属性是有优先级的。<br /> 比如我们存在如下配置属性 <code>username</code></p> <pre><code>├─application.properties │   &gt;&gt; username=huan ├─application-dev.properties │   &gt;&gt; username=huan.fu </code></pre> <p>那么此时 <code>username</code> 的值是什么呢？此处借用 <code>Apollo</code>的一张图来说解释一下这个问题。</p> <p>参考链接：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.apolloconfig.com/#/zh/design/apollo-design"  target="_blank"  rel="nofollow">https://www.apolloconfig.com/#/zh/design/apollo-design</a><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/a323e556860f70eca10cbfe8ef262abd.jpg" alt="SpringBoot扩展点EnvironmentPostProcessor_在线工具"><br /> Spring从3.1版本开始增加了<code>ConfigurableEnvironment</code>和<code>PropertySource</code>：</p> <p><code>ConfigurableEnvironment</code></p> <ul> <li>Spring的ApplicationContext会包含一个Environment（实现ConfigurableEnvironment接口）</li> <li>ConfigurableEnvironment自身包含了很多个PropertySource</li> </ul> <p><code>PropertySource</code></p> <ul> <li>属性源</li> <li>可以理解为很多个Key - Value的属性配置</li> </ul> <p>由上方的原理图可知,<code>key</code>在最开始出现的<code>PropertySource</code>中的优先级更高，上面的例子在<code>SpringBoot</code>中<code>username</code>的值为<code>huan.fu</code>。</p> <h2 id="3何时加入我们自己的配置">3、何时加入我们自己的配置</h2> <p>由第二步 <code>获取配置属性的优先级</code> 可知，<code>PropertySource</code> 越靠前越先执行，那么要我们配置生效，就必须放在越前面越好。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/4699aad908beac2167997f8db6b888f6.jpg" alt="SpringBoot扩展点EnvironmentPostProcessor_在线工具"><br /> 由上图可知，SpringBoot加载各种配置是通过<code>EnvironmentPostProcessor</code>来实现的，而具体的实现是<code>ConfigDataEnvironmentPostProcessor</code>来实现的。那么我们自己编写一个<code>EnvironmentPostProcessor</code>的实现类，然后在<code>ConfigDataEnvironmentPostProcessor</code>后执行，并加入到 <code>Environment</code>中的第一位即可。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/86af89cfabe9288ac949c730a08f5f65.jpg" alt="SpringBoot扩展点EnvironmentPostProcessor_在线工具"></p> <h1 id="四实现">四、实现</h1> <h2 id="1引入springboot依赖">1、引入SpringBoot依赖</h2> <pre><code class="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt; &lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;     &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;     &lt;parent&gt;         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;         &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;         &lt;version&gt;2.6.6&lt;/version&gt;         &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;     &lt;/parent&gt;     &lt;groupId&gt;com.huan.springcloud&lt;/groupId&gt;     &lt;artifactId&gt;springboot-extension-point&lt;/artifactId&gt;     &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;     &lt;name&gt;springboot-extension-point&lt;/name&gt;     &lt;properties&gt;         &lt;java.version&gt;1.8&lt;/java.version&gt;     &lt;/properties&gt;     &lt;dependencies&gt;         &lt;dependency&gt;             &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;             &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;         &lt;/dependency&gt;     &lt;/dependencies&gt; &lt;/project&gt;  </code></pre> <h2 id="2在applicationproperties中配置属性">2、在application.properties中配置属性</h2> <p><code>vim application.properties</code></p> <pre><code class="language-properties">username=huan </code></pre> <h2 id="3编写自定义属性并加入spring-environment中">3、编写自定义属性并加入Spring Environment中</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/84bcd61805cbafd1eb3d873f2e42f998.jpg" alt="SpringBoot扩展点EnvironmentPostProcessor_在线工具"><br /><strong>注意：</strong><br /> 1、如果发现程序中日志没有输出，检查是否使用了<code>slf4j</code>输出日志，此时因为日志系统未初始化无法输出日志。<code>解决方法如下：</code></p> <pre><code>SpringBoot版本 		&gt;= 2.4 可以参考上图中的使用 DeferredLogFactory 来输出日志 		&lt; 2.4 			1、参考如下链接 https://stackoverflow.com/questions/42839798/how-to-log-errors-in-a-environmentpostprocessor-execution 			2、核心代码： 				@Component 				public class MyEnvironmentPostProcessor implements 				        EnvironmentPostProcessor, ApplicationListener&lt;ApplicationEvent&gt; { 				    private static final DeferredLog log = new DeferredLog(); 				    @Override 				    public void postProcessEnvironment( 				            ConfigurableEnvironment env, SpringApplication app) { 				        log.error("This should be printed"); 				    } 				    @Override 				    public void onApplicationEvent(ApplicationEvent event) { 				        log.replayTo(MyEnvironmentPostProcessor.class); 				    } 				} </code></pre> <h2 id="4通过spi使自定义的配置生效">4、通过SPI使自定义的配置生效</h2> <p>1、在 <code>src/main/resources</code>下新建<code>META-INF/spring.factories</code>文件<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/39703744a5458313b46360170104b433.jpg" alt="SpringBoot扩展点EnvironmentPostProcessor_在线工具"><br /> 2、配置</p> <pre><code>org.springframework.boot.env.EnvironmentPostProcessor=\   com.huan.springcloud.extensionpoint.environmentpostprocessor.CustomEnvironmentPostProcessor </code></pre> <h2 id="5编写测试类输出定义的-username-属性的值">5、编写测试类，输出定义的 username 属性的值</h2> <pre><code class="language-java">@Component public class PrintCustomizeEnvironmentProperty implements ApplicationRunner {      private static final Logger log = LoggerFactory.getLogger(PrintCustomizeEnvironmentProperty.class);      @Value("${username}")     private String userName;      @Override     public void run(ApplicationArguments args) {         log.info("获取到的 username 的属性值为: {}", userName);     } } </code></pre> <h2 id="6运行结果">6、运行结果</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/26e59a4e397a4bbdb399a8b8b8f56962.jpg" alt="SpringBoot扩展点EnvironmentPostProcessor_在线工具"></p> <h1 id="五注意事项">五、注意事项</h1> <h2 id="1日志无法输出">1、日志无法输出</h2> <p>参考上方的 <code>3、编写自定义属性并加入Spring Environment中</code>提供的解决方案。</p> <h2 id="2配置没有生效">2、配置没有生效</h2> <ul> <li>检查<code>EnvironmentPostProcessor</code>的优先级，看看是否<code>@Order</code>或者<code>Ordered</code>返回的优先级值不对。</li> <li>看看别的地方是否实现了 <code>EnvironmentPostProcessor</code>或<code>ApplicationContextInitializer</code>或<code>BeanFactoryPostProcessor</code>或<code>BeanDefinitionRegistryPostProcessor</code>等这些接口，在这个里面修改了 <code>PropertySource</code>的顺序。</li> <li>理解 Spring 获取获取属性的顺序 参考 <code>2、获取配置属性的优先级</code> </li> </ul> <h2 id="3日志系统如何初始化">3、日志系统如何初始化</h2> <p>如下代码初始化日志系统</p> <pre><code>org.springframework.boot.context.logging.LoggingApplicationListener </code></pre> <h1 id="六完整代码">六、完整代码</h1> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://gitee.com/huan1993/spring-cloud-parent/tree/master/springboot/springboot-extension-point/src/main/java/com/huan/springcloud/extensionpoint/environmentpostprocessor"  target="_blank"  rel="nofollow">https://gitee.com/huan1993/spring-cloud-parent/tree/master/springboot/springboot-extension-point/src/main/java/com/huan/springcloud/extensionpoint/environmentpostprocessor</a></p> <h1 id="七参考链接">七、参考链接</h1> <p>1、<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/apolloconfig/apollo/blob/master/apollo-client/src/main/java/com/ctrip/framework/apollo/spring/boot/ApolloApplicationContextInitializer.java"  target="_blank"  rel="nofollow">https://github.com/apolloconfig/apollo/blob/master/apollo-client/src/main/java/com/ctrip/framework/apollo/spring/boot/ApolloApplicationContextInitializer.java</a><br /> 2、<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/apolloconfig/apollo/blob/master/apollo-client/src/main/java/com/ctrip/framework/apollo/spring/config/PropertySourcesProcessor.java"  target="_blank"  rel="nofollow">https://github.com/apolloconfig/apollo/blob/master/apollo-client/src/main/java/com/ctrip/framework/apollo/spring/config/PropertySourcesProcessor.java</a></p> <p>3、<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.apolloconfig.com/#/zh/design/apollo-design"  target="_blank"  rel="nofollow">https://www.apolloconfig.com/#/zh/design/apollo-design</a></p> <p>4、<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://stackoverflow.com/questions/42839798/how-to-log-errors-in-a-environmentpostprocessor-execution"  target="_blank"  rel="nofollow">解决EnvironmentPostProcessor中无法输出日志</a></p> <p>5、<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://docs.spring.io/spring-boot/docs/2.6.6/reference/htmlsingle/#howto.application.customize-the-environment-or-application-context"  target="_blank"  rel="nofollow">https://docs.spring.io/spring-boot/docs/2.6.6/reference/htmlsingle/#howto.application.customize-the-environment-or-application-context</a></p> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1539.htm">nodejs从异步事件中获取数据方法</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1541.htm">数据库时间问题</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1602.htm" title="CSS：实现多行文本垂直居中的四种方法">CSS：实现多行文本垂直居中的四种方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-1604.htm" title="go语言panic函数详解">go语言panic函数详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1619.htm" title="sql server排查死锁优化性能_MsSql_">sql server排查死锁优化性能_MsSql_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1610.htm" title="python3.5上使用virtualenv创建虚拟环境的坑">python3.5上使用virtualenv创建虚拟环境的坑</a></li>
+                        <li class="py-2"><a href="/html/category/article-1586.htm" title="tensorflow基础流程">tensorflow基础流程</a></li>
+                        <li class="py-2"><a href="/html/category/article-1580.htm" title="EFCore 6.0入门看这篇就够了">EFCore 6.0入门看这篇就够了</a></li>
+                        <li class="py-2"><a href="/html/category/article-1594.htm" title="Vue watch中监听值的变化,判断后修改值方式_vue.js_">Vue watch中监听值的变化,判断后修改值方式_vue.js_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1601.htm" title="java数组去重">java数组去重</a></li>
+                        <li class="py-2"><a href="/html/category/article-1627.htm" title="go语言编译过程概述">go语言编译过程概述</a></li>
+                        <li class="py-2"><a href="/html/category/article-1611.htm" title="Druid10 监控">Druid10 监控</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

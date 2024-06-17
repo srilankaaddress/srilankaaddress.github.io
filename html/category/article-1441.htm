@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1441.htm" />
+    <title>Sqlalchemy异步操作详解 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">Sqlalchemy异步操作详解</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<h3 id="异步sqlalchemy">异步SQLAlchemy</h3> <p>SQLAlchemy作为一款<code>通用</code>的Python Orm工具，在最近的版本也支持了异步操作。但网上很多资料都不是很齐全，API也不是很好查询的情况下，我便有了整理一份基础文档的想法。文章主要会以CRUD为入口，解决大家最基本的需求。</p> <h3 id="engine的区别">engine的区别</h3> <p>在普通的SQLAlchemy中，建立engine对象，我们会采用下面的方式:</p> <pre><code class="language-python">from sqlalchemy import create_engine engine = create_engine(SQLALCHEMY_DATABASE_URI, pool_recycle=1500)</code></pre> <p>而异步的方式如下:</p> <pre><code class="language-python">from sqlalchemy.ext.asyncio import create_async_engine async_engine = create_async_engine(ASYNC_SQLALCHEMY_URI, pool_recycle=1500)</code></pre> <h3 id="session的区别">session的区别</h3> <p>我们一般用sessionmaker来建立session，不过异步的有点区别:</p> <pre><code class="language-python">from sqlalchemy.ext.asyncio import AsyncSession from sqlalchemy.orm import sessionmaker  # 同步session Session = sessionmaker(engine)  # 异步session 区别在于需要指定对应的class_ async_session = sessionmaker(async_engine, class_=AsyncSession)</code></pre> <h3 id="建立会话">建立会话</h3> <p>我们还是以代码的形式展示:</p> <pre><code class="language-python"># 同步 with Session() as session:   # 里面是具体的sql操作   pass    # 异步 async with Session() as session:     # 里面是异步的操作，区别就是从with变成了async with 也就意味着方法必须是async修饰的     pass</code></pre> <hr/> <p>以上是关于建立连接，处理会话的一些区别，接着我们讲对应的CRUD操作。</p> <h3 id="查询">查询</h3> <p>这里依旧会给出新老版本的对比:</p> <pre><code class="language-python"># 注意Session为同步Session，为了区分，异步session为async_session # model则为具体的Model类  # 异步查询方式 from sqlalchemy import select   async def query():     async with async_session() as session:         sql = select(model).where(model.id == 1)         print(sql) # 这里可以打印出sql         result = await session.execute(sql)         # 第一条数据         data = result.scalars().first()         # 所有数据         # data = result.scalars().all()   # 同步查询方式一 def query():     with Session() as session:         # 查询id=1的第一条数据 result对应的就是model的实例 如果没有则是None         result = session.query(model).filter_by(id=1).first()         # 查询所有数据 result对应的数据为List[model]，即model数组         # result = session.query(model).filter_by(name="zhangsan").all()  # 同步查询方式二 def query():     with Session() as session:         # 查询id=1的第一条数据 result对应的就是model的实例 如果没有则是None         result = session.query(model).filter(model.id == 1).first()         # 查询所有数据 result对应的数据为List[model]，即model数组         # result = session.query(model).filter(model.name == "zhangsan").all()</code></pre> <h3 id="新增">新增</h3> <p>这里开始就只讲异步的操作了。</p> <pre><code class="language-python">async def insert(data):     async with async_session() as session:         async with session.begin():             session.add(data)             # 刷新自带的主键             await session.flush()             # 释放这个data数据             session.expunge(data)             return data</code></pre> <p>先说一下session.begin，这个你可以理解为一个事务操作，当采用session的begin方法后，你可以发现我们不需要调用commit方法也能把修改存入数据库。</p> <p>expunge方法，是用例释放这个实例，SQLAlchemy有个特点，当你的session会话结束以后，它会销毁你插入的这种临时数据，你再想访问这个data就访问不了了。所以我们可以释放这个数据。（expunge的作用）</p> <h3 id="编辑">编辑</h3> <p>一般编辑有2种方式:</p> <ul> <li>查询出对应的数据，在数据上修改</li> <li>根据key-value的形式，修改对应数据的字段</li> </ul> <pre><code class="language-python">from sqlalchemy import select, update  # 方式一 async def update_record(model):     async with async_session() as session:         async with session.begin():             result = await session.execute(select(model).where(id=1))             now = result.scalars().first()             if now is None:                 raise Exception("记录不存在")             now.name = "李四"             now.age = 23             # 这里测试过，如果去掉flush会导致数据不更新             await session.flush()             session.expunge(now)             return now  # 方式二 async def update_by_map():     async with async_session() as session:         async with session.begin():             # 更新id为1的数据，并把name改为李四 age改为23             sql = update(model).where(model.id == 1).values(name="李四", age=23)             await session.execute(sql)</code></pre> <h3 id="删除">删除</h3> <p>删除的话，软删除大家都是update，所以不需要多说，物理删除的话，也有两种方式:</p> <ul> <li>查到以后删除之</li> <li>直接根据条件删除（这种我没有仔细研究，我选的是第一种方式，容错率高点）</li> </ul> <pre><code class="language-python">async def delete_by_id():     async with async_session() as session:         async with session.begin():             result = await session.execute(select(model).where(model.id == 2))             original = result.scalars().first()             if original is None:                 raise Exception("记录不存在")             # 如果是多条             # session.delete(original)             # for item in result:             #     session.delete(item)</code></pre> <p>今天的异步内容就整理到这里，我个人觉得还是很实用的，希望对大家有帮助~~~</p> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1440.htm">Java8新特性-函数式接口（lambda基础）</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1442.htm">SpringBoot整合Shiro和Redis的示例代码_java</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1591.htm" title="netty系列之:netty中的frame解码器_在线工具">netty系列之:netty中的frame解码器_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1590.htm" title="Python  turtle  模块可以编写游戏，是真的吗？">Python  turtle  模块可以编写游戏，是真的吗？</a></li>
+                        <li class="py-2"><a href="/html/category/article-1589.htm" title="浅谈Vue的双向绑定和单向数据流冲突吗_vue.js_">浅谈Vue的双向绑定和单向数据流冲突吗_vue.js_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1588.htm" title="JavaScript实现计数器、计时器——setTimeout与setInterval的区别">JavaScript实现计数器、计时器——setTimeout与setInterval的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-1622.htm" title="Anaconda 创建django不同版本开发环境">Anaconda 创建django不同版本开发环境</a></li>
+                        <li class="py-2"><a href="/html/category/article-1597.htm" title="微信小程序，制作属于自己的Icon图标">微信小程序，制作属于自己的Icon图标</a></li>
+                        <li class="py-2"><a href="/html/category/article-1573.htm" title="大数据系列(3)-HDFS 常用命令">大数据系列(3)-HDFS 常用命令</a></li>
+                        <li class="py-2"><a href="/html/category/article-1619.htm" title="sql server排查死锁优化性能_MsSql_">sql server排查死锁优化性能_MsSql_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1620.htm" title="Spring如何快速上手">Spring如何快速上手</a></li>
+                        <li class="py-2"><a href="/html/category/article-1613.htm" title="vue 动态组件组件复用_真正的动态声明性组件">vue 动态组件组件复用_真正的动态声明性组件</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

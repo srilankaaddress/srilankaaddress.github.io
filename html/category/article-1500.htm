@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1500.htm" />
+    <title>Linux nfs 网络文件系统 配置过程 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">Linux nfs 网络文件系统 配置过程</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<div id="content_views" class="markdown_views prism-dracula"> <p>参考<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/solaraceboy/article/details/78743563"  rel="nofollow">https://blog.csdn.net/solaraceboy/article/details/78743563</a></p> <p>以下机器都是centOS 7</p> <p>1 需要Linux安装nfs-utils。所有机器都需要装。</p> <pre><code class="prism language-bash">yum -y<span class="token function">install</span> nfs-utils</code></pre> <p>2 启动服务端的nfs和rpcbind服务，并将其设置为开机启动（作为服务器，应保证服务在每次重启之后都能迅速提供服务）。</p> <pre><code class="prism language-bash">systemctl start nfs systemctl<span class="token builtin class-name">enable</span> nfs systemctl status nfs  systemctl start rpcbind systemctl<span class="token builtin class-name">enable</span> rpcbind systemctl status rpcbind</code></pre> <p>或者</p> <pre><code class="prism language-bash">systemctl<span class="token builtin class-name">enable</span> nfs --now systemctl<span class="token builtin class-name">enable</span> rpcbind --now</code></pre> <p>或者更简单一点：</p> <pre><code>systemctl enable nfs-server --now</code></pre> <pre><code class="prism language-bash"><span class="token punctuation">(</span>base<span class="token punctuation">)</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl start nfs</span><span class="token punctuation">(</span>base<span class="token punctuation">)</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl enable nfs</span> Created symlink from /etc/systemd/system/multi-user.target.wants/nfs-server.service to /usr/lib/systemd/system/nfs-server.service.<span class="token punctuation">(</span>base<span class="token punctuation">)</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl status nfs</span> ● nfs-server.service - NFS server and services    Loaded: loaded<span class="token punctuation">(</span>/usr/lib/systemd/system/nfs-server.service<span class="token punctuation">;</span> enabled<span class="token punctuation">;</span> vendor preset: disabled<span class="token punctuation">)</span>    Active: active<span class="token punctuation">(</span>exited<span class="token punctuation">)</span> since 四<span class="token number">2021</span>-12-02<span class="token number">21</span>:26:17 CST<span class="token punctuation">;</span> 24s ago  Main PID:<span class="token number">2792</span><span class="token punctuation">(</span>code<span class="token operator">=</span>exited,<span class="token assign-left variable">status</span><span class="token operator">=</span><span class="token number">0</span>/SUCCESS<span class="token punctuation">)</span>    CGroup: /system.slice/nfs-server.service<span class="token number">12</span>月 02<span class="token number">21</span>:26:17 localhost.localdomain systemd<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>: Starting NFS server and services<span class="token punctuation">..</span>.<span class="token number">12</span>月 02<span class="token number">21</span>:26:17 localhost.localdomain systemd<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>: Started NFS server and services.<span class="token punctuation">(</span>base<span class="token punctuation">)</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl start rpcbind</span><span class="token punctuation">(</span>base<span class="token punctuation">)</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl enable rpcbind</span><span class="token punctuation">(</span>base<span class="token punctuation">)</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl status rpcbind</span> ● rpcbind.service - RPC<span class="token builtin class-name">bind</span><span class="token function">service</span>    Loaded: loaded<span class="token punctuation">(</span>/usr/lib/systemd/system/rpcbind.service<span class="token punctuation">;</span> enabled<span class="token punctuation">;</span> vendor preset: enabled<span class="token punctuation">)</span>    Active: active<span class="token punctuation">(</span>running<span class="token punctuation">)</span> since 四<span class="token number">2021</span>-12-02<span class="token number">21</span>:26:17 CST<span class="token punctuation">;</span> 46s ago  Main PID:<span class="token number">2788</span><span class="token punctuation">(</span>rpcbind<span class="token punctuation">)</span>    CGroup: /system.slice/rpcbind.service            └─2788 /sbin/rpcbind -w<span class="token number">12</span>月 02<span class="token number">21</span>:26:17 localhost.localdomain systemd<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>: Starting RPC<span class="token builtin class-name">bind</span> service<span class="token punctuation">..</span>.<span class="token number">12</span>月 02<span class="token number">21</span>:26:17 localhost.localdomain systemd<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>: Started RPC<span class="token builtin class-name">bind</span> service.</code></pre> <p>3、在服务端创建共享目录。</p> <pre><code class="prism language-bash"><span class="token function">mkdir</span> /nfskevin</code></pre> <p>4、修改服务端配置文件<br /> 修改服务端配置文件<code>vim /etc/exports</code>，增加如下一行：</p> <p>(1) * 任意主机可以使用NFS服务</p> <p>(2) rw 该主机对该共享目录有读写权限</p> <p>(3) async 资料会先暂存于内存中，而非直接写入硬盘</p> <p>(4) no_root_squash 登入 NFS 主机使用分享目录的使用者，如果是 root 的话，那么对于这个分享的目录来说，他就具有 root 的权限，单词squash是压缩压扁的意思。</p> <p>(5) Root_squash 在登入 NFS 主机使用分享之目录的使用者如果是 root 时，那么这个使用者的权限将被压缩成为匿名使用者，通常他的 UID 与 GID 都会变成 nobody 那个系统账号的身份。</p> <p>声明三个事情：分享什么文件、给哪个IP分享、权限是什么。ro是read only，rw是read write。</p> <pre><code class="prism language-bash">/nfskevin<span class="token number">10.10</span>.14.38/24<span class="token punctuation">(</span>ro<span class="token punctuation">)</span></code></pre> <p>要开读写权限注意文件的权限需要改，而不是像下图只有读：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221113/fdc294817c1082037f7afa9608d70f40.jpg" alt="Linux nfs 网络文件系统 配置过程"></p> <p>5、重启服务端nfs服务</p> <pre><code class="prism language-bash">systemctl restart nfs-server</code></pre> <p>或者</p> <pre><code class="prism language-bash">exportfs -r</code></pre> <p>6、配置服务端防火墙</p> <pre><code class="prism language-bash">firewall-cmd --add-service<span class="token operator">=</span>nfs --permanent firewall-cmd --reload</code></pre> <p>7、启动客户端nfs服务（客户端可以不启动rpcbind服务），挂载服务端nfs目录。</p> <pre><code class="prism language-bash">systemctl<span class="token builtin class-name">enable</span> nfs --now systemctl<span class="token builtin class-name">enable</span> rpcbind --now<span class="token function">mkdir</span> /mntkevin<span class="token function">mount</span> -t nfs<span class="token number">10.10</span>.14.36:/nfskevin /mntkevin</code></pre> <p>8、测试。<br /> 在客户端查看一下挂载情况。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221113/6b635b0c7d61ce38d553106ea566afab.jpg" alt="Linux nfs 网络文件系统 配置过程"></p> <p>9、客户端的挂载，让开机就可用，开机就挂载起来。</p> <pre><code class="prism language-bash"><span class="token function">vim</span> /etc/fstab</code></pre> <p>写：</p> <pre><code class="prism language-bash"><span class="token number">10.10</span>.14.36:/nfskevin /mntkevin                 nfs     defaults<span class="token number">0</span><span class="token number">0</span></code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221113/ea5da84878702b2f92886b9e18c11db7.jpg" alt="Linux nfs 网络文件系统 配置过程"></p> <pre><code class="prism language-bash"><span class="token function">mount</span> -a<span class="token comment"># 将/etc/fstab的所有内容重新加载 mount -a 会忽略所有已经完成的操作，也就是开机时 fstab 已经挂载后，而且你没有修改 fstab 。你再运行 mount -a ，他会自动忽略全部 fstab 内容。</span></code></pre> </div> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1499.htm">将视频转换为HTML5 ogg / ogv和mpg4</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1501.htm">PowerDotNet平台化软件架构设计与实现系列应用监控平台</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1598.htm" title="Unity实现简单的对象池_在线工具">Unity实现简单的对象池_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1621.htm" title="SSM三大框架工作流程与原理详解">SSM三大框架工作流程与原理详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1597.htm" title="微信小程序，制作属于自己的Icon图标">微信小程序，制作属于自己的Icon图标</a></li>
+                        <li class="py-2"><a href="/html/category/article-1592.htm" title="SpringBoot时区问题解决，彻底解决时差问题">SpringBoot时区问题解决，彻底解决时差问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-1614.htm" title="我们如何更改MySQL AUTO_INCREMENT起始号码？">我们如何更改MySQL AUTO_INCREMENT起始号码？</a></li>
+                        <li class="py-2"><a href="/html/category/article-1577.htm" title="springboot 中注解@Async失效的情况">springboot 中注解@Async失效的情况</a></li>
+                        <li class="py-2"><a href="/html/category/article-1601.htm" title="java数组去重">java数组去重</a></li>
+                        <li class="py-2"><a href="/html/category/article-1593.htm" title="Linux中磁盘分区清理方法">Linux中磁盘分区清理方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-1589.htm" title="浅谈Vue的双向绑定和单向数据流冲突吗_vue.js_">浅谈Vue的双向绑定和单向数据流冲突吗_vue.js_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1595.htm" title="@RequestMapping注解最详细解析">@RequestMapping注解最详细解析</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

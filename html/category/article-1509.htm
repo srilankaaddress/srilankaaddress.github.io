@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1509.htm" />
+    <title>【Spring】——事务实现过程及原理 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">【Spring】——事务实现过程及原理</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<div id="content_views" class="htmledit_views"> <h1 style="margin:0in; margin-left:.375in; font-size:14.0pt"> <span lang="en-US" style="font-family:Calibri; color:#3A3838">1</span><span lang="zh-CN" style="font-family:宋体; color:#3A3838">、</span><span lang="en-US" style="font-family:宋体"><strong>Spring</strong></span><span lang="zh-CN" style="font-family:宋体"><strong>中事务处理的作用：</strong></span><br /> </h1> <p style="margin:0in 0in 0in 0.375in; font-family:宋体; font-size:14pt">&nbsp;</p> <p style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt; color:#3A3838"> <span lang="en-US">Spring</span><span lang="zh-CN">事务处理，是将事务处理的工作统一起来，并为事务处理提供通用的支持。</span></p> <p style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <h1 style="margin:0in; margin-left:.375in; font-size:14.0pt; color:#3A3838"> <span lang="en-US" style="font-family:Calibri">2</span><span lang="zh-CN" style="font-family:宋体">、</span><span lang="zh-CN" style="font-family:宋体"><strong>工作原理及实现</strong></span><br /> </h1> <p style="margin:0in; margin-left:.375in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <h2 style="margin:0in; margin-left:.75in; font-size:14.0pt"> <span lang="en-US" style="font-family:Calibri; color:#3A3838">a</span><span lang="zh-CN" style="font-family:宋体; color:#3A3838">、</span><span lang="zh-CN" style="font-family:宋体; color:#ED7D31"><strong>划分处理单元——</strong></span><span lang="en-US" style="font-family:宋体; color:#ED7D31"><strong>IOC</strong></span><br /> </h2> <p lang="en-US" style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt; color:#ED7D31"> &nbsp;</p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> <span lang="zh-CN">由于</span><span lang="en-US">spring</span><span lang="zh-CN">解决的问题是对单个数据库进行局部事务处理的，具体的实现首相用</span><span lang="en-US">spring</span><span lang="zh-CN">中的</span><span lang="en-US">IOC</span><span lang="zh-CN">划分了事务处理单元。并且将对事务的各种配置放到了</span><span lang="en-US">ioc</span><span lang="zh-CN">容器中（设置事务管理器，设置事务的传播特性及隔离机制）。</span></p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <h2 style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt"> <span lang="en-US" style="color:#3A3838">b</span><span lang="zh-CN" style="color:#3A3838">、</span><span lang="en-US" style="color:#ED7D31"><strong>AOP</strong></span><span lang="zh-CN" style="color:#ED7D31"><strong>拦截需要进行事务处理的类</strong></span><br /> </h2> <p style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt; color:#ED7D31"> &nbsp;</p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> <span lang="en-US">Spring</span><span lang="zh-CN">事务处理模块是通过</span><span lang="en-US">AOP</span><span lang="zh-CN">功能来实现声明式事务处理的，具体操作（比如事务实行的配置和读取，事务对象的抽象），用</span><span lang="en-US">TransactionProxyFactoryBean</span><span lang="zh-CN">接口来使用</span><span lang="en-US">AOP</span><span lang="zh-CN">功能，生成</span><span lang="en-US">proxy</span><span lang="zh-CN">代理对象，通过</span><span lang="en-US">TransactionInterceptor</span><span lang="zh-CN">完成对代理方法的拦截，将事务处理的功能编织到拦截的方法中。</span></p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> <span lang="zh-CN">读取</span><span lang="en-US">ioc</span><span lang="zh-CN">容器事务配置属性，转化为</span><span lang="en-US">spring</span><span lang="zh-CN">事务处理需要的内部数据结构（</span><span lang="en-US">TransactionAttributeSourceAdvisor</span><span lang="zh-CN">），转化为</span><span lang="en-US">TransactionAttribute</span><span lang="zh-CN">表示的数据对象。</span></p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <h2 style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt"> <span lang="en-US" style="color:#3A3838">c</span><span lang="zh-CN" style="color:#3A3838">、</span><span lang="zh-CN" style="color:#ED7D31"><strong>对事物处理实现（事务的生成、提交、回滚、挂起）</strong></span><br /> </h2> <p style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt; color:#ED7D31"> &nbsp;</p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> <span lang="en-US">spring</span><span lang="zh-CN">委托给具体的事务处理器实现。实现了一个抽象和适配。适配的具体事务处理器：</span><span lang="en-US">DataSource</span><span lang="zh-CN">数据源支持、</span><span lang="en-US">hibernate</span><span lang="zh-CN">数据源事务处理支持、</span><span lang="en-US">JDO</span><span lang="zh-CN">数据源事务处理支持，</span><span lang="en-US">JPA</span><span lang="zh-CN">、</span><span lang="en-US">JTA</span><span lang="zh-CN">数据源事务处理支持。这些支持都是通过设计</span><span lang="en-US">PlatformTransactionManager</span><span lang="zh-CN">、</span><span lang="en-US">AbstractPlatforTransaction</span><span lang="zh-CN">一系列事务处理的支持。</span></p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <p style="margin:0in; margin-left:.75in; font-size:14.0pt; color:#3A3838"><span lang="en-US" style="font-family:Calibri">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span lang="zh-CN" style="font-family:宋体">为常用数据源支持提供了一系列的</span><span lang="en-US" style="font-family:宋体">TransactionManager</span><span lang="zh-CN" style="font-family:宋体">。</span></p> <p style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <p style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <h2 style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt"> <span lang="en-US" style="color:#3A3838">d</span><span lang="zh-CN" style="color:#3A3838">、</span><span lang="zh-CN" style="color:#ED7D31"><strong>结合</strong></span><br /> </h2> <p style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt; color:#ED7D31"> &nbsp;</p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> <span lang="en-US">PlatformTransactionManager</span><span lang="zh-CN">实现了</span><span lang="en-US">TransactionInterception</span><span lang="zh-CN">接口，让其与</span><span lang="en-US">TransactionProxyFactoryBean</span><span lang="zh-CN">结合起来，形成一个</span><span lang="en-US">Spring</span><span lang="zh-CN">声明式事务处理的设计体系。</span></p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <h1 style="margin:0in; margin-left:.375in; font-size:14.0pt; color:#3A3838"> <span lang="en-US" style="font-family:Calibri">3</span><span lang="zh-CN" style="font-family:宋体">、</span><span lang="zh-CN" style="font-family:宋体"><strong>应用场景</strong></span><br /> </h1> <p style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <p style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt; color:#3A3838"> <span lang="zh-CN">&nbsp; 支持不同数据源，在底层进行封装，可以做到事务即开即用，这样的好处是：即使有其他的数据源事务处理需要，</span><span lang="en-US">Spring</span><span lang="zh-CN">也提供了一种一致的方式。</span></p> </p></div> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1508.htm">vue项目打包时踩的坑</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1510.htm">Java四舍五入保留两位小数</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1589.htm" title="浅谈Vue的双向绑定和单向数据流冲突吗_vue.js_">浅谈Vue的双向绑定和单向数据流冲突吗_vue.js_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1612.htm" title="C语言 模拟实现memcpy与memmove函数详解_C 语言">C语言 模拟实现memcpy与memmove函数详解_C 语言</a></li>
+                        <li class="py-2"><a href="/html/category/article-1599.htm" title="vue实现可以快进后退的跑马灯组件_vue.js">vue实现可以快进后退的跑马灯组件_vue.js</a></li>
+                        <li class="py-2"><a href="/html/category/article-1615.htm" title="使用 Docker 搭建 Confluence">使用 Docker 搭建 Confluence</a></li>
+                        <li class="py-2"><a href="/html/category/article-1575.htm" title="经典数据结构解决迷宫问题（Python实现）">经典数据结构解决迷宫问题（Python实现）</a></li>
+                        <li class="py-2"><a href="/html/category/article-1604.htm" title="go语言panic函数详解">go语言panic函数详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1573.htm" title="大数据系列(3)-HDFS 常用命令">大数据系列(3)-HDFS 常用命令</a></li>
+                        <li class="py-2"><a href="/html/category/article-1578.htm" title="如何离线安装VSCode插件">如何离线安装VSCode插件</a></li>
+                        <li class="py-2"><a href="/html/category/article-1609.htm" title="聚类算法——python实现层次聚类（AGNES）">聚类算法——python实现层次聚类（AGNES）</a></li>
+                        <li class="py-2"><a href="/html/category/article-1593.htm" title="Linux中磁盘分区清理方法">Linux中磁盘分区清理方法</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

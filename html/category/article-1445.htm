@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1445.htm" />
+    <title>vscode配置基于maven的Javaweb开发 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">vscode配置基于maven的Javaweb开发</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<div id="content_views" class="markdown_views prism-github-gist"> <h1><a id="vscodemavenJavaweb_1" rel="nofollow"></a>vscode配置基于maven的Javaweb开发</h1> <p>得益于vscode的便捷性，并且不是很吃电脑性能，所以得到越来越多的青睐，vscode在编写脚本语言比如python上非常好用，但是如果开发大型项目，其实还是有些麻烦的，所以这里给出一个教程，来配置一个能够结合maven开发javawen的项目，并且后续会加入调试等内容。</p> <p>在配置之前，你要有开发过Java web项目的经验，要不然可能很多东西都不知道为什么。</p> <h2><a id="_9" rel="nofollow"></a>事前准备</h2> <p>主要就是配置Java环境、maven环境、tomcat环境，这三个都是解压即可，主要是注意配置环境变量<code>JAVA_HOME</code> 、<code>MAVEN_HOME</code>以及<code>CATALINA_HOME</code>，然后将他们加入到path里面，最后path里面多了这四条:</p> <pre><code>%MAVEN_HOME%\bin %JAVA_HOME%\bin %CATALINA_HOME%\lib %CATALINA_HOME%\bin</code></pre> <p>并且你在命令行输入<code>java -version</code><code>mvn -v</code><code>catalina version</code>都ok，说明开发环境都配置好了。 其实到了这个地方，如果你是大佬，你就可以基于记事本来开发了，更何况vscode，其实IDE主要就相当于润滑剂，能够更加简单的用这些工具，不用你输很多命令。而vscode介于二者之间。</p> <h2><a id="vscode_20" rel="nofollow"></a>vscode插件</h2> <p>vscode之所以好用，就是里面有了很多的插件，能够起到润滑剂作用，帮助你更方便的开发。这里需要的插件有:</p> <pre><code>Language Support for Java(TM) by Red Hat Debugger for Java Java Extension Pack Maven for Java Tomcat for Java MySQL</code></pre> <p>安装完插件，主要就是配置了。这里主要配置一下maven即可，在File-&gt;Preferences-&gt;Settings里面，你可以搜索一下maven，配置如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221201/14c43e1fe5c2be313372dcf6e63c1ff0.jpg" alt="vscode配置基于maven的Javaweb开发"></p> <p>这样就能找到maven的配置了。tomcat也可以配置一下workspace，你可以自行在设置里搜索然后更改，其作用主要是修改一下我们运行web时的位置。</p> <h2><a id="mavenweb_42" rel="nofollow"></a>maven构建web项目</h2> <p>其实这里和之前学习maven构建项目一样，只不过安装了插件，你可以不通过命令了，而是通过鼠标点来点去即可。首先ctrl+shif+p<code>打开vscode的命令面板，输入</code>&gt;maven: Create Maven Project<code>,回车，然后选择</code>web app`版本1.4，然后等待建立maven骨架，这里会需要输入group<br /> Id，这里我输入了com.demo1，以及artifactId，我输入了demo，其他的回车用默认即可。</p> <p>然后你发现目录下面会多了一个demo的目录，并且demo下面还有一个pom.xml，这个时候就说明建立成功了，你用vscode打开这个demo文件夹即可（因为建立后，好像vscode不会自动打开）。</p> <p>构建完成后，我们需要部署到tomcat上面，这里现增加一个tomcat服务器，你当前的工作区应该如下所示：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221201/3b00797b90b05b8d648d204131566aad.jpg" alt="vscode配置基于maven的Javaweb开发"></p> <p>你点击TOMCAT SERVERS右边的小加号，然后会弹出来选择目录的，你就选择你tomcat的安装目录即可（就是下面有bin的那个），如果没问题，那么就会在下面多一个服务器，然后你可以右键，选择start即可。等到开启完成，你再点击open in browse即可在浏览器里面看到tomcat的界面（与原版tomcat有一点不同，vscode插件做了一点定制）。</p> <p>我们在终端输入<code>mvn clean package</code> 就可以将项目打成war包，在Demo\target\demo.war,r 然后你在上面右键，即可出现Run on tomcat server, 这就会将其部署到tomcat上面，你在浏览器里面刷新一下，会发现多了一个项目，你点击就可以进去，或者直接地址栏输入<code>http://localhost:8080/demo/</code>。</p> <p>p.s. 可能你也注意到了如果右键在webapp这个目录上的话，也有Run on tomcat server并且能够运行，但是这个仅限于静态项目，我试了在spring mvc下，对servlet访问就不行了，所以建议还是用<code>mvn clean package</code> ，如果觉得麻烦，后续会继续讲其他方案。</p> <p>到此为止，通过vscode结合maven构建项目就完成了。</p> </div> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1444.htm">vue实现列表拖拽排序的示例代码_vue.js</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1446.htm">CentOS 7.6环境设置Redis开机自启动</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1571.htm" title="kafka集群安全化之启用kerberos与acl">kafka集群安全化之启用kerberos与acl</a></li>
+                        <li class="py-2"><a href="/html/category/article-1583.htm" title="kubernetes实现分布式限流_云和虚拟化_">kubernetes实现分布式限流_云和虚拟化_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1593.htm" title="Linux中磁盘分区清理方法">Linux中磁盘分区清理方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-1587.htm" title="如何在vue3使用骨架屏">如何在vue3使用骨架屏</a></li>
+                        <li class="py-2"><a href="/html/category/article-1613.htm" title="vue 动态组件组件复用_真正的动态声明性组件">vue 动态组件组件复用_真正的动态声明性组件</a></li>
+                        <li class="py-2"><a href="/html/category/article-1585.htm" title="pymysql增删改查之insert操作">pymysql增删改查之insert操作</a></li>
+                        <li class="py-2"><a href="/html/category/article-1600.htm" title="xpath的使用">xpath的使用</a></li>
+                        <li class="py-2"><a href="/html/category/article-1618.htm" title="vue3中获取ref元素的几种方式">vue3中获取ref元素的几种方式</a></li>
+                        <li class="py-2"><a href="/html/category/article-1582.htm" title="Qt 实现文字输入框，带字数限制">Qt 实现文字输入框，带字数限制</a></li>
+                        <li class="py-2"><a href="/html/category/article-1622.htm" title="Anaconda 创建django不同版本开发环境">Anaconda 创建django不同版本开发环境</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

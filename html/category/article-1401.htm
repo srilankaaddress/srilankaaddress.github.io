@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1401.htm" />
+    <title>spring 循环依赖,Bean使用@Async注解 导致项目启动失败 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">spring 循环依赖,Bean使用@Async注解 导致项目启动失败</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<div id="content_views" class="htmledit_views"> <p>&nbsp; 一天下午，重新部署测试环境的时候，发现服务启动失败，报如下错误：</p> <pre class="has"><code class="language-java">ERROR o.s.web.context.ContextLoader - Context initialization failed   org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'matchAutoJiaoJuan': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.online.tk.test.service.MatchService com.online.tk.test.task.matchAutoJiaoJuan.matchService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'matchService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.online.tk.test.service.testAnswerCardService com.online.tk.test.service.MatchService.testAnswerCardService; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'testAnswerCardService': Bean with name 'testAnswerCardService' has been injected into other beans [practiceCardDubboService] in its raw version as part of a circular reference, but has eventually been wrapped. This means that said other beans do not use the final version of the bean. This is often the result of over-eager type matching - consider using 'getBeanNamesOfType' with the 'allowEagerInit' flag turned off, for example</code></pre> <p>大致的意思是&nbsp; :启动失败，创建bean失败，名为“testanswercardService”的bean已作为循环引用的一部分，以其原始版本注入到其他bean[practicecardDuboService]中，但最终被包装。这意味着其他bean不使用bean的最终版本。这通常是过度渴望类型匹配的结果-例如，考虑在禁用“allowagerinit”标志的情况下使用“getBeannameSoftype”（Injection 注射&nbsp; Autowired自动装配;注解; nested 嵌套的）</p> <p>简单来说，项目中存在了循环引用。matchService 中注入了testAnswerCardService ，同时在testAnswerCardService 中也引用了</p> <p>matchService ,导致循环引用。因为是老项目中，确实存在着循环引用的问题，关于循环引用如何解决，稍后总结。</p> <p>循环引用这个问题不是最近开发的功能，是一直存在的，为什么今天突然有问题了？</p> <p>一，首先怀疑测试环境代码的有问题,对比了下没有发现什么区别。然后部署了别的分支（match和dev）分支的代码，发现报同样的问题，初步判定不是代码的问题（后来结果证明这个判断是错的，忽略了小小的一个字段）</p> <p>二，然后猜测是不是spring什么相关版本自动升级了，看了看pom文件的结构，都是定义的特别的某个的版本，目前老项目使用的是4.2.5，检查了一遍，也没发现其他异常，排除版本突然升级的问题</p> <p>三，是不是测试环境在搞什么测试动作，重新启动了下其他的两个项目，发现是没问题的，??尴尬了。</p> <p>四，是不是还是代码的问题呢</p> <p>&nbsp;&nbsp;&nbsp;&nbsp; 节前刚上线，那个时候代码还是没有问题的。重新拉了一个分支，然后将代码会滚到节前,竟然发现代码是否运行的。所以应该还是代码的问题??，接着试着将代码还原到昨天，发现代码仍然没有问题。逐步缩小范围，然后git compare,发现了如下代码:</p> <p><img fetchpriority="high" decoding="async" alt="" class="has" height="231" src="http://img.555519.xyz/uploads3/20220707/22456bfa5fdbd766d4d774e17e34775f.jpg"></p> <p>哈哈，在testAnswerCardService 类里面，有一个异步方法。</p> <p>四，虽然找到了原因，但是不理解原理，找了找相关资料</p> <p>&nbsp;原因解释如下：在程序启动的时候，Spring 已经对testAnswerCardService 里面的matchService记载完成，当准备创建matchService的时候发现使用了@Async注解，即Spring又需要江Bean代理一次，然后Spring发现该Bean已经被其他对象注入，所以会造成这个问题。</p> <p>关于@Async生成代理这块，其实还是有些模糊，参考一下文章：</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/lianhuazy167/article/details/66967673"  rel="nofollow">https://blog.csdn.net/lianhuazy167/article/details/66967673</a></p> <p>小结</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 回想这个排查思路，其实挺简单的，但是不够仔细，导致绕了远路。又对spring这一块了解了下，并且对于项目中的整个pom文件结构做了了解,也算学习和提升下，不断进步吧。</p> </div> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1400.htm">FreeRTOS实时操作系统队列的API函数讲解_操作系统</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1402.htm">序列化多表操作、请求与响应、视图组件(子类与拓展类)、继承GenericAPIView类重写接口</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1620.htm" title="Spring如何快速上手">Spring如何快速上手</a></li>
+                        <li class="py-2"><a href="/html/category/article-1598.htm" title="Unity实现简单的对象池_在线工具">Unity实现简单的对象池_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1623.htm" title="Java集合类型遍历和排序">Java集合类型遍历和排序</a></li>
+                        <li class="py-2"><a href="/html/category/article-1574.htm" title="Quartz高可用定时任务快速上手">Quartz高可用定时任务快速上手</a></li>
+                        <li class="py-2"><a href="/html/category/article-1575.htm" title="经典数据结构解决迷宫问题（Python实现）">经典数据结构解决迷宫问题（Python实现）</a></li>
+                        <li class="py-2"><a href="/html/category/article-1609.htm" title="聚类算法——python实现层次聚类（AGNES）">聚类算法——python实现层次聚类（AGNES）</a></li>
+                        <li class="py-2"><a href="/html/category/article-1627.htm" title="go语言编译过程概述">go语言编译过程概述</a></li>
+                        <li class="py-2"><a href="/html/category/article-1578.htm" title="如何离线安装VSCode插件">如何离线安装VSCode插件</a></li>
+                        <li class="py-2"><a href="/html/category/article-1602.htm" title="CSS：实现多行文本垂直居中的四种方法">CSS：实现多行文本垂直居中的四种方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-1626.htm" title="数据库四大特性与隔离级别">数据库四大特性与隔离级别</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

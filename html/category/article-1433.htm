@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1433.htm" />
+    <title>springboot整合spring retry 重试机制 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">springboot整合spring retry 重试机制</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <p>当我们调用一个接口可能由于网络等原因造成第一次失败，再去尝试就成功了，这就是重试机制，spring支持重试机制，并且在Spring Cloud中可以与Hystaix结合使用，可以避免访问到已经不正常的实例。 但是切记非幂等情况下慎用重试</p> <p>一 加入依赖</p> <pre><code>&lt;dependency&gt;   &lt;groupId&gt;org.springframework.retry&lt;/groupId&gt;   &lt;artifactId&gt;spring-retry&lt;/artifactId&gt; &lt;/dependency&gt;  &lt;dependency&gt;   &lt;groupId&gt;org.aspectj&lt;/groupId&gt;   &lt;artifactId&gt;aspectjweaver&lt;/artifactId&gt; &lt;/dependency&gt;</code></pre> <p>二 在主类上加入 @EnableRetry 注解<br /> @EnableRetry //开启重试机制<br /> @EnableAutoConfiguration //开启自动配置<br /> @SpringBootApplication<br /> public class WjKekingApplication {<!-- --></p> <p>public static void main(String[] args) {<!-- --><br /> SpringApplication.run(WjKekingApplication.class, args);<br /> }<br /> }<br /> 三 demo<br /> package com.wj.project.keking.myTest.service;</p> <p>import org.slf4j.Logger;<br /> import org.slf4j.LoggerFactory;<br /> import org.springframework.retry.annotation.Backoff;<br /> import org.springframework.retry.annotation.Recover;<br /> import org.springframework.retry.annotation.Retryable;<br /> import org.springframework.stereotype.Service;</p> <p>import java.time.LocalTime;</p> <p>@Service<br /> public class RetryService {<!-- --></p> <pre><code>private final static Logger logger = LoggerFactory.getLogger(RetryService.class);  private final int totalNum = 100000;  /**  * @Retryable的参数说明： •value：抛出指定异常才会重试  * •include：和value一样，默认为空，当exclude也为空时，默认所以异常  * •exclude：指定不处理的异常  * •maxAttempts：最大重试次数，默认3次  * •backoff：重试等待策略，默认使用@Backoff，@Backoff的value默认为1000L，我们设置为2000L；multiplier（指定延迟倍数）默认为0，表示固定暂停1秒后进行重试，如果把multiplier设置为1.5，则第一次重试为2秒，第二次为3秒，第三次为4.5秒。  */ @Retryable(value = Exception.class, maxAttempts = 3, backoff = @Backoff(delay = 2000L, multiplier = 1.5)) public int retry(int num) {     logger.info("减库存开始" + LocalTime.now());     try {         int i = 1 / 0;     } catch (Exception e) {         logger.error("illegal");     }     if (num &lt;= 0) {         throw new IllegalArgumentException("数量不对");     }     logger.info("减库存执行结束" + LocalTime.now());     return totalNum - num; }  @Recover public void recover(Exception e) {     logger.warn("减库存失败！！！" + LocalTime.now()); }</code></pre> <p>}<br /> 四 写一个简单的测试</p> <p>import base.BaseTest;<br /> import org.junit.Test;<br /> import org.springframework.beans.factory.annotation.Autowired;</p> <p>public class RetryServiceTest extends BaseTest {<!-- --></p> <pre><code>@Autowired private RetryService retryService;  @Test public void retry() {     int count = retryService.retry(-1);     System.out.println("库存为 ：" + count); }</code></pre> <p>}</p> <p>五 结果：<br /> 2018-07-28 01:12:09.836 INFO 31128 — [ main] o.s.b.w.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 55413 (http) with context path ‘’<br /> 2018-07-28 01:12:09.843 INFO 31128 — [ main] c.w.p.k.myTest.service.RetryServiceTest : Started RetryServiceTest in 7.178 seconds (JVM running for 10.657)<br /> 2018-07-28 01:12:10.584 INFO 31128 — [ main] c.w.p.k.myTest.service.RetryService : 减库存开始01:12:10.584<br /> 2018-07-28 01:12:10.584 ERROR 31128 — [ main] c.w.p.k.myTest.service.RetryService : illegal<br /> 2018-07-28 01:12:12.588 INFO 31128 — [ main] c.w.p.k.myTest.service.RetryService : 减库存开始01:12:12.588<br /> 2018-07-28 01:12:12.588 ERROR 31128 — [ main] c.w.p.k.myTest.service.RetryService : illegal<br /> 2018-07-28 01:12:15.588 INFO 31128 — [ main] c.w.p.k.myTest.service.RetryService : 减库存开始01:12:15.588<br /> 2018-07-28 01:12:15.588 ERROR 31128 — [ main] c.w.p.k.myTest.service.RetryService : illegal<br /> 2018-07-28 01:12:15.589 WARN 31128 — [ main] c.w.p.k.myTest.service.RetryService : 减库存失败！！！01:12:15.589<br /> 库存为 ：100000<br /> 2018-07-28 01:12:15.604 INFO 31128 — [ Thread-3] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1af2d44a: startup date [Sat Jul 28 01:12:03 CST 2018]; root of context hierarchy<br /> 2018-07-28 01:12:15.608 INFO 31128 — [ Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor : Shutting down ExecutorService ‘taskExecutor’<br /> ’<br /> 六 注意事项：<br /> 1、使用了@Retryable的方法不能在本类被调用，不然重试机制不会生效。也就是要标记为@Service，然后在其它类使用@Autowired注入或者@Bean去实例才能生效。</p> <p>2 、要触发@Recover方法，那么在@Retryable方法上不能有返回值，只能是void才能生效。</p> <p>3 、非幂等情况下慎用</p> <p>4 、使用了@Retryable的方法里面不能使用try…catch包裹，要在方法上抛出异常，不然不会触发。</p> </div> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1432.htm">实现二级菜单的伸缩功能的两种方法</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1434.htm">Springboot如何同时连接两个数据库</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1614.htm" title="我们如何更改MySQL AUTO_INCREMENT起始号码？">我们如何更改MySQL AUTO_INCREMENT起始号码？</a></li>
+                        <li class="py-2"><a href="/html/category/article-1575.htm" title="经典数据结构解决迷宫问题（Python实现）">经典数据结构解决迷宫问题（Python实现）</a></li>
+                        <li class="py-2"><a href="/html/category/article-1606.htm" title="RabbitMQ链接不上异常">RabbitMQ链接不上异常</a></li>
+                        <li class="py-2"><a href="/html/category/article-1609.htm" title="聚类算法——python实现层次聚类（AGNES）">聚类算法——python实现层次聚类（AGNES）</a></li>
+                        <li class="py-2"><a href="/html/category/article-1625.htm" title="Linux源码安装RabbitMQ高可用集群">Linux源码安装RabbitMQ高可用集群</a></li>
+                        <li class="py-2"><a href="/html/category/article-1605.htm" title="QCustomPlot开发笔记：QCustomPlot简介、下载以及基础绘图_在线工具">QCustomPlot开发笔记：QCustomPlot简介、下载以及基础绘图_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1623.htm" title="Java集合类型遍历和排序">Java集合类型遍历和排序</a></li>
+                        <li class="py-2"><a href="/html/category/article-1586.htm" title="tensorflow基础流程">tensorflow基础流程</a></li>
+                        <li class="py-2"><a href="/html/category/article-1604.htm" title="go语言panic函数详解">go语言panic函数详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1580.htm" title="EFCore 6.0入门看这篇就够了">EFCore 6.0入门看这篇就够了</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

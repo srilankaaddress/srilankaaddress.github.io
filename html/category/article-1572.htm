@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1572.htm" />
+    <title>IDEA部署Tomcat(超详细) - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">IDEA部署Tomcat(超详细)</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<div id="content_views" class="htmledit_views"> <h2>创建Web项目</h2> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们首先使用IDEA创建一个普通的java项目</p> <p><img fetchpriority="high" decoding="async" alt="" height="254" src="http://img.555519.xyz/uploads3/20220607/1ca65d6c8d18abee7a3539b1a8dad22b.jpg"></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;创建好后的项目结构如上图，我创建的项目名称为tomcat，这个项目现在还是一个普通的java项目，想要开发web程序，我们还要做一下操作，首先我们先给项目添加依赖</p> <p><img decoding="async" alt="" height="265" src="http://img.555519.xyz/uploads3/20220607/c7c956487ed83b839ccf2d8bf822e693.jpg"></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先右键自己创建的项目，然后点击add framework support</p> <p><img decoding="async" alt="" height="942" src="http://img.555519.xyz/uploads3/20220607/76ad2bf7b5c6d07790296bf87ee08580.jpg"></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;选择Web application，然后点ok</p> <p><img loading="lazy" decoding="async" alt="" height="331" src="http://img.555519.xyz/uploads3/20220607/2a657f76112d787d3912767acdb66247.jpg"></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们可以发现多了一个web文件夹，这个web文件夹里面就是放自己的web文件，例如html文件，jsp文件等，web下面的WEB-INF目录里面的web.xml就是用来配置这个web项目的，在WEB-INF下面我们一般会建立一个lib文件夹用于存放项目所需的jar包。</p> <hr/> <h2>配置tomcat</h2> <p>&nbsp; &nbsp; &nbsp; &nbsp; 创建web项目后我们需要配置tomcat才能运行，下面我们来进行配置。</p> <p><img loading="lazy" decoding="async" alt="" height="506" src="http://img.555519.xyz/uploads3/20220607/ac10e6f7afc04294b133bed480c12cac.jpg"></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先点击add configuration</p> <p><img loading="lazy" decoding="async" alt="" height="803" src="http://img.555519.xyz/uploads3/20220607/01e08ca4bd8bbb965bf3453600b9d9a5.jpg"></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;然后点击+号</p> <p><img loading="lazy" decoding="async" alt="" height="337" src="http://img.555519.xyz/uploads3/20220607/d15db856ab0e832b7a3d17917840e898.jpg"></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下拉选择tomcat server下的local</p> <p><img loading="lazy" decoding="async" alt="" height="420" src="http://img.555519.xyz/uploads3/20220607/8527500f6c84c298e499be4a46c2ef70.jpg"></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于我已经配置过，所以自动选择了，如果没有没有自动选择，点击configuration，点击+号，在tomcat选择自己的tomcat目录即可</p> <p><img loading="lazy" decoding="async" alt="" height="294" src="http://img.555519.xyz/uploads3/20220607/7454755a44e54e65f5abfcfb994524e8.jpg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;回到配置界面</p> <p><img loading="lazy" decoding="async" alt="" height="456" src="http://img.555519.xyz/uploads3/20220607/4e4aa78443690c0f67bc372a35208817.jpg"></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们在这个界面中首先点击deployment，先配置自己的项目名称，也就是外部访问的项目名称</p> <p><img loading="lazy" decoding="async" alt="" height="341" src="http://img.555519.xyz/uploads3/20220607/d84e68b6dcb627a836055e402353b7e3.jpg"></p> <p>点击+号，选择发布方式(第一个选项为war包，第二个选项为源码)，我们选择Artifact</p> <p><img loading="lazy" decoding="async" alt="" height="278" src="http://img.555519.xyz/uploads3/20220607/5fe005d929e21437a599eca6d0d70fa0.jpg">&nbsp;选择后下滑修改对外访问路径，我一般和项目名称一致</p> <p><img loading="lazy" decoding="async" alt="" height="191" src="http://img.555519.xyz/uploads3/20220607/a9c7cad0eb56878c9afefd50891764c9.jpg"></p> <p><img loading="lazy" decoding="async" alt="" height="210" src="http://img.555519.xyz/uploads3/20220607/8aaeff5a6afd26793e5b0be7b03e19e3.jpg"></p> <p>&nbsp;然后回到serve界面</p> <p><img loading="lazy" decoding="async" alt="" height="541" src="http://img.555519.xyz/uploads3/20220607/78954f676c610ca07d85755cf0041111.jpg"></p> <p>&nbsp; &nbsp; &nbsp; &nbsp; 这里设置tomcat的名字</p> <p><img loading="lazy" decoding="async" alt="" height="84" src="http://img.555519.xyz/uploads3/20220607/da961d9febe692254a16bd0aec3a9b71.jpg"></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这里选择发布项目后是否默认打开游览器，以及打开哪个游览器，根据自己需要进行选择</p> <p><img loading="lazy" decoding="async" alt="" height="254" src="http://img.555519.xyz/uploads3/20220607/a9c53e28496a3805ad1b8cb98a82607a.jpg"></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这里是我们对外访问的url<img loading="lazy" decoding="async" alt="" height="93" src="http://img.555519.xyz/uploads3/20220607/05ce3ae82baf128f87cca0025e8475dc.jpg"></p> <p>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;然后我们把下面2个选项设置为热加载，表示我们在修改文件后就会生效(修改java文件后需要重新发布才会生效)</p> <p><img loading="lazy" decoding="async" alt="" height="137" src="http://img.555519.xyz/uploads3/20220607/dc04851c9db16e31fb8afd7a3db4b3bf.jpg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这里是设置端口，根据自己的需要来设置</p> <p><img loading="lazy" decoding="async" alt="" height="182" src="http://img.555519.xyz/uploads3/20220607/7e9c86df16d82ea140b87355e6f331fb.jpg"></p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;都设置好后我们点击apply后点击ok</p> <p><img loading="lazy" decoding="async" alt="" height="947" src="http://img.555519.xyz/uploads3/20220607/da7077aeb670da0aa539f8f195a66c22.jpg"></p> <p>&nbsp; &nbsp; &nbsp; &nbsp; 我们可以看见这个界面，表示已经配置好了</p> <p><img loading="lazy" decoding="async" alt="" height="475" src="http://img.555519.xyz/uploads3/20220607/aa0d4fa4b77bc7d2095622b039168d2d.jpg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;启动一下，服务器启动成功，但是控制台输出乱码</p> <p><img loading="lazy" decoding="async" alt="" height="388" src="http://img.555519.xyz/uploads3/20220607/52481aa38621fab413a9bf8d8172b384.jpg"></p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;这个有多种解决方法，我们随便选择一种，首先我们点击idea界面的file，选择setting，进入设置界面</p> <p><img loading="lazy" decoding="async" alt="" height="792" src="http://img.555519.xyz/uploads3/20220607/a190a4b18a8831897505543dc7a80840.jpg"></p> <p><img loading="lazy" decoding="async" alt="" height="803" src="http://img.555519.xyz/uploads3/20220607/4152bf04c7a0bea0aad972f9e6f9acdc.jpg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;然后我们在搜索框中输入console ，回车</p> <p><img loading="lazy" decoding="async" alt="" height="1008" src="http://img.555519.xyz/uploads3/20220607/39b4bd79bff7a67538df55d2eb4eba02.jpg"></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;然后我们把默认编码改为GBK</p> <p><img loading="lazy" decoding="async" alt="" height="394" src="http://img.555519.xyz/uploads3/20220607/4eb6f104dc8743822d1c6bc0b071b9eb.jpg"></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点击apply，然后点击ok，重新启动服务器，发现控制台正常输出</p> <p><img loading="lazy" decoding="async" alt="" height="449" src="http://img.555519.xyz/uploads3/20220607/6648a8ee06a1f2523fd0fdb8c2533b57.jpg"></p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;访问服务器，网页显示为</p> <p><img loading="lazy" decoding="async" alt="" height="203" src="http://img.555519.xyz/uploads3/20220607/7d999ffb282ce1855bcaaf941ce7df51.jpg">&nbsp; &nbsp; &nbsp; &nbsp; 其实访问这个网址，默认访问的就是<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://localhost:8080/tomcat/"  title="http://localhost:8080/tomcat/" rel="nofollow">http://localhost:8080/tomcat/</a>&nbsp;下面的index.jsp文件，我们修改下index.jsp文件，让其输出Hello Toncat</p> <p><img loading="lazy" decoding="async" alt="" height="495" src="http://img.555519.xyz/uploads3/20220607/8a3f4c65f5e40d202925e408fb6935c8.jpg"></p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;再次访问，发现网页已经显示Hello Tomcat</p> <p><img loading="lazy" decoding="async" alt="" height="221" src="http://img.555519.xyz/uploads3/20220607/0a67e5eb21c6d8c716b5d5a7d282074f.jpg"></p> <p><strong>到此，我们已经成功在idea中部署了web项目，配置了tomcat，并解决了启动tomcat控制台输出乱码问题。启动服务器能够正常运行。</strong></p> </div> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1571.htm">kafka集群安全化之启用kerberos与acl</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1573.htm">大数据系列(3)-HDFS 常用命令</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1579.htm" title="Vue3项目中动态组件component的使用">Vue3项目中动态组件component的使用</a></li>
+                        <li class="py-2"><a href="/html/category/article-1624.htm" title="Java 18为什么要指定UTF-8为默认字符集_在线工具">Java 18为什么要指定UTF-8为默认字符集_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1604.htm" title="go语言panic函数详解">go语言panic函数详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1612.htm" title="C语言 模拟实现memcpy与memmove函数详解_C 语言">C语言 模拟实现memcpy与memmove函数详解_C 语言</a></li>
+                        <li class="py-2"><a href="/html/category/article-1600.htm" title="xpath的使用">xpath的使用</a></li>
+                        <li class="py-2"><a href="/html/category/article-1589.htm" title="浅谈Vue的双向绑定和单向数据流冲突吗_vue.js_">浅谈Vue的双向绑定和单向数据流冲突吗_vue.js_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1584.htm" title="access update语句执行_用pymysql实现对多行数据的insert和update加速">access update语句执行_用pymysql实现对多行数据的insert和update加速</a></li>
+                        <li class="py-2"><a href="/html/category/article-1625.htm" title="Linux源码安装RabbitMQ高可用集群">Linux源码安装RabbitMQ高可用集群</a></li>
+                        <li class="py-2"><a href="/html/category/article-1614.htm" title="我们如何更改MySQL AUTO_INCREMENT起始号码？">我们如何更改MySQL AUTO_INCREMENT起始号码？</a></li>
+                        <li class="py-2"><a href="/html/category/article-1569.htm" title="微信小程序自定义导航栏组件(完美适配手机),可自定义实现任何你想要的功能">微信小程序自定义导航栏组件(完美适配手机),可自定义实现任何你想要的功能</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

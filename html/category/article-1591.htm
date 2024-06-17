@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1591.htm" />
+    <title>netty系列之:netty中的frame解码器_在线工具 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">netty系列之:netty中的frame解码器_在线工具</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				</p> <div class="toc"> <div class="toc-container-header">目录</div> <ul> <li><a href="#%E7%AE%80%E4%BB%8B"  rel="nofollow">简介</a></li> <li><a href="#linebasedframedecoder"  rel="nofollow">LineBasedFrameDecoder</a></li> <li><a href="#delimiterbasedframedecoder"  rel="nofollow">DelimiterBasedFrameDecoder</a></li> <li><a href="#fixedlengthframedecoder"  rel="nofollow">FixedLengthFrameDecoder</a></li> <li><a href="#lengthfieldbasedframedecoder"  rel="nofollow">LengthFieldBasedFrameDecoder</a></li> <li><a href="#%E6%80%BB%E7%BB%93"  rel="nofollow">总结</a></li> </ul> </div> <h1 id="简介">简介</h1> <p>netty中的数据是通过ByteBuf来进行传输的，一个ByteBuf中可能包含多个有意义的数据，这些数据可以被称作frame，也就是说一个ByteBuf中可以包含多个Frame。</p> <p>对于消息的接收方来说，接收到了ByteBuf，还需要从ByteBuf中解析出有用而数据，那就需要将ByteBuf中的frame进行拆分和解析。</p> <p>一般来说不同的frame之间会有有些特定的分隔符,我们可以通过这些分隔符来区分frame，从而实现对数据的解析。</p> <p>netty为我们提供了一些合适的frame解码器，通过使用这些frame解码器可以有效的简化我们的工作。下图是netty中常见的几个frame解码器：</p> <p><img decoding="async" src="https://img-blog.csdnimg.cn/6f394018c43a40a6a53a5260fc577575.png" alt="netty系列之:netty中的frame解码器_在线工具" style="zoom: 67%"></p> <p>接下来我们来详细介绍一下上面几个frame解码器的使用。</p> <h1 id="linebasedframedecoder">LineBasedFrameDecoder</h1> <p>LineBasedFrameDecoder从名字上看就是按行来进行frame的区分。根据操作系统的不同，换行可以有两种换行符，分别是 "\n" 和 "\r\n" 。</p> <p>LineBasedFrameDecoder的基本原理就是从ByteBuf中读取对应的字符来和"\n" 跟 "\r\n"，可以了可以准确的进行字符的比较，这些frameDecoder对字符的编码也会有一定的要求，一般来说是需要UTF-8编码。因为在这样的编码中，"\n"和"\r"是以一个byte出现的，并且不会用在其他的组合编码中，所以用"\n"和"\r"来进行判断是非常安全的。</p> <p>LineBasedFrameDecoder中有几个比较重要的属性，一个是maxLength的属性，用来检测接收到的消息长度，如果超出了长度限制，则会抛出TooLongFrameException异常。</p> <p>还有一个stripDelimiter属性，用来判断是否需要将delimiter过滤掉。</p> <p>还有一个是failFast,如果该值为true，那么不管frame是否读取完成，只要frame的长度超出了maxFrameLength，就会抛出TooLongFrameException。如果该值为false，那么TooLongFrameException会在整个frame完全读取之后再抛出。</p> <p>LineBasedFrameDecoder的核心逻辑是先找到行的分隔符的位置，然后根据这个位置读取到对应的frame信息，这里来看一下找到行分隔符的findEndOfLine方法：</p> <pre><code>    private int findEndOfLine(final ByteBuf buffer) {         int totalLength = buffer.readableBytes();         int i = buffer.forEachByte(buffer.readerIndex() + offset, totalLength - offset, ByteProcessor.FIND_LF);         if (i &gt;= 0) {             offset = 0;             if (i &gt; 0 &amp;&amp; buffer.getByte(i - 1) == '\r') {                 i--;             }         } else {             offset = totalLength;         }         return i;     } </code></pre> <p>这里使用了一个ByteBuf的forEachByte对ByteBuf进行遍历。我们要找的字符是：ByteProcessor.FIND_LF。</p> <p>最后LineBasedFrameDecoder解码之后的对象还是一个ByteBuf。</p> <h1 id="delimiterbasedframedecoder">DelimiterBasedFrameDecoder</h1> <p>上面讲的LineBasedFrameDecoder只对行分隔符有效，如果我们的frame是以其他的分隔符来分割的话LineBasedFrameDecoder就用不了了，所以netty提供了一个更加通用的DelimiterBasedFrameDecoder，这个frameDecoder可以自定义delimiter:</p> <pre><code>public class DelimiterBasedFrameDecoder extends ByteToMessageDecoder {          public DelimiterBasedFrameDecoder(int maxFrameLength, ByteBuf delimiter) {         this(maxFrameLength, true, delimiter);     }  </code></pre> <p>传入的delimiter是一个ByteBuf，所以delimiter可能不止一个字符。</p> <p>为了解决这个问题在DelimiterBasedFrameDecoder中定义了一个ByteBuf的数组：</p> <pre><code>    private final ByteBuf[] delimiters;      delimiters= delimiter.readableBytes(); </code></pre> <p>这个delimiters是通过调用delimiter的readableBytes得到的。</p> <p>DelimiterBasedFrameDecoder的逻辑和LineBasedFrameDecoder差不多，都是通过对比bufer中的字符来对bufer中的数据进行截取，但是DelimiterBasedFrameDecoder可以接受多个delimiters，所以它的用处会根据广泛。</p> <h1 id="fixedlengthframedecoder">FixedLengthFrameDecoder</h1> <p>除了进行ByteBuf中字符比较来进行frame拆分之外，还有一些其他常见的frame拆分的方法，比如根据特定的长度来区分，netty提供了一种这样的decoder叫做FixedLengthFrameDecoder。</p> <pre><code>public class FixedLengthFrameDecoder extends ByteToMessageDecoder  </code></pre> <p>FixedLengthFrameDecoder也是继承自ByteToMessageDecoder，它的定义很简单，可以传入一个frame的长度：</p> <pre><code>    public FixedLengthFrameDecoder(int frameLength) {         checkPositive(frameLength, "frameLength");         this.frameLength = frameLength;     } </code></pre> <p>然后调用ByteBuf的readRetainedSlice方法来读取固定长度的数据：</p> <pre><code>in.readRetainedSlice(frameLength) </code></pre> <p>最后将读取到的数据返回。</p> <h1 id="lengthfieldbasedframedecoder">LengthFieldBasedFrameDecoder</h1> <p>还有一些frame中包含了特定的长度字段，这个长度字段表示ByteBuf中有多少可读的数据，这样的frame叫做LengthFieldBasedFrame。</p> <p>netty中也提供了一个对应的处理decoder：</p> <pre><code>public class LengthFieldBasedFrameDecoder extends ByteToMessageDecoder  </code></pre> <p>读取的逻辑很简单，首先读取长度，然后再根据长度再读取数据。为了实现这个逻辑，LengthFieldBasedFrameDecoder提供了4个字段，分别是 lengthFieldOffset,lengthFieldLength,lengthAdjustment和initialBytesToStrip。</p> <p>lengthFieldOffset指定了长度字段的开始位置，lengthFieldLength定义的是长度字段的长度，lengthAdjustment是对lengthFieldLength进行调整，initialBytesToStrip表示是否需要去掉长度字段。</p> <p>听起来好像不太好理解，我们举几个例子，首先是最简单的：</p> <pre><code>   BEFORE DECODE (14 bytes)         AFTER DECODE (14 bytes)    +--------+----------------+      +--------+----------------+    | Length | Actual Content |-----&gt;| Length | Actual Content |    | 0x000C | "HELLO, WORLD" |      | 0x000C | "HELLO, WORLD" |    +--------+----------------+      +--------+----------------+ </code></pre> <p>要编码的消息有个长度字段，长度字段后面就是真实的数据，0x000C是一个十六进制，表示的数据是12，也就是"HELLO, WORLD" 中字符串的长度。</p> <p>这里4个属性的值是：</p> <pre><code>   lengthFieldOffset   = 0    lengthFieldLength   = 2    lengthAdjustment    = 0    initialBytesToStrip = 0  </code></pre> <p>表示的是长度字段从0开始，并且长度字段占有两个字节，长度不需要调整，也不需要对字段进行调整。</p> <p>再来看一个比较复杂的例子，在这个例子中4个属性值如下：</p> <pre><code>   lengthFieldOffset   = 1      lengthFieldLength   = 2    lengthAdjustment    = 1      initialBytesToStrip = 3   </code></pre> <p>对应的编码数据如下所示：</p> <pre><code>BEFORE DECODE (16 bytes)                       AFTER DECODE (13 bytes)    +------+--------+------+----------------+      +------+----------------+    | HDR1 | Length | HDR2 | Actual Content |-----&gt;| HDR2 | Actual Content |    | 0xCA | 0x000C | 0xFE | "HELLO, WORLD" |      | 0xFE | "HELLO, WORLD" |    +------+--------+------+----------------+      +------+----------------+ </code></pre> <p>上面的例子中长度字段是从第1个字节开始的(第0个字节是HDR1)，长度字段占有2个字节，长度再调整一个字节，最终数据的开始位置就是1+2+1=4,然后再截取前3个字节的数据，得到了最后的结果。</p> <h1 id="总结">总结</h1> <p>netty提供的这几个基于字符集的frame decoder基本上能够满足我们日常的工作需求了。当然，如果你传输的是一些更加复杂的对象，那么可以考虑自定义编码和解码器。自定义的逻辑步骤和上面我们讲解的保持一致就行了。</p> <blockquote> <p>本文已收录于 <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://www.flydean.com/14-5-netty-frame-decoder/"  target="_blank"  rel="nofollow">http://www.flydean.com/14-5-netty-frame-decoder/</a></p> <p>最通俗的解读，最深刻的干货，最简洁的教程，众多你不知道的小技巧等你来发现！</p> <p>欢迎关注我的公众号:「程序那些事」,懂技术，更懂你！</p> </blockquote> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1590.htm">Python  turtle  模块可以编写游戏，是真的吗？</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1592.htm">SpringBoot时区问题解决，彻底解决时差问题</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1626.htm" title="数据库四大特性与隔离级别">数据库四大特性与隔离级别</a></li>
+                        <li class="py-2"><a href="/html/category/article-1620.htm" title="Spring如何快速上手">Spring如何快速上手</a></li>
+                        <li class="py-2"><a href="/html/category/article-1622.htm" title="Anaconda 创建django不同版本开发环境">Anaconda 创建django不同版本开发环境</a></li>
+                        <li class="py-2"><a href="/html/category/article-1576.htm" title="vuex几大模块和Vuex助手使用详解">vuex几大模块和Vuex助手使用详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1601.htm" title="java数组去重">java数组去重</a></li>
+                        <li class="py-2"><a href="/html/category/article-1625.htm" title="Linux源码安装RabbitMQ高可用集群">Linux源码安装RabbitMQ高可用集群</a></li>
+                        <li class="py-2"><a href="/html/category/article-1607.htm" title="ASP.NET和ASP.NETCore多环境配置对比">ASP.NET和ASP.NETCore多环境配置对比</a></li>
+                        <li class="py-2"><a href="/html/category/article-1612.htm" title="C语言 模拟实现memcpy与memmove函数详解_C 语言">C语言 模拟实现memcpy与memmove函数详解_C 语言</a></li>
+                        <li class="py-2"><a href="/html/category/article-1597.htm" title="微信小程序，制作属于自己的Icon图标">微信小程序，制作属于自己的Icon图标</a></li>
+                        <li class="py-2"><a href="/html/category/article-1599.htm" title="vue实现可以快进后退的跑马灯组件_vue.js">vue实现可以快进后退的跑马灯组件_vue.js</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

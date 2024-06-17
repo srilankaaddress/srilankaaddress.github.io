@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1366.htm" />
+    <title>企业DevOps之路：Jenkins 流水线 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">企业DevOps之路：Jenkins 流水线</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<h1 id="1-pipeline-概述">1. Pipeline 概述</h1> <p>Pipeline 即流水线，是 jenkins2.X 的新特性，是 jenkins 官方推荐使用的持续集成方案。与传统的自由风格项目不同，它是通过 jenkins DSL 编写代码来实现。相比于之前用户只能通过 Web 界面进行配置的方式来定义 Jenkins 任务，现在通过使用 jenkins DSL 和 Groovy 语言编写程序，用户可以定义流水线并执行各种任务。</p> <p>Jenkins pipeline包含两类元素，分别是stages和steps。如图：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/bf23610618b513a2b1f824d7262d38e7.jpg" alt="企业DevOps之路：Jenkins 流水线"></p> <ul> <li> <p>step 代表单一的操作；告诉 Jenkins 做什么。比如，代码从仓库检出代码，执行脚本</p> </li> <li> <p>stage 等于一系列 step 的组合，通常来表示 Jenkins pipeline 进程的可示化。例如，Build、Test、Deploy等</p> </li> </ul> <p>更详细的资料请查看官网</p> <pre><code>https://www.jenkins.io/doc/book/pipeline/</code></pre> <p>Pipeline 有两种语法，分别是声明式和脚本式</p> <p>声明式语法</p> <pre><code>pipeline {   agent any   stages {       stage('Build') {           steps {               // TODO           }       }       stage('Test') {           steps {               // TODO           }       }       stage('Deploy') {           steps {               // TODO           }       }   } }</code></pre> <p>agent any：表示任意一个可用代理节点上执行该Pipeline</p> <p>stage('Build')：定义阶段</p> <p>steps {}：阶段执行的步骤</p> <p>脚本式语法</p> <pre><code>node {   stage('Build') {       // TODO   }   stage('Test') {       // TODO   }   stage('Deploy') {       // TODO   } }</code></pre> <p>node：表示任意一个可用代理节点上执行该Pipeline</p> <p>stage('Build') {}：定义阶段。在脚本式语法中 stage 代码块是可选的；不过明确写上的话可以让每个阶段的任务更清晰</p> <h1 id="3-安装-jenkins-pipeline--插件">3. 安装 Jenkins Pipeline  插件</h1> <p>安装 Pipeline 和 Pipeline Maven Integration 插件</p> <p>Manage Jenkins -&gt; Manage Plugins</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/b9d3aae5e9c89f74ab018e56a5aa2735.jpg" alt="企业DevOps之路：Jenkins 流水线"></p> <p>安装后，重启 Tomcat。</p> <h1 id="3-流水线编译与部署">3. 流水线编译与部署</h1> <p>创建流水线任务</p> <p>新建Item</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/865544e9e4b85cae8f433ba9d0b48df9.jpg" alt="企业DevOps之路：Jenkins 流水线"></p> <p>配置流水线任务</p> <p>初学者对于 Pipeline 的脚本肯定无从入手的；但是 Pipeline 提供了一个非常有用的帮助文档。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/bd0858c9997d325b0d0dff39a91f6274.jpg" alt="企业DevOps之路：Jenkins 流水线"></p> <pre><code>http://127.0.0.1:8080/jenkins/job/Pipeline_maven/pipeline-syntax/</code></pre> <p>Pipeline 脚本有两种编写模式</p> <ul> <li> <p>Pipeline 脚本</p> </li> <li> <p>Jenkinsfile 文件</p> </li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/03074cd7c4b1ddd40a3aa578770d9545.jpg" alt="企业DevOps之路：Jenkins 流水线"></p> <p>这里选择 Pipeline script</p> <h2 id="31-克隆代码">3.1 克隆代码</h2> <pre><code>git credentialsId: 'c8eea0cc-24e7-4eb1-a2dd-42fc1066f35a', url: 'https://gitee.com/hjj520/ruoyi-patrol.git'</code></pre> <h2 id="32-编译">3.2 编译</h2> <pre><code>bat 'mvn clean install'</code></pre> <p>在 Windows 操作系统 Jenkins Pipeline 中要使用bat来运行 Windows 命令；而 Linux 操作系统则需要使用sh来运行 Shell 命令。</p> <h2 id="33--上传-jar包">3.3  上传 jar包</h2> <pre><code>bat 'C:/jenkins/pscp.exe -r -l root -pw root %WORKSPACE%/ruoyi-admin/target/ruoyi-admin.jar 192.168.10.8:/home/huangjinjin/software/springdocker'</code></pre> <p>图片</p> <p>完整 Pipeline 脚本</p> <pre><code>pipeline {   agent any    stages {       stage('git clone') {           steps {               git credentialsId: 'c8eea0cc-24e7-4eb1-a2dd-42fc1066f35a', url: 'https://gitee.com/hjj520/ruoyi-patrol.git'           }       }               stage('complie') {           steps {                 bat 'mvn clean install'           }       }               stage('upload') {           steps {                 bat 'C:/jenkins/pscp.exe -r -l root -pw root %WORKSPACE%/ruoyi-admin/target/ruoyi-admin.jar 192.168.10.8:/home/huangjinjin/software/springdocker'           }       }           }     }</code></pre> <p>其他步骤可以自行添加，例如，测试、部署等。</p> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1365.htm">Java基础|Java8接口新特性</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1367.htm">oracle 挂载不上data,AnyBackup-CDM Oracle单机挂载恢复失败，提示错误信息：挂载失败，原因：指定的挂载点不为空，请指定一个空的文件夹作为挂载点&#8230;</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1628.htm" title="etcd分布式键值数据库安装（单机版）">etcd分布式键值数据库安装（单机版）</a></li>
+                        <li class="py-2"><a href="/html/category/article-1586.htm" title="tensorflow基础流程">tensorflow基础流程</a></li>
+                        <li class="py-2"><a href="/html/category/article-1613.htm" title="vue 动态组件组件复用_真正的动态声明性组件">vue 动态组件组件复用_真正的动态声明性组件</a></li>
+                        <li class="py-2"><a href="/html/category/article-1580.htm" title="EFCore 6.0入门看这篇就够了">EFCore 6.0入门看这篇就够了</a></li>
+                        <li class="py-2"><a href="/html/category/article-1584.htm" title="access update语句执行_用pymysql实现对多行数据的insert和update加速">access update语句执行_用pymysql实现对多行数据的insert和update加速</a></li>
+                        <li class="py-2"><a href="/html/category/article-1588.htm" title="JavaScript实现计数器、计时器——setTimeout与setInterval的区别">JavaScript实现计数器、计时器——setTimeout与setInterval的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-1605.htm" title="QCustomPlot开发笔记：QCustomPlot简介、下载以及基础绘图_在线工具">QCustomPlot开发笔记：QCustomPlot简介、下载以及基础绘图_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1620.htm" title="Spring如何快速上手">Spring如何快速上手</a></li>
+                        <li class="py-2"><a href="/html/category/article-1614.htm" title="我们如何更改MySQL AUTO_INCREMENT起始号码？">我们如何更改MySQL AUTO_INCREMENT起始号码？</a></li>
+                        <li class="py-2"><a href="/html/category/article-1618.htm" title="vue3中获取ref元素的几种方式">vue3中获取ref元素的几种方式</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

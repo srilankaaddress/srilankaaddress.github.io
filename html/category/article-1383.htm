@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1383.htm" />
+    <title>vue3.0，setup()的使用，Composition Api(组合式api)data，computed，methods，watch - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">vue3.0，setup()的使用，Composition Api(组合式api)data，computed，methods，watch</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night"> <h2><a id="vue30_0" rel="nofollow"></a>vue3.0项目创建好之后，来看看一个简单组件内的代码顺便介绍几个特点:</h2> <p>1.组合式api就是指把vue2.0中的<strong>data</strong>，<strong>computed</strong>，<strong>methods</strong>，<strong>watch</strong>都集中在3.0中的setup()中<br /> 2.setup取代<strong>beforeCreate</strong>，<strong>created</strong>这两个周期，也就是原本放在这两个钩子的内容现在放在setup中<br /> 3.在setup里无法再使用<strong>this</strong>，因为在执行setup的时候组件实例还没创建成功(setup执行在<strong>beforeCreate</strong>之前)。<br /> 4.接收两个参数<strong>props</strong>，<strong>context</strong>(具体的后面讲)<br /> 5.代码可读性更高，维护也更方便。当然也完美兼容vue2.x</p> <pre><code class="prism language-bash"><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span><span class="token operator">&lt;</span>div<span class="token assign-left variable">class</span><span class="token operator">=</span><span class="token string">"home"</span><span class="token operator">&gt;</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">{<!-- --></span>user.name<span class="token punctuation">}</span><span class="token punctuation">}</span>--<span class="token punctuation">{<!-- --></span><span class="token punctuation">{<!-- --></span>user.age<span class="token punctuation">}</span><span class="token punctuation">}</span>--<span class="token punctuation">{<!-- --></span><span class="token punctuation">{<!-- --></span>num<span class="token punctuation">}</span><span class="token punctuation">}</span>--<span class="token punctuation">{<!-- --></span><span class="token punctuation">{<!-- --></span>doubleCount<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">"change"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/button<span class="token operator">&gt;</span><span class="token operator">&lt;</span>/div<span class="token operator">&gt;</span><span class="token operator">&lt;</span>/template<span class="token operator">&gt;</span><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span><span class="token function">import</span><span class="token punctuation">{<!-- --></span> ref, reactive, computed, watch<span class="token punctuation">}</span> from<span class="token string">'vue'</span><span class="token builtin class-name">export</span> default<span class="token punctuation">{<!-- --></span>   name:<span class="token string">'Home'</span>,<span class="token function-name function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>   	const user<span class="token operator">=</span> reactive<span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span> name:<span class="token string">'jerry'</span>, age:<span class="token number">18</span><span class="token punctuation">}</span><span class="token punctuation">)</span> // 创建引用类型数据使用reactive   	const num<span class="token operator">=</span> ref<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>	// 创建基础数据类型使用ref,使用是用.vulue 	const doubleCount<span class="token operator">=</span> computed<span class="token punctuation">((</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token punctuation">{<!-- --></span><span class="token builtin class-name">return</span> num.value *<span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">)</span>     // watch的单个值写法，第一个参数是一个getter函数，该函数返回一个响应式对象，要响应式。     watch<span class="token punctuation">((</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">&gt;</span> num.value,<span class="token punctuation">(</span>newValue, old<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token punctuation">{<!-- --></span>     	// newValue新值,old旧值     	console.log<span class="token punctuation">(</span>newValue, old,<span class="token string">'--w'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>     // watch的多个值写法     /* const num1<span class="token operator">=</span> ref<span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span>     watch<span class="token punctuation">(</span><span class="token punctuation">[</span>count, count1<span class="token punctuation">]</span>,<span class="token punctuation">(</span><span class="token punctuation">[</span>newCount, newCount2<span class="token punctuation">]</span>,<span class="token punctuation">[</span>oldCount, oldCount2<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token punctuation">{<!-- --></span>       console.log<span class="token punctuation">(</span><span class="token punctuation">[</span>newCount, newCount2<span class="token punctuation">]</span>,<span class="token string">'--'</span>,<span class="token punctuation">[</span>oldCount, oldCount2<span class="token punctuation">]</span>,<span class="token string">'--w'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>      watch<span class="token punctuation">((</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">&gt;</span> user,<span class="token punctuation">(</span>newValue, oldValue<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token punctuation">{<!-- --></span>     	console.log<span class="token punctuation">(</span>newValue, oldValue<span class="token punctuation">)</span><span class="token punctuation">}</span>,<span class="token punctuation">{<!-- --></span> deep:<span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span> // 深入监听user对象内部变化     watch<span class="token punctuation">(</span><span class="token punctuation">[</span>count, count1<span class="token punctuation">]</span>,<span class="token punctuation">(</span>newValue, oldValue<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token punctuation">{<!-- --></span>      	console.log<span class="token punctuation">(</span>newValue<span class="token punctuation">)</span>//<span class="token punctuation">[</span>newCount, newCount2<span class="token punctuation">]</span>       	console.log<span class="token punctuation">(</span>oldValue<span class="token punctuation">)</span>//<span class="token punctuation">[</span>oldCount, oldCount2<span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span> */     const change<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token punctuation">{<!-- --></span>       	num.value++<span class="token punctuation">}</span><span class="token builtin class-name">return</span><span class="token punctuation">{<!-- --></span>     	user,      	num,     	doubleCount，     	change<span class="token punctuation">}</span><span class="token punctuation">}</span>,<span class="token function-name function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>   	// vue2.0的内容也还是可以照常用的<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span>/script<span class="token operator">&gt;</span></code></pre> <h2><a id="setup_59" rel="nofollow"></a>setup()的两个参数</h2> <pre><code class="prism language-bash"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span><span class="token function">import</span><span class="token punctuation">{<!-- --></span> toRefs, toRef<span class="token punctuation">}</span> from<span class="token string">'vue'</span><span class="token builtin class-name">export</span> default<span class="token punctuation">{<!-- --></span>   name:<span class="token string">'Home'</span>,   // 因为props是响应性的，使用解构后会消除其响应性，所以需要使用toRefs, toRef   // 但是context不具有响应性，可以直接使用解构赋值，但是只能访问attrs, slots, emit, expose   setup<span class="token punctuation">(</span>props, context<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>     const<span class="token punctuation">{<!-- --></span> name<span class="token punctuation">}</span><span class="token operator">=</span> toRefs<span class="token punctuation">(</span>props<span class="token punctuation">)</span>     const<span class="token punctuation">{<!-- --></span> name0<span class="token punctuation">}</span><span class="token operator">=</span> toRef<span class="token punctuation">(</span>props,<span class="token string">'jerry'</span><span class="token punctuation">)</span> // toRef的第二个参数就类似于函数形参的默认值    	const<span class="token punctuation">{<!-- --></span>attrs, slots, emit, expose<span class="token punctuation">}</span><span class="token operator">=</span> context // 可以打印出来自己去看这几个属性<span class="token builtin class-name">return</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span>/script<span class="token operator">&gt;</span></code></pre> <p><strong>方便维护，便于理解</strong><br /> 这样看就不会像vue2.0那样，在维护的时候想要查询某个变量的逻辑，要去data，watch，methos等等里面去找，代码一多，眼睛都给你看画，脑壳看痛</p> <pre><code class="prism language-bash"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span><span class="token function">import</span><span class="token punctuation">{<!-- --></span> ref, reactive<span class="token punctuation">}</span> from<span class="token string">'vue'</span><span class="token builtin class-name">export</span> default<span class="token punctuation">{<!-- --></span>   name:<span class="token string">'Home'</span>,   setup<span class="token punctuation">(</span>props, context<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span> 	const num<span class="token operator">=</span> ref<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> 	/*<span class="token builtin class-name">.</span> 	.这里都是对num的操作代码<span class="token builtin class-name">.</span> 	*/ 	 	const user<span class="token operator">=</span> reactive<span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>name:<span class="token string">'jerry'</span><span class="token punctuation">}</span><span class="token punctuation">)</span> 	/*<span class="token builtin class-name">.</span> 	.这里都是对user的操作代码<span class="token builtin class-name">.</span> 	*/<span class="token builtin class-name">return</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span>/script<span class="token operator">&gt;</span></code></pre> </div> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1382.htm">dubbo发送过程编码失败，会唤醒发送线程吗？_在线工具</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1384.htm">MultipartFile转成File类型</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1610.htm" title="python3.5上使用virtualenv创建虚拟环境的坑">python3.5上使用virtualenv创建虚拟环境的坑</a></li>
+                        <li class="py-2"><a href="/html/category/article-1624.htm" title="Java 18为什么要指定UTF-8为默认字符集_在线工具">Java 18为什么要指定UTF-8为默认字符集_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1607.htm" title="ASP.NET和ASP.NETCore多环境配置对比">ASP.NET和ASP.NETCore多环境配置对比</a></li>
+                        <li class="py-2"><a href="/html/category/article-1614.htm" title="我们如何更改MySQL AUTO_INCREMENT起始号码？">我们如何更改MySQL AUTO_INCREMENT起始号码？</a></li>
+                        <li class="py-2"><a href="/html/category/article-1586.htm" title="tensorflow基础流程">tensorflow基础流程</a></li>
+                        <li class="py-2"><a href="/html/category/article-1628.htm" title="etcd分布式键值数据库安装（单机版）">etcd分布式键值数据库安装（单机版）</a></li>
+                        <li class="py-2"><a href="/html/category/article-1578.htm" title="如何离线安装VSCode插件">如何离线安装VSCode插件</a></li>
+                        <li class="py-2"><a href="/html/category/article-1579.htm" title="Vue3项目中动态组件component的使用">Vue3项目中动态组件component的使用</a></li>
+                        <li class="py-2"><a href="/html/category/article-1591.htm" title="netty系列之:netty中的frame解码器_在线工具">netty系列之:netty中的frame解码器_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1577.htm" title="springboot 中注解@Async失效的情况">springboot 中注解@Async失效的情况</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1598.htm" />
+    <title>Unity实现简单的对象池_在线工具 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">Unity实现简单的对象池_在线工具</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<h1 id="一简介">一、简介</h1> <p>先说说为什么要使用对象池<br /> 在Unity游戏运行时，经常需要生成一些物体，例如子弹、敌人等。虽然Unity中有<code>Instantiate()</code>方法可以使用，但是在某些情况下并不高效。特别是对于那些需要大量生成又需要大量销毁的物体来说，多次重复调用<code>Instantiate()</code>方法和<code>Destory()</code>方法会造成大量的性能消耗。<br /> 这时使用对象池是一个更好的选择。<br /> 那么什么是对象池呢？<br /> 简单来说，就是在一开始创建一些物体(或对象)，将它们隐藏(休眠)起来，对象池就是这些物体的集合，当需要使用的时候，就将需要的对象激活然后使用，而不是实例化生成。如果对象池中的对象消耗完了可以扩大对象池或者重新再次使用对象池中的对象。<br /> 一般情况下，一个对象池中存放的都是一类物体，我们一般希望创建多个对象池来存储不同类型的物体。<br /> 例如我们需要两个对象池来分别存储球体和立方体。<br /> 那么可以选择使用<code>Dictionary</code>来创建对象池，这样不仅可以创建对象池，还能指定每个对象池存储对象的类型。这样就能通过Tag来访问对象池。<br /> 至于对象池中可以使用<code>Queue</code>(队列)来存储具体的对象，队列不仅可以快速获取到第一个对象，能够按顺序获取对象。如果出队的对象在使用完成之后再次入队，那么这样就可以一直循环来重用对象。</p> <h1 id="二unity中的具体实现">二、Unity中的具体实现</h1> <p>新建一个Unity项目，在场景中添加一个空物体，命名为ObjectPool<br /> 同时制作一个黑色的地面便于显示和观察<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220505/039dcdc0ecf4166c3f26e5ae09249647.jpg" alt="Unity实现简单的对象池_在线工具"><br /> 新建脚本<code>ObjectPooler</code>添加到ObjectPool上</p> <pre><code>public class ObjectPooler : MonoBehaviour {     [System.Serializable]        public class Pool    //对象池类     {         public string tag;          //对象池的Tag(名称)         public GameObject prefab;   //对象池所保存的物体类型         public int size;            //对象池的大小     }     public List&lt;Pool&gt; pools;                  Dictionary&lt;string, Queue&lt;GameObject&gt;&gt; poolDictionary;  //声明字典      void Start()     {         //实例化字典                  对象池的Tag   对象池保存的物体         poolDictionary = new Dictionary&lt;string, Queue&lt;GameObject&gt;&gt;();     } } </code></pre> <p>在Inspector中添加对应的数据，这里简单创建了立方体和球体并设为了预制体<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220505/647e9500dbeb73596520642a982fcad4.jpg" alt="Unity实现简单的对象池_在线工具"></p> <p>然后继续修改<code>ObjectPooler</code></p> <pre><code>public class ObjectPooler : MonoBehaviour {     [System.Serializable]        public class Pool     {         public string tag;         public GameObject prefab;         public int size;     }     public List&lt;Pool&gt; pools;     Dictionary&lt;string, Queue&lt;GameObject&gt;&gt; poolDictionary;      public static ObjectPooler Instance;    //单例模式，便于访问对象池     private void Awake()     {         Instance = this;     }     void Start()     {         poolDictionary = new Dictionary&lt;string, Queue&lt;GameObject&gt;&gt;();         foreach (Pool pool in pools)         {             Queue&lt;GameObject&gt; objectPool = new Queue&lt;GameObject&gt;();     //为每个对象池创建队列             for (int i = 0; i &lt; pool.size; i++)             {                 GameObject obj = Instantiate(pool.prefab);                 obj.SetActive(false);   //隐藏对象池中的对象                 objectPool.Enqueue(obj);//将对象入队             }             poolDictionary.Add(pool.tag, objectPool);   //添加到字典后可以通过tag来快速访问对象池         }     }      public GameObject SpawnFromPool(string tag, Vector3 positon, Quaternion rotation)     //从对象池中获取对象的方法     {         if (!poolDictionary.ContainsKey(tag))  //如果对象池字典中不包含所需的对象池         {             Debug.Log("Pool: " + tag + " does not exist");             return null;         }          GameObject objectToSpawn = poolDictionary[tag].Dequeue();  //出队，从对象池中获取所需的对象         objectToSpawn.transform.position = positon;  //设置获取到的对象的位置         objectToSpawn.transform.rotation = rotation; //设置对象的旋转         objectToSpawn.SetActive(true);                //将对象从隐藏设为激活          poolDictionary[tag].Enqueue(objectToSpawn);     //再次入队，可以重复使用，如果需要的对象数量超过对象池内对象的数量，在考虑扩大对象池         //这样重复使用就不必一直生成和消耗对象，节约了大量性能         return objectToSpawn;  //返回对象     } } </code></pre> <p>新建脚本<code>CubeSpanwer</code>，来使用对象池生成物体</p> <pre><code>public class CubeSpanwer : MonoBehaviour {     ObjectPooler objectPooler;     private void Start()     {         objectPooler = ObjectPooler.Instance;     }     private void FixedUpdate()     {         //这样会高效一点，比ObjectPooler.Instance         objectPooler.SpawnFromPool("Cube", transform.position, Quaternion.identity);     } } </code></pre> <p>新建脚本<code>Cube</code>，添加到Cube预制体上，让其在生成时添加一个力便于观察<br /> 注意：为了方便观察这里移除了Cube上的BoxCollider</p> <pre><code>public class Cube : MonoBehaviour {     void Start()     {         GetComponent&lt;Rigidbody&gt;().AddForce(new Vector3(Random.Range(0f, 0.2f), 1f, Random.Range(0f, 0.2f)));     } } </code></pre> <p>我们发现Cube并没有向上飞起而是堆叠在一起<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220505/b36d873eff6e0be5af2da27a93bef7f0.jpg" alt="Unity实现简单的对象池_在线工具"><br /> 这时因为Cube只在生成时在Start中添加了力，只调用了一次，但马上就被隐藏放入对象池了，等到再次取出时，并没有任何方法的调用，只是单纯设置位置</p> <p>我们需要让cube对象知道自己被重用了，再次调用添加力的方法<br /> 新建接口 <code>IPooledObject</code></p> <pre><code>public interface IPooledObject {     void OnObjectSpawn(); } </code></pre> <p>然后让<code>Cube</code>继承该接口</p> <pre><code>public class Cube : MonoBehaviour, IPooledObject {     private Rigidbody rig;     public void OnObjectSpawn()     {         rig = gameObject.GetComponent&lt;Rigidbody&gt;();         rig.velocity = Vector3.zero;	//将速度重置为0，物体在被隐藏时仍然具有速度，不然重用时仍然具有向下的速度         rig.AddForce(new Vector3(Random.Range(0, 0.2f), 10, Random.Range(0, 0.2f)), ForceMode.Impulse);     } } </code></pre> <p>然后修改<code>ObjectPooler</code>，让Cube在被重用时调用重用的方法</p> <pre><code>public GameObject SpawnFromPool(string tag, Vector3 positon, Quaternion rotation)     //从对象池中获取对象的方法     {         ......         IPooledObject pooledObj = objectToSpawn.GetComponent&lt;IPooledObject&gt;();         if (pooledObj != null)  //判断，并不是所有对象都继承了该接口，例如Cube我想让它向上飞，Sphere则让它直接生成，Sphere就不必继承IPoolObject接口         {             pooledObj.OnObjectSpawn();  //调用重用时的方法         }         poolDictionary[tag].Enqueue(objectToSpawn);         return objectToSpawn;     } </code></pre> <p>运行结果：</p> <p>Cube从CubeSpawner不断生成，可以自行设置计时器来限制生成的速度<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220505/2ca24adb444ff93c15bb3bcdb575ebd4.jpg" alt="Unity实现简单的对象池_在线工具"></p> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1597.htm">微信小程序，制作属于自己的Icon图标</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1599.htm">vue实现可以快进后退的跑马灯组件_vue.js</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1615.htm" title="使用 Docker 搭建 Confluence">使用 Docker 搭建 Confluence</a></li>
+                        <li class="py-2"><a href="/html/category/article-1589.htm" title="浅谈Vue的双向绑定和单向数据流冲突吗_vue.js_">浅谈Vue的双向绑定和单向数据流冲突吗_vue.js_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1588.htm" title="JavaScript实现计数器、计时器——setTimeout与setInterval的区别">JavaScript实现计数器、计时器——setTimeout与setInterval的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-1595.htm" title="@RequestMapping注解最详细解析">@RequestMapping注解最详细解析</a></li>
+                        <li class="py-2"><a href="/html/category/article-1604.htm" title="go语言panic函数详解">go语言panic函数详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1590.htm" title="Python  turtle  模块可以编写游戏，是真的吗？">Python  turtle  模块可以编写游戏，是真的吗？</a></li>
+                        <li class="py-2"><a href="/html/category/article-1580.htm" title="EFCore 6.0入门看这篇就够了">EFCore 6.0入门看这篇就够了</a></li>
+                        <li class="py-2"><a href="/html/category/article-1616.htm" title="C ++程序进行Fermat原始性测试">C ++程序进行Fermat原始性测试</a></li>
+                        <li class="py-2"><a href="/html/category/article-1611.htm" title="Druid10 监控">Druid10 监控</a></li>
+                        <li class="py-2"><a href="/html/category/article-1621.htm" title="SSM三大框架工作流程与原理详解">SSM三大框架工作流程与原理详解</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

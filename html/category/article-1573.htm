@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1573.htm" />
+    <title>大数据系列(3)-HDFS 常用命令 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">大数据系列(3)-HDFS 常用命令</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<div id="content_views" class="htmledit_views"> <p id="main-toc"><strong>目录</strong></p> <p id="1.%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%91%BD%E4%BB%A4-toc" style="margin-left:0px;"><a href="#1.%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%91%BD%E4%BB%A4" rel="nofollow">1.服务端命令</a></p> <p id="1.1%20appendToFile%20%E8%BF%BD%E5%8A%A0%E5%88%B0%E6%96%87%E4%BB%B6-toc" style="margin-left:40px;"><a href="#1.1%20appendToFile%20%E8%BF%BD%E5%8A%A0%E5%88%B0%E6%96%87%E4%BB%B6" rel="nofollow">1.1 appendToFile 追加到文件</a></p> <p id="1.2%C2%A0copyFromLocal%20%E4%BB%8E%E6%9C%AC%E5%9C%B0%E6%8B%B7%E8%B4%9D-toc" style="margin-left:40px;"><a href="#1.2%C2%A0copyFromLocal%20%E4%BB%8E%E6%9C%AC%E5%9C%B0%E6%8B%B7%E8%B4%9D" rel="nofollow">1.2&nbsp;copyFromLocal 从本地拷贝</a></p> <p id="1.3%20copyToLocal%20%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%88%B0%E6%9C%AC%E5%9C%B0-toc" style="margin-left:40px;"><a href="#1.3%20copyToLocal%20%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%88%B0%E6%9C%AC%E5%9C%B0" rel="nofollow">1.3 copyToLocal 下载文件到本地</a></p> <p id="1.4%C2%A0%20count%20%E7%BB%9F%E8%AE%A1%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E3%80%81%E6%96%87%E4%BB%B6%E6%95%B0%E9%87%8F%E4%BB%A5%E5%8F%8A%E6%96%87%E4%BB%B6%E6%80%BB%E5%A4%A7%E5%B0%8F-toc" style="margin-left:40px;"><a href="#1.4%C2%A0%20count%20%E7%BB%9F%E8%AE%A1%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E3%80%81%E6%96%87%E4%BB%B6%E6%95%B0%E9%87%8F%E4%BB%A5%E5%8F%8A%E6%96%87%E4%BB%B6%E6%80%BB%E5%A4%A7%E5%B0%8F" rel="nofollow">1.4&nbsp; count 统计文件目录、文件数量以及文件总大小</a></p> <p id="1.5%C2%A0%20getmerge%C2%A0%20%E5%90%88%E5%B9%B6%E6%96%87%E4%BB%B6-toc" style="margin-left:40px;"><a href="#1.5%C2%A0%20getmerge%C2%A0%20%E5%90%88%E5%B9%B6%E6%96%87%E4%BB%B6" rel="nofollow">1.5&nbsp; getmerge&nbsp; 合并文件</a></p> <p id="%C2%A01.6%20%E5%BF%85%E6%9D%80%E6%8A%80%C2%A0-toc" style="margin-left:40px;"><a href="#%C2%A01.6%20%E5%BF%85%E6%9D%80%E6%8A%80%C2%A0" rel="nofollow">&nbsp;1.6 必杀技&nbsp;</a></p> <p id="2.%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8-toc" style="margin-left:0px;"><a href="#2.%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8" rel="nofollow">2.客户端使用（JAVA API）</a></p> <p id="2.1%20%E6%96%B0%E5%BB%BAJava%E5%B7%A5%E7%A8%8B%EF%BC%8C%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96%E5%8C%85%EF%BC%9A-toc" style="margin-left:40px;"><a href="#2.1%20%E6%96%B0%E5%BB%BAJava%E5%B7%A5%E7%A8%8B%EF%BC%8C%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96%E5%8C%85%EF%BC%9A" rel="nofollow">2.1 新建Java工程，添加依赖包：</a></p> <p id="2.2%20Java%E4%BB%A3%E7%A0%81-toc" style="margin-left:40px;"><a href="#2.2%20Java%E4%BB%A3%E7%A0%81" rel="nofollow">2.2 Java代码</a></p> <p id="2.3%20%E9%AA%8C%E8%AF%81%E7%BB%93%E6%9E%9C-toc" style="margin-left:40px;"><a href="#2.3%20%E9%AA%8C%E8%AF%81%E7%BB%93%E6%9E%9C" rel="nofollow">2.3 验证结果</a></p> <hr id="hr-toc"/> <p>本文基于之前搭建的集群，通过服务端以及客户端对HDFS的操作，让大家熟悉HDFS的使用。</p> <h1 id="1.%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%91%BD%E4%BB%A4">1.服务端命令</h1> <p>命令都很简单，基本就是Linux操作命令</p> <pre><code class="language-bash">[hadoop@leader hadoop]$ hadoop fs -help Usage: hadoop fs [generic options] 	[-appendToFile &lt;localsrc&gt; ... &lt;dst&gt;] 	[-cat [-ignoreCrc] &lt;src&gt; ...] 	[-checksum [-v] &lt;src&gt; ...] 	[-chgrp [-R] GROUP PATH...] 	[-chmod [-R] &lt;MODE[,MODE]... | OCTALMODE&gt; PATH...] 	[-chown [-R] [OWNER][:[GROUP]] PATH...] 	[-concat &lt;target path&gt; &lt;src path&gt; &lt;src path&gt; ...] 	[-copyFromLocal [-f] [-p] [-l] [-d] [-t &lt;thread count&gt;] &lt;localsrc&gt; ... &lt;dst&gt;] 	[-copyToLocal [-f] [-p] [-ignoreCrc] [-crc] &lt;src&gt; ... &lt;localdst&gt;] 	[-count [-q] [-h] [-v] [-t [&lt;storage type&gt;]] [-u] [-x] [-e] [-s] &lt;path&gt; ...] 	[-cp [-f] [-p | -p[topax]] [-d] &lt;src&gt; ... &lt;dst&gt;] 	[-createSnapshot &lt;snapshotDir&gt; [&lt;snapshotName&gt;]] 	[-deleteSnapshot &lt;snapshotDir&gt; &lt;snapshotName&gt;] 	[-df [-h] [&lt;path&gt; ...]] 	[-du [-s] [-h] [-v] [-x] &lt;path&gt; ...] 	[-expunge [-immediate] [-fs &lt;path&gt;]] 	[-find &lt;path&gt; ... &lt;expression&gt; ...] 	[-get [-f] [-p] [-ignoreCrc] [-crc] &lt;src&gt; ... &lt;localdst&gt;] 	[-getfacl [-R] &lt;path&gt;] 	[-getfattr [-R] {-n name | -d} [-e en] &lt;path&gt;] 	[-getmerge [-nl] [-skip-empty-file] &lt;src&gt; &lt;localdst&gt;] 	[-head &lt;file&gt;] 	[-help [cmd ...]] 	[-ls [-C] [-d] [-h] [-q] [-R] [-t] [-S] [-r] [-u] [-e] [&lt;path&gt; ...]] 	[-mkdir [-p] &lt;path&gt; ...] 	[-moveFromLocal [-f] [-p] [-l] [-d] &lt;localsrc&gt; ... &lt;dst&gt;] 	[-moveToLocal &lt;src&gt; &lt;localdst&gt;] 	[-mv &lt;src&gt; ... &lt;dst&gt;] 	[-put [-f] [-p] [-l] [-d] [-t &lt;thread count&gt;] &lt;localsrc&gt; ... &lt;dst&gt;] 	[-renameSnapshot &lt;snapshotDir&gt; &lt;oldName&gt; &lt;newName&gt;] 	[-rm [-f] [-r|-R] [-skipTrash] [-safely] &lt;src&gt; ...] 	[-rmdir [--ignore-fail-on-non-empty] &lt;dir&gt; ...] 	[-setfacl [-R] [{-b|-k} {-m|-x &lt;acl_spec&gt;} &lt;path&gt;]|[--set &lt;acl_spec&gt; &lt;path&gt;]] 	[-setfattr {-n name [-v value] | -x name} &lt;path&gt;] 	[-setrep [-R] [-w] &lt;rep&gt; &lt;path&gt; ...] 	[-stat [format] &lt;path&gt; ...] 	[-tail [-f] [-s &lt;sleep interval&gt;] &lt;file&gt;] 	[-test -[defswrz] &lt;path&gt;] 	[-text [-ignoreCrc] &lt;src&gt; ...] 	[-touch [-a] [-m] [-t TIMESTAMP (yyyyMMdd:HHmmss) ] [-c] &lt;path&gt; ...] 	[-touchz &lt;path&gt; ...] 	[-truncate [-w] &lt;length&gt; &lt;path&gt; ...] 	[-usage [cmd ...]]</code></pre> <p>重点说明以下命令：</p> <h2 id="1.1%20appendToFile%20%E8%BF%BD%E5%8A%A0%E5%88%B0%E6%96%87%E4%BB%B6">1.1 appendToFile 追加到文件</h2> <p>可以看到文件被追加到fs /input/wcinput_sample.txt&nbsp;</p> <pre><code class="language-bash">[hadoop@leader hadoop]$ hadoop fs -appendToFile /opt/module/hadoop-3.3.1/wcinput/wcinput_sample.txt /input/wcinput_sample.txt [hadoop@leader hadoop]$ hadoop fs -cat /input/wcinput_sample.txt angus test sufiyar test angus test sufiyar test angus test sufiyar test angus test sufiyar test angus test sufiyar test doudou test hadoop test root tes angus test sufiyar test angus test sufiyar test angus test sufiyar test angus test sufiyar test angus test sufiyar test doudou test hadoop test root tes</code></pre> <h2 id="1.2%C2%A0copyFromLocal%20%E4%BB%8E%E6%9C%AC%E5%9C%B0%E6%8B%B7%E8%B4%9D">1.2&nbsp;copyFromLocal 从本地拷贝</h2> <p>等同于之前使用的-put ,类似命令&nbsp; moveFromLocal 是从本地剪切到hdfs.</p> <pre><code class="language-bash">[hadoop@leader hadoop]$ hadoop fs -copyFromLocal /opt/module/hadoop-3.3.1/sbin/angus-hadoop.sh /input [hadoop@leader hadoop]$ hadoop fs -ls /input Found 2 items -rw-r--r--   3 hadoop supergroup        991 2022-02-08 16:11 /input/angus-hadoop.sh -rw-r--r--   3 hadoop supergroup        306 2022-02-08 16:06 /input/wcinput_sample.txt</code></pre> <h2 id="1.3%20copyToLocal%20%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%88%B0%E6%9C%AC%E5%9C%B0">1.3 copyToLocal 下载文件到本地</h2> <p>类似的命令moveToLocal 是把hdfs上的剪切到本地</p> <pre><code class="language-bash">[hadoop@leader hadoop]$ hadoop fs -copyToLocal /input/angus-hadoop.sh ~ [hadoop@leader hadoop]$ ls ~ angus-hadoop.sh</code></pre> <h2 id="1.4%C2%A0%20count%20%E7%BB%9F%E8%AE%A1%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E3%80%81%E6%96%87%E4%BB%B6%E6%95%B0%E9%87%8F%E4%BB%A5%E5%8F%8A%E6%96%87%E4%BB%B6%E6%80%BB%E5%A4%A7%E5%B0%8F"><strong>1.4&nbsp; count 统计文件目录、文件数量以及文件总大小</strong></h2> <pre><code class="language-bash">[hadoop@leader hadoop]$ hadoop fs -count /input            1            2               1297 /input [hadoop@leader hadoop]$ hadoop fs -ls /input Found 2 items -rw-r--r--   3 hadoop supergroup        991 2022-02-08 16:11 /input/angus-hadoop.sh -rw-r--r--   3 hadoop supergroup        306 2022-02-08 16:06 /input/wcinput_sample.txt</code></pre> <h2 id="1.5%C2%A0%20getmerge%C2%A0%20%E5%90%88%E5%B9%B6%E6%96%87%E4%BB%B6">1.5&nbsp; getmerge&nbsp; 合并文件</h2> <p>&nbsp;把多个文件merge到一个文件，如下列，把/input 的文件merge后，保存在本地用户目录的mergeOne.txt中。</p> <p><img fetchpriority="high" decoding="async" alt="" height="1200" src="http://img.555519.xyz/uploads/20221230/eb696ae2f60c8db2a464cc3814f00b91.jpg"></p> <h2 id="%C2%A01.6%20%E5%BF%85%E6%9D%80%E6%8A%80%C2%A0">&nbsp;1.6 必杀技&nbsp;</h2> <p><span style="color:#fe2c24;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hadoop fs -help XX&nbsp; (XX为你想了解的命令）</strong></span></p> <h1 id="2.%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8">2.客户端使用（JAVA API）</h1> <p>使用场景比较少，暂时不深入，试点几个操作</p> <h2 id="2.1%20%E6%96%B0%E5%BB%BAJava%E5%B7%A5%E7%A8%8B%EF%BC%8C%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96%E5%8C%85%EF%BC%9A">2.1 新建Java工程，添加依赖包：</h2> <pre><code class="language-XML">&lt;dependency&gt;   &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;   &lt;artifactId&gt;hadoop-client&lt;/artifactId&gt;   &lt;version&gt;3.3.1&lt;/version&gt; &lt;/dependency&gt;</code></pre> <h2 id="2.2%20Java%E4%BB%A3%E7%A0%81">2.2 Java代码</h2> <pre><code class="language-java">package com.angus.hadoop.hdfs;  import lombok.extern.log4j.Log4j2; import org.apache.hadoop.conf.Configuration; import org.apache.hadoop.fs.FileSystem; import org.apache.hadoop.fs.LocatedFileStatus; import org.apache.hadoop.fs.Path; import org.apache.hadoop.fs.RemoteIterator; import org.junit.jupiter.api.AfterAll; import org.junit.jupiter.api.BeforeAll; import org.junit.jupiter.api.Test;  import java.io.File; import java.io.IOException; import java.net.URI; import java.net.URISyntaxException; import java.util.Arrays;  /**  * Created with p4j.  * User: anguszhu  * Date: 2月,10 2022  * Time: 下午4:35  * description:  */ @Log4j2 public class HdfsOperationTest {      private static FileSystem fs;      @BeforeAll     public static void initFs(){         try {             Configuration conf = new Configuration();             //副本数设置为2             conf.set("dfs.replication", "2");             fs=FileSystem.newInstance(new URI("hdfs://leader:9820"), conf,"hadoop");         } catch (IOException | InterruptedException| URISyntaxException e) {             log.error("init failed",e);         }     }      @Test     public void testCrateFileWithFS(){         try {             Path fspath = new Path("/output");             RemoteIterator&lt;LocatedFileStatus&gt; fileIter = fs.listFiles(fspath, false);             printFileInfo(fileIter);             fs.copyToLocalFile(new Path("/output/part-r-00000"),new Path("/opt/tech"));             File file = new File("/opt/tech/part-r-00000");             log.info("file len:{}",file.length());              fs.copyFromLocalFile(new Path("/opt/tech/part-r-00000"),new Path("/JavaUpload"));             fs.deleteOnExit(new Path("/JavaUpload"));             RemoteIterator&lt;LocatedFileStatus&gt; locatedFileStatusRemoteIterator = fs.listFiles(new Path("/JavaUpload"), false);             printFileInfo(locatedFileStatusRemoteIterator);          } catch (IOException e) {             e.printStackTrace();         }     }      private void printFileInfo(RemoteIterator&lt;LocatedFileStatus&gt; fileIter) throws IOException {         while (fileIter.hasNext()) {             LocatedFileStatus lfs = fileIter.next();             //输出文件名称             log.info("=========================file Name:{}", lfs.getPath().getName() + "=========================");             //获取文件大小，以及文件副本数             log.info("file length={},replications={}", lfs.getLen(), "" + lfs.getReplication());             //记录文件所在节点位置             Arrays.stream(lfs.getBlockLocations()).forEach(l -&gt; log.info(l.toString()));         }     }       @AfterAll     public static void closeResouce(){         try {             fs.close();         } catch (IOException e) {             log.error("close failed",e);         }     }  } </code></pre> <h2 id="2.3%20%E9%AA%8C%E8%AF%81%E7%BB%93%E6%9E%9C">2.3 验证结果</h2> <p>关键日志：</p> <p><img decoding="async" alt="" height="512" src="http://img.555519.xyz/uploads/20221230/2b904b034687f8de3aff1a9754cdaf66.jpg"></p> <p>副本数为前面设置的2，文件落在leader,follower2节点，文件大小与之前下载的一样</p> <p><img decoding="async" alt="" height="238" src="http://img.555519.xyz/uploads/20221230/0f244d328f0f9ec7c70834d6d6ff0f5b.jpg">&nbsp;浏览器查看一下&nbsp;</p> <p><img loading="lazy" decoding="async" alt="" height="1200" src="http://img.555519.xyz/uploads/20221230/c8c74a3645c33a5055b87141763f748c.jpg"></p> <p>l</p> </p></div> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1572.htm">IDEA部署Tomcat(超详细)</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1574.htm">Quartz高可用定时任务快速上手</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1581.htm" title="SpringBoot导入导出数据">SpringBoot导入导出数据</a></li>
+                        <li class="py-2"><a href="/html/category/article-1620.htm" title="Spring如何快速上手">Spring如何快速上手</a></li>
+                        <li class="py-2"><a href="/html/category/article-1601.htm" title="java数组去重">java数组去重</a></li>
+                        <li class="py-2"><a href="/html/category/article-1598.htm" title="Unity实现简单的对象池_在线工具">Unity实现简单的对象池_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1595.htm" title="@RequestMapping注解最详细解析">@RequestMapping注解最详细解析</a></li>
+                        <li class="py-2"><a href="/html/category/article-1625.htm" title="Linux源码安装RabbitMQ高可用集群">Linux源码安装RabbitMQ高可用集群</a></li>
+                        <li class="py-2"><a href="/html/category/article-1623.htm" title="Java集合类型遍历和排序">Java集合类型遍历和排序</a></li>
+                        <li class="py-2"><a href="/html/category/article-1570.htm" title="基于 Apache Hudi 构建增量和无限回放事件流的 OLAP 平台">基于 Apache Hudi 构建增量和无限回放事件流的 OLAP 平台</a></li>
+                        <li class="py-2"><a href="/html/category/article-1621.htm" title="SSM三大框架工作流程与原理详解">SSM三大框架工作流程与原理详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1616.htm" title="C ++程序进行Fermat原始性测试">C ++程序进行Fermat原始性测试</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

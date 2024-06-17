@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1416.htm" />
+    <title>ElasticSearch7.3学习Filter与Query对比、使用explain关键字分析语法 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">ElasticSearch7.3学习Filter与Query对比、使用explain关键字分析语法</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<h2 class="md-end-block md-heading"><span class="md-plain">1、数据准备</span></h2> <p class="md-end-block md-p"><span class="md-plain">首先创建book索引</span></p> <pre class="language-java"><code>PUT /book/ {   "settings": {     "number_of_shards": 1,     "number_of_replicas": 0   },   "mappings": {     "properties": {       "name": {         "type": "text",         "analyzer": "ik_max_word",         "search_analyzer": "ik_smart"       },       "description": {         "type": "text",         "analyzer": "ik_max_word",         "search_analyzer": "ik_smart"       },       "studymodel": {         "type": "keyword"       },       "price": {         "type": "double"       },       "timestamp": {         "type": "date",         "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"       },       "pic": {         "type": "text",         "index": false       }     }   } }</code></pre> <p class="md-end-block md-p"><span class="md-plain">插入数据</span></p> <pre class="language-java"><code>PUT /book/_doc/1 {   "name": "Bootstrap开发",   "description": "Bootstrap是一个非常流行的开发框架。此开发框架可以帮助不擅长css页面开发的程序人员轻松的实现一个css，不受浏览器限制的精美界面css效果。",   "studymodel": "201002",   "price": 38.6,   "timestamp": "2019-08-25 19:11:35",   "pic": "group1/M00/00/00/wKhlQFs6RCeAY0pHAAJx5ZjNDEM428.jpg",   "tags": [     "bootstrap",     "dev"   ] }  PUT /book/_doc/2 {   "name": "java编程思想",   "description": "java语言是世界第一编程语言，在软件开发领域使用人数最多。",   "studymodel": "201001",   "price": 68.6,   "timestamp": "2019-08-25 19:11:35",   "pic": "group1/M00/00/00/wKhlQFs6RCeAY0pHAAJx5ZjNDEM428.jpg",   "tags": [     "java",     "dev"   ] }  PUT /book/_doc/3 {   "name": "spring开发基础",   "description": "spring 在java领域非常流行，java程序员都在用。",   "studymodel": "201001",   "price": 88.6,   "timestamp": "2019-08-24 19:11:35",   "pic": "group1/M00/00/00/wKhlQFs6RCeAY0pHAAJx5ZjNDEM428.jpg",   "tags": [     "spring",     "java"   ] }</code></pre> <h2 class="md-end-block md-heading"><span class="md-plain">2、Filter与Query示例</span></h2> <p class="md-end-block md-p"><span class="md-plain">需求：用户查询description中有"java程序员"，并且价格大于80小于90的数据。</span></p> <h3 class="md-end-block md-p"><span class="md-plain">2.1 Query</span></h3> <p class="md-end-block md-p"><span class="md-plain">首先采用Query来进行查询，首先查询description中有"java程序员"。</span></p> <pre class="language-plaintext"><code>GET /book/_search {   "query": {     "bool": {       "must": [         {           "match": {             "description": "java程序员"           }         }       ]     }   } }</code></pre> <p class="md-end-block md-p">查询结果如下：</p> <p class="md-end-block md-p"><img fetchpriority="high" decoding="async" src="http://img.555519.xyz/uploads3/20220509/56b4e15b851560edb754cc20e5000e74.jpg" alt="ElasticSearch7.3学习Filter与Query对比、使用explain关键字分析语法" width="548" height="658"/></p> <p class="md-end-block md-p"><span class="md-plain">可以看到，查询出来两条数据，score分别是1.9、0.5。</span></p> <p class="md-end-block md-p"><span class="md-plain">然后查询description中有"java程序员"，并且价格大于80小于90的数据</span></p> <pre class="language-java"><code>GET /book/_search {   "query": {     "bool": {       "must": [         {           "match": {             "description": "java程序员"           }         },         {           "range": {             "price": {               "gte": 80,               "lte": 90             }           }         }       ]     }   } }</code></pre> <p class="md-end-block md-p"><span class="md-plain">再次查看结果：</span></p> <p class="md-end-block md-p"><span class="md-plain"><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/aeddd84ae2b7f2b2672c2d91758538c1.jpg" alt="ElasticSearch7.3学习Filter与Query对比、使用explain关键字分析语法" width="468" height="497"/></span></p> <p class="md-end-block md-p"><span class="md-plain">这次查询出来一条数据，score变为2.9。这一条数据在上一次的查询结果中的score为1.9。然后接着往下看使用Filter。</span></p> <h3 class="md-end-block md-p"><span class="md-plain">2.2 filter</span></h3> <p class="md-end-block md-p"><span class="md-plain">还是相同的需求，首先查询description中有"java程序员"。</span></p> <pre class="language-plaintext"><code>GET /book/_search {   "query": {     "bool": {       "must": [         {           "match": {             "description": "java程序员"           }         }       ]     }   } }</code></pre> <p class="md-end-block md-heading"><span class="md-plain">查询结果如下：</span></p> <p><span class="md-plain"><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/0df038d594054df368a9fe9dab763246.jpg" alt="ElasticSearch7.3学习Filter与Query对比、使用explain关键字分析语法" width="520" height="623"/></span></p> <p class="md-end-block md-heading"><span class="md-plain">通过查询结果可以看到，查询的两条数据的score是1.9、0.5。</span></p> <p><span class="md-plain">然后使用filter查询description中有"java程序员"，并且价格大于80小于90的数据</span></p> <pre class="language-java"><code>GET /book/_search {   "query": {     "bool": {       "must": [         {           "match": {             "description": "java程序员"           }         }       ],       "filter": {         "range": {           "price": {             "gte": 80,             "lte": 90           }         }       }     }   } }</code></pre> <p class="md-end-block md-heading"><span class="md-plain">查询结果如下：</span></p> <p><span class="md-plain"><img loading="lazy" decoding="async" src="http://img.555519.xyz/uploads3/20220509/bffdea7aabc8feafb9c31519152eb67f.jpg" alt="ElasticSearch7.3学习Filter与Query对比、使用explain关键字分析语法" width="520" height="568"/></span></p> <p class="md-end-block md-heading"><span class="md-plain">可以看到，查询出来的数据与使用query查询结果一样，但是score依旧为1.9。</span></p> <p>说明在使用query查询的过程中，影响到了相关度(score)的排序，在使用filter进行查询，并不会影响相关度(score)的计算。</p> <h3 class="md-end-block md-heading"><span class="md-plain">2.3&nbsp; filter与query对比</span></h3> <p class="md-end-block md-p"><span class="md-plain">filter，仅仅只是按照搜索条件过滤出需要的数据而已，不计算任何相关度分数，对相关度没有任何影响。</span></p> <p class="md-end-block md-p"><span class="md-plain">query，会去计算每个document相对于搜索条件的相关度，并按照相关度进行排序。</span></p> <p class="md-end-block md-p"><span class="md-plain">应用场景：</span></p> <p class="md-end-block md-p"><span class="md-plain">一般来说，如果你是在进行搜索，需要将最匹配搜索条件的数据先返回，那么用query。</span><span class="md-plain">如果你只是要根据一些条件筛选出一部分数据，不关注其排序，那么用filter。</span></p> <h3 class="md-end-block md-heading"><span class="md-plain">2.4 filter与query性能</span></h3> <p class="md-end-block md-p"><span class="md-plain">filter，不需要计算相关度分数，不需要按照相关度分数进行排序，同时还有内置的自动cache最常使用filter的数据。比如在范围查询，keyword字段查询中推荐使用filter来进行查询。</span></p> <p class="md-end-block md-p"><span class="md-plain">query，相反，要计算相关度分数，按照分数进行排序，而且无法cache结果。</span></p> <p class="md-end-block md-p"><span class="md-plain">在同等查询结果下，filter的性能一般是要优于query的。</span></p> <h2 class="md-end-block md-heading"><span class="md-plain">3、explain分析语法</span></h2> <p class="md-end-block md-p"><span class="md-plain">在实际的应用过程中，需要查询的逻辑一般比较复杂，那当语句冗长的时候，这时候显然不太可能通过直接执行语句来调试语法正确与否，这个时候就可以通过explain来验证语句的正确性。</span></p> <p class="md-end-block md-p"><span class="md-plain">验证错误语句：</span></p> <pre class="language-plaintext"><code>GET /book/_validate/query?explain {   "query": {     "mach": {       "description": "java程序员"     }   } }</code></pre> <p class="md-end-block md-p"><span class="md-plain">返回结果如下，错误信息为没有名叫mach的query。</span></p> <pre class="language-plaintext"><code>{   "valid" : false,   "error" : "org.elasticsearch.common.ParsingException: no [query] registered for [mach]" }</code></pre> <p class="md-end-block md-p"><span class="md-plain">再来看语句正确的情况下</span></p> <pre class="language-plaintext"><code>GET /book/_validate/query?explain {   "query": {     "match": {       "description": "java程序员"     }   } }</code></pre> <p class="md-end-block md-p"><span class="md-plain">返回，返回结果还包含对语句的解释：从description查询java关键词，从description查询程序员关键词。</span></p> <pre class="language-plaintext"><code>{   "_shards" : {     "total" : 1,     "successful" : 1,     "failed" : 0   },   "valid" : true,   "explanations" : [     {       "index" : "book",       "valid" : true,       "explanation" : "description:java description:程序员"     }   ] }</code></pre> <p class="md-end-block md-p"><span class="md-plain">应用场景：</span></p> <p class="md-end-block md-p"><span class="md-plain">一般用在那种特别复杂庞大的搜索下，比如你一下子写了上百行的搜索，这个时候可以先用validate api去验证一下，搜索是否合法。</span><span class="md-plain">合法以后，explain就像mysql的执行计划，可以看到搜索的目标等信息。</span></p> <p class="md-end-block md-p"> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1415.htm">1-spring boot&#8211;FailureAnalyzer</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1417.htm">Springboot  文件上传(base64方式)</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1603.htm" title="linux磁盘文件清理">linux磁盘文件清理</a></li>
+                        <li class="py-2"><a href="/html/category/article-1578.htm" title="如何离线安装VSCode插件">如何离线安装VSCode插件</a></li>
+                        <li class="py-2"><a href="/html/category/article-1607.htm" title="ASP.NET和ASP.NETCore多环境配置对比">ASP.NET和ASP.NETCore多环境配置对比</a></li>
+                        <li class="py-2"><a href="/html/category/article-1604.htm" title="go语言panic函数详解">go语言panic函数详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1576.htm" title="vuex几大模块和Vuex助手使用详解">vuex几大模块和Vuex助手使用详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1599.htm" title="vue实现可以快进后退的跑马灯组件_vue.js">vue实现可以快进后退的跑马灯组件_vue.js</a></li>
+                        <li class="py-2"><a href="/html/category/article-1581.htm" title="SpringBoot导入导出数据">SpringBoot导入导出数据</a></li>
+                        <li class="py-2"><a href="/html/category/article-1622.htm" title="Anaconda 创建django不同版本开发环境">Anaconda 创建django不同版本开发环境</a></li>
+                        <li class="py-2"><a href="/html/category/article-1585.htm" title="pymysql增删改查之insert操作">pymysql增删改查之insert操作</a></li>
+                        <li class="py-2"><a href="/html/category/article-1572.htm" title="IDEA部署Tomcat(超详细)">IDEA部署Tomcat(超详细)</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

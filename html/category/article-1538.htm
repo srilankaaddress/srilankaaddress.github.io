@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1538.htm" />
+    <title>从Paxos到ZooKeeper-一致性协议之2PC、3PC - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">从Paxos到ZooKeeper-一致性协议之2PC、3PC</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2 id="一2pc"><strong>一、2PC</strong></h2> <p>&nbsp;&nbsp;&nbsp;&nbsp;在上一节<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://blog.csdn.net/qq_29999343/article/details/78253146"  rel="nofollow">ZooKeeper-分布式架构</a>中有讲到，分布式系统架构设计中往往是在系统可用性和数据一致性之间进行反复权衡，于是产生了系列一致性协议</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;在分布式系统中，每个节点都能明确知道自身事务操作结果，但无法直接获取到其他分布式节点的操作结果。所以当一个事务要横跨多个节点时，为了保证事务处理的ACID特性而引入了协调者组件来统一调度所有分布式节点（参与者）的执行逻辑，协调者调度参与者的行为并最终决定是否把参与者的事务进行真正的提交</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;2PC（Two-Phase Commit 两阶段提交）：完成参与者的协调，统一决定事务的提交或回滚，使基于分布式系统架构下的所有节点在进行事务处理过程中能够保持原子性和数据一致性</p> <p><strong>1. 协议说明</strong></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;二阶段提交协议将事物的提交过程分为两个阶段处理</p> <p>（1）提交事务请求</p> <blockquote> <p>事务询问：协调者向所有参与者发送事务内容，询问是否可以执行事务提交操作，等待响应<br /> 执行事务：参与者节点执行事务操作，并记录Undo和Redo信息到事务日志<br /> 参与者响应：若参与者成功执行事务，则向协调者反馈Yes响应，否则反馈No响应</p> </blockquote> <p>（2）执行事务提交-提交</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;如果所有参与者的反馈都是Yes响应，那么执行事务提交</p> <blockquote> <p>发送提交请求：协调者向所有参与者发送Commit请求<br /> 事务提交：参与者接受到Commit请求后执行事务提交操作并释放占用的事务资源<br /> 反馈事务提交结果：参与者完成事务提交后向协调者发送Ack消息<br /> 完成事务：协调者收到所有参与者的Ack响应后，完成事务提交</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220830/1396c76dc3c1dcc58671d13fe91fac07.jpg" alt="从Paxos到ZooKeeper-一致性协议之2PC、3PC"></p> <p>（3）执行事务提交-中断</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;如果任何一个参与者返回了N响应或者协调者等待超时后就会中断事务</p> <blockquote> <p>发送回滚请求：协调者向所有参与者发送Rollback请求<br /> 事务回滚：参与者受到请求后通过Undo信息执行事务回滚操作并释放占用的事务资源<br /> 反馈事务回滚结果：参与者回滚事务后向协调者发送Ack消息<br /> 中断事务：协调者接收到所有参与者的Ack响应后，完成事务中断</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220830/7324b94c1c99b9293479554845fe8bd0.jpg" alt="从Paxos到ZooKeeper-一致性协议之2PC、3PC"></p> <p><strong>2. 优缺点</strong></p> <p>（1）优点</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;原理简单，实现方便</p> <p>（2）缺点</p> <blockquote> <p><strong>同步阻塞：</strong>在阶段二事务提交过程中，所有参与者的操作逻辑都处于阻塞状态，等待其他参与者响应，协调者请求<br /><strong>单点问题：</strong>一旦协调者出现问题，阶段二提交流程无法运转，并且参与者会一直处于锁定事务资源的状态，无法继续事务操作<br /><strong>数据不一致：</strong>当协调者向所有参与者发送了Commit请求后局部网络异常或协调者半路出错导致只有部分参与者收到Commit请求，造成系统出现数据不一致<br /><strong>太过保守：</strong>任何一个参与节点的失败使得协调者无法获取所有参与者的响应信息都会导致整个事务的失败</p> </blockquote> <h2 id="二3pc"><strong>二、3PC</strong></h2> <p>&nbsp;&nbsp;&nbsp;&nbsp;3PC（Three-Phase Commit 三阶段提交）将二阶段提交的提交事务请求过程一分为二，形成CanCommit、PreCommit、doCommit三个阶段</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220830/f2c3ff1cc0fa91c47865482e0b3a95a9.jpg" alt="从Paxos到ZooKeeper-一致性协议之2PC、3PC"></p> <p><strong>1.协议说明</strong></p> <p>（1）CanCommit</p> <blockquote> <p>事务询问：协调者向所有参与者发送包含事务内容的CanCommit请求，询问是否可以执行事务提交操作，等待响应<br /> 参与者响应：参与者接收到CanCommit请求后判断自身能够顺利执行事务，能则返回Yes响应并进入预备状态，否则返回No响应</p> </blockquote> <p>（2）PreCommit</p> <ul> <li> <p>执行事务预提交</p> <p>如果所有参与者反馈都为Yes响应，则执行事务预提交</p> <blockquote> <p>发送预提交请求：协调者向所有参与者节点发出PreCommit请求，并进入Prepared阶段<br /> 事务预提交：参与者接收到PreCommit请求后执行事务操作，并记录Undo和Redo信息到事务日志中<br /> 参与者响应事务执行结果：若参与者成功执行事务后则返回Ack响应给协调者，等待最终命令</p> </blockquote> </li> <li> <p>中断事务</p> <p>若任何一个参与者反馈了No响应或者协调者等待超时则中断事务</p> <blockquote> <p>发送中断请求：协调者向所有参与者节点发出Abort请求<br /> 中断事务：无论收到Abort请求或者等待协调者请求超时，参与者都会中断事务</p> </blockquote> </li> </ul> <p>（3）DoCommit</p> <ul> <li> <p>执行提交</p> <blockquote> <p>发送提交请求：当协调者收到所有参与者反馈的Ack响应，向所有参与者发送DoCommit请求，从预提交状态转到提交状态<br /> 事务提交：参与者接收到DoCommit请求后，正式执行事务提交操作，并释放占用的事务资源<br /> 反馈事务提交结果：参与者完成事务提交后向协调者发送Ack消息<br /> 完成事务：协调者接受到所有参与者反馈的Ack响应后，完成事务</p> </blockquote> </li> <li> <p>中断事务</p> <blockquote> <p>发送中断请求：协调者向所有参与者节点发出Abort请求<br /> 事务回滚：参与者接收到Abort请求后，利用Undo信息执行事务回滚操作，并释放占用的事务资源<br /> 反馈事务回滚结果：参与者完成事务回滚后向协调者发送Ack消息<br /> 中断事务：协调者接收到所有参与者反馈的Ack响应后，中断事务</p> </blockquote> </li> </ul> <p>&nbsp;&nbsp;&nbsp;&nbsp;第三阶段中若参与者无法及时接收到协调者发送的DoCommit或者Abort请求都会在等待超时后继续进行事务提交</p> <p><strong>2. 优缺点</strong></p> <p>（1）优点</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;降低参与者的阻塞范围，能够在出现单点故障后继续达成一致</p> <p>（2）缺点</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;接受者接收到PreCommit消息后，如果出现网络分区导致协调者和参与者无法正常通信，这时参与者仍会进行事务提交，造成数据的不一致</p> </div> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1537.htm">深度学习训练过程中的学习率衰减策略及pytorch实现</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1539.htm">nodejs从异步事件中获取数据方法</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1585.htm" title="pymysql增删改查之insert操作">pymysql增删改查之insert操作</a></li>
+                        <li class="py-2"><a href="/html/category/article-1571.htm" title="kafka集群安全化之启用kerberos与acl">kafka集群安全化之启用kerberos与acl</a></li>
+                        <li class="py-2"><a href="/html/category/article-1587.htm" title="如何在vue3使用骨架屏">如何在vue3使用骨架屏</a></li>
+                        <li class="py-2"><a href="/html/category/article-1593.htm" title="Linux中磁盘分区清理方法">Linux中磁盘分区清理方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-1627.htm" title="go语言编译过程概述">go语言编译过程概述</a></li>
+                        <li class="py-2"><a href="/html/category/article-1591.htm" title="netty系列之:netty中的frame解码器_在线工具">netty系列之:netty中的frame解码器_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1606.htm" title="RabbitMQ链接不上异常">RabbitMQ链接不上异常</a></li>
+                        <li class="py-2"><a href="/html/category/article-1589.htm" title="浅谈Vue的双向绑定和单向数据流冲突吗_vue.js_">浅谈Vue的双向绑定和单向数据流冲突吗_vue.js_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1582.htm" title="Qt 实现文字输入框，带字数限制">Qt 实现文字输入框，带字数限制</a></li>
+                        <li class="py-2"><a href="/html/category/article-1615.htm" title="使用 Docker 搭建 Confluence">使用 Docker 搭建 Confluence</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

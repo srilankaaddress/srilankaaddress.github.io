@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1515.htm" />
+    <title>MySQL——union(合并结果集)、limit(获取部分数据)、关于MySQL中常用数据类型 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">MySQL——union(合并结果集)、limit(获取部分数据)、关于MySQL中常用数据类型</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2 id="博客目录">博客目录</h2> <h5 id="1union合并结果集">1、union(合并结果集)</h5> <h5 id="2limit获取一张表中某部分数据">2、limit(获取一张表中某部分数据)</h5> <h5 id="3表创建表删除表">3、表——创建表、删除表</h5> <h5 id="4关于mysql中的数据类型">4、关于MySQL中的数据类型</h5> <hr/> <h3 id="一union合并结果集">一、union(合并结果集)</h3> <blockquote> <p>将两个查询结果合并(可以是不同表)</p> <p>注意：MySQL要求字段数量相同</p> </blockquote> <pre><code>mysql&gt; select ename,job from emp where job="clerk"     -&gt; union     -&gt; select ename,job from emp where job="manager"; +--------+---------+ | ename  | job     | +--------+---------+ | SMITH  | CLERK   | | ADAMS  | CLERK   | | JAMES  | CLERK   | | MILLER | CLERK   | | JONES  | MANAGER | | BLAKE  | MANAGER | | CLARK  | MANAGER | +--------+---------+ 7 rows in set (0.08 sec) </code></pre> <hr/> <h3 id="二limit获取一张表中某部分数据">二、limit(获取一张表中某部分数据)</h3> <h4 id="1limit只在mysql中存在不通用mysql特色">1、limit只在MySQL中存在(不通用)，MySQL特色</h4> <h4 id="2例">2、例</h4> <blockquote> <p>1、找出员工表中前5条记录</p> </blockquote> <pre><code>mysql&gt; select * from emp limit 5; +-------+--------+----------+------+------------+---------+---------+--------+ | EMPNO | ENAME  | JOB      | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO | +-------+--------+----------+------+------------+---------+---------+--------+ |  7369 | SMITH  | CLERK    | 7902 | 1980-12-17 |  800.00 |    NULL |     20 | |  7499 | ALLEN  | SALESMAN | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 | |  7521 | WARD   | SALESMAN | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 | |  7566 | JONES  | MANAGER  | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 | |  7654 | MARTIN | SALESMAN | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 | +-------+--------+----------+------+------------+---------+---------+--------+ 5 rows in set (0.00 sec) </code></pre> <p>以上limit 5中的5代表从表中记录0开始，取5条记录，等同于下面的SQL语句</p> <pre><code>mysql&gt; select * from emp limit 0,5; </code></pre> <blockquote> <p>2、找出公司中工资排名前5名员工(思路：按照工资降序排的前5个)</p> </blockquote> <pre><code>mysql&gt; select ename,sal from emp order by sal desc limit 0,5; +-------+---------+ | ename | sal     | +-------+---------+ | KING  | 5000.00 | | SCOTT | 3000.00 | | FORD  | 3000.00 | | JONES | 2975.00 | | BLAKE | 2850.00 | +-------+---------+ 5 rows in set (0.00 sec) </code></pre> <blockquote> <p>3、按照工资排在3-9名的员工</p> </blockquote> <pre><code>mysql&gt; select ename,sal from emp order by sal desc limit 2,8; +--------+---------+ | ename  | sal     | +--------+---------+ | FORD   | 3000.00 | | JONES  | 2975.00 | | BLAKE  | 2850.00 | | CLARK  | 2450.00 | | ALLEN  | 1600.00 | | TURNER | 1500.00 | | MILLER | 1300.00 | | MARTIN | 1250.00 | +--------+---------+ 8 rows in set (0.00 sec) </code></pre> <h4 id="3limit语法格式">3、limit语法格式</h4> <p>limit 起始下标,长度 <br /> 如果起始下标没有指定，默认从0开始，0代表表中第一条记录</p> <h4 id="4limit实际应用分页">4、limit实际应用————分页</h4> <p>以下是MySQL通用的分页SQL语句</p> <ul> <li> <p>第pageno页</p> <pre><code>mysql&gt; select     -&gt; ename,sal     -&gt; from     -&gt; emp     -&gt; order by     -&gt; sal desc     -&gt; limit (pageno-1)*pagesize,pagesize; </code></pre> </li> </ul> <hr/> <h3 id="三表创建表删除表">三、表——创建表、删除表</h3> <p>给字段添加默认值：default</p> <pre><code>mysql&gt; drop table if exists t_user;#删除表，如果t_user存在，则删除 Query OK, 0 rows affected, 1 warning (0.23 sec)  mysql&gt; create table tableName(#表名     -&gt; ColumnName(字段名) dataType(length)（数据类型，字段长度）     -&gt; ); </code></pre> <hr/> <h3 id="四关于mysql数据库中的数据类型">四、关于MySQL数据库中的数据类型</h3> <ul> <li>varchar:可变长度字符串</li> <li>char:定长字符串</li> <li>int:整数型</li> <li>bigint:长整型</li> <li>float：浮点型(单精度)</li> <li>double：浮点型(双精度)</li> <li>date：日期类型</li> <li>blob：Binary Large Object：二进制大对象</li> <li>clob：Character Large Object：字符大对象</li> </ul> <p>…….</p> <h4 id="char与varchar对比">char与varchar对比</h4> <ol> <li>都是字符串</li> <li>varchar根据字段长度来动态分配给其长度</li> <li>varchar比较智能，节省空间</li> <li>varchar在分配的时候要执行相关判断，效率低</li> <li>char不需要动态分配，效率高，但浪费空间</li> <li>如果字段数据不具有伸缩性，采用char。反之采用varchar</li> </ol> <h4 id="常用数据类型解析">常用数据类型解析</h4> <ul> <li>varchar(3):表示存储的数据不能超过3个字符长度</li> <li>char(3):表示存储的数据不能超过3个字符长度</li> <li>int(3):最大可以存储999</li> <li>bigint:对应java中的long类型</li> <li>double(7,2):7代表7个有效数字，2代表两个小数位</li> <li>date：在实际开发中为了通用，所以日期类型一般不使用，采用字符串代替日期类型</li> <li>blob：专门存储图片、声音、视频等数据。数据库表中存储一个图片很常见，但是一个大的视频是很少的，一般都是提供视频的链接地址</li> <li>clob：可以存储比较大的文本，4G+的字符串可以存储</li> </ul> </div> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1514.htm">初识Java以及一些常见的数据类型</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1516.htm">Typescript的三种运行方式</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1608.htm" title="linux下安装tomcat9,linux tomcat 9 安装及配置教程">linux下安装tomcat9,linux tomcat 9 安装及配置教程</a></li>
+                        <li class="py-2"><a href="/html/category/article-1569.htm" title="微信小程序自定义导航栏组件(完美适配手机),可自定义实现任何你想要的功能">微信小程序自定义导航栏组件(完美适配手机),可自定义实现任何你想要的功能</a></li>
+                        <li class="py-2"><a href="/html/category/article-1577.htm" title="springboot 中注解@Async失效的情况">springboot 中注解@Async失效的情况</a></li>
+                        <li class="py-2"><a href="/html/category/article-1607.htm" title="ASP.NET和ASP.NETCore多环境配置对比">ASP.NET和ASP.NETCore多环境配置对比</a></li>
+                        <li class="py-2"><a href="/html/category/article-1592.htm" title="SpringBoot时区问题解决，彻底解决时差问题">SpringBoot时区问题解决，彻底解决时差问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-1618.htm" title="vue3中获取ref元素的几种方式">vue3中获取ref元素的几种方式</a></li>
+                        <li class="py-2"><a href="/html/category/article-1574.htm" title="Quartz高可用定时任务快速上手">Quartz高可用定时任务快速上手</a></li>
+                        <li class="py-2"><a href="/html/category/article-1606.htm" title="RabbitMQ链接不上异常">RabbitMQ链接不上异常</a></li>
+                        <li class="py-2"><a href="/html/category/article-1594.htm" title="Vue watch中监听值的变化,判断后修改值方式_vue.js_">Vue watch中监听值的变化,判断后修改值方式_vue.js_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1578.htm" title="如何离线安装VSCode插件">如何离线安装VSCode插件</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

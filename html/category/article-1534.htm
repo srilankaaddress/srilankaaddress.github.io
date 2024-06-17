@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1534.htm" />
+    <title>微服务nacos简单部署+网关设置+日志管理 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">微服务nacos简单部署+网关设置+日志管理</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<div id="content_views" class="htmledit_views"> <h1 id="1.nacos%E7%AE%80%E5%8D%95%E9%83%A8%E7%BD%B2"><strong>目录</strong></h1> <p id="1.nacos%E7%AE%80%E5%8D%95%E9%83%A8%E7%BD%B2-toc" style="margin-left:0px;"><a href="#1.nacos%E7%AE%80%E5%8D%95%E9%83%A8%E7%BD%B2" rel="nofollow">1.nacos简单部署</a></p> <p id="2.%E7%BD%91%E5%85%B3%E8%AE%BE%E7%BD%AE-toc" style="margin-left:0px;"><a href="#2.%E7%BD%91%E5%85%B3%E8%AE%BE%E7%BD%AE" rel="nofollow">2.网关设置</a></p> <p id="3%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86.%C2%A0-toc" style="margin-left:0px;"><a href="#3%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86.%C2%A0" rel="nofollow">3日志管理.</a></p> <hr id="hr-toc"/> <h1>1.nacos简单部署</h1> <p>nacos引用的主要依赖是然后在配置文件进行注册（需要提前启动nacos插件，默认密码都是nacos）</p> <pre><code class="language-java">      &lt;dependency&gt;             &lt;groupId&gt;com.alibaba.cloud&lt;/groupId&gt;             &lt;artifactId&gt;spring-cloud-starter-alibaba-nacos-discovery&lt;/artifactId&gt;        &lt;/dependency&gt;</code></pre> <p>在配置文件进行注册&nbsp;（注册时必须设置服务名）</p> <pre><code class="language-java">spring.application.name=shop-product spring.cloud.nacos.server-addr=localhost:8848</code></pre> <p>&nbsp;然后在列表中可以看见对应的服务<img fetchpriority="high" decoding="async" alt="" height="479" src="http://img.555519.xyz/uploads/20221117/24b18b1642dcc56ae06799e7f73bbe51.jpg"></p> <p>服务直接可以相互调用，调用方式有三种</p> <p>1.直接输入服务ip(不灵活)</p> <pre><code class="language-java">  /**  * @program: shop-parent3  * @description:  * @author: 大鱼  * @create: 2021-07-07 19:36  **/ @RestController public class OrderController {     @Resource     OrderMapper orderMapper;     @Resource     RestTemplate restTemplate;     @GetMapping("insert")     private String insertit(Integer pid, Integer num) {         Order order = new Order();         Product prduct = restTemplate.getForObject("http://localhost:8081/product/byid/"+pid,Product.class);         order.setUsername("xxxx");          orderMapper.insert(order);         return "ok";     } }</code></pre> <p>2.从nacos注册中心获取（不符合习惯）</p> <blockquote> <pre><code class="language-html hljs">@RestController public class OrderController1 {     @Resource     OrderMapper orderMapper;     @Resource     RestTemplate restTemplate;     @Resource     DiscoveryClient discoveryClient;     @GetMapping("insert1")     private String insertit(Integer pid, Integer num) {         Order order = new Order();         List&lt;ServiceInstance&gt; instances = discoveryClient.getInstances("shop-product");         ServiceInstance instance = instances.get(0);         Product prduct = restTemplate.getForObject(instance.getUri()+"/product/byid/"+pid,Product.class);         order.setUsername("xxxx");          orderMapper.insert(order);         return "ok";     } }</code></pre> </blockquote> <p>&nbsp;用DiscoveryClient类获取注册中心的集群，然后获取路径</p> <p>同时在主启动类加入RestTemplate引用类</p> <pre><code>@SpringBootApplication @MapperScan(basePackages = "com.dayu.mapper")  public class OrderApplication {     public static void main(String[] args) {         SpringApplication.run(OrderApplication.class, args);     }      @Bean     public RestTemplate restTemplate() {         return new RestTemplate();     } }</code></pre> <p>3.引用openfeign依赖</p> <pre><code class="language-java">      &lt;dependency&gt;             &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;             &lt;artifactId&gt;spring-cloud-starter-openfeign&lt;/artifactId&gt;         &lt;/dependency&gt;</code></pre> <p>&nbsp;新建一个接口加注解并且指定注册中心想要获取的服务名以及该服务的方法</p> <pre><code>@FeignClient(value = "shop-product") @RequestMapping("product") public interface Myopen {     @GetMapping("byid/{id}")     public Product getit(@PathVariable Integer id); }</code></pre> <p>开启注解&nbsp;@EnableFeignClients生效和&nbsp; @LoadBalanced（负载均衡）</p> <pre><code>@SpringBootApplication @MapperScan(basePackages = "com.dayu.mapper") @EnableFeignClients  public class OrderApplication {     public static void main(String[] args) {         SpringApplication.run(OrderApplication.class, args);     }      @Bean     @LoadBalanced     public RestTemplate restTemplate() {         return new RestTemplate();     } }</code></pre> <p>在配置文件可声明服务负载均衡的方式</p> <pre><code>shop-product:  # 这里使用服务的名称   ribbon:     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #使用的的负载均衡策略</code></pre> <p>4.配置文件</p> <p>微服务的配置文件可以从注册中心进行获取，</p> <p>&nbsp;1）首先引入依赖</p> <pre><code>    &lt;dependency&gt;         &lt;groupId&gt;com.alibaba.cloud&lt;/groupId&gt;         &lt;artifactId&gt;spring-cloud-starter-alibaba-nacos-config&lt;/artifactId&gt;     &lt;/dependency&gt;</code></pre> <p>首先定义一个bootstrap.yml文件</p> <pre><code>#资源配置文件有优先级pro&gt;yaml&gt;yml #从nacos 获取资源配置文件 spring:   application:     name: shop-product#微服务名   cloud:     nacos:       config:         server-addr: localhost:8848         file-extension: yaml#文件后缀可变</code></pre> <p>根据服务名和相应的文件后缀获取配置文件，与配置文件无异<img decoding="async" alt="" height="243" src="http://img.555519.xyz/uploads/20221117/293291395229021c8738a75bc65b0d10.jpg"></p> <p><img decoding="async" alt="" height="783" src="http://img.555519.xyz/uploads/20221117/b33bdd5c6f32e4015835f05ce4338053.jpg"></p> <h1></h1> <h1 id="2.%E7%BD%91%E5%85%B3%E8%AE%BE%E7%BD%AE">2.网关设置</h1> <p style="margin-left:0;text-align:left;">所谓的API网关，就是指系统的统一入口，它封装了应用程序的内部结构，为客户端提供统一服 务，一些与业务本身功能无关的公共逻辑可以在这里实现，诸如认证、鉴权、监控（黑白名单）、路由转发等等。</p> <p style="margin-left:0;text-align:left;">首先引入依赖</p> <pre><code class="language-html hljs">&lt;dependency&gt;     &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;     &lt;artifactId&gt;spring-cloud-starter-gateway&lt;/artifactId&gt; &lt;/dependency&gt;</code></pre> <p>首先在配置文件注册微服务的相关信息，然后可以在nacos的配置中心进行获取</p> <pre><code>spring:   cloud:     gateway:       routes:         - id: shop-product           uri: lb://shop-product/   #负载均衡服务名ip           order: 0           predicates:             - Path=/product/**   #断言 #            - Age=18,60           filters:   #过滤器             - SetStatus=250 #            - StripPrefix=1</code></pre> <p>全局过滤器是用来对网关请求所有的服务请求进行过滤的。</p> <pre><code class="language-java">@Component public class AllFilter  implements GlobalFilter, Ordered {      public Mono&lt;Void&gt; filter(ServerWebExchange exchange, GatewayFilterChain chain) {          System.out.println("---------------------------全局拦截器---------------");         ServerHttpRequest request = exchange.getRequest();          ServerHttpResponse response = exchange.getResponse();          String token = request.getHeaders().getFirst("token");         System.out.println(token);         if (!StringUtils.isEmpty(token)) {             if ("admin".equals(token)) {                 return chain.filter(exchange);//如果请求头含有token并且是admin时对其放性             }             String path = request.getPath().toString();             if (path.contains("/login")) {                 return chain.filter(exchange);//判断路径是否包含login（防止空指针异常）             }         }         Map data = new HashMap&lt;&gt;();         DataBuffer buffer = null;         try {             data.put("status", "2222");//将map转成json并且返回前端             data.put("msg", "先登录");             byte[] datas = JSON.toJSONString(data).getBytes("utf-8");//需要阿里的依赖             buffer = response.bufferFactory().wrap(datas);             response.setStatusCode(HttpStatus.UNAUTHORIZED);             response.getHeaders().add("Content-Type","application/json;charset=UTF-8");//编译格式         } catch (Exception e) {             e.printStackTrace();          }         return response.writeWith(Mono.just(buffer)); // // //        exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED); //        return exchange.getResponse().setComplete();     }       public int getOrder() {//优先级         return 1;     } }</code></pre> <p>转为json的依赖</p> <pre><code class="language-java">    &lt;dependency&gt;         &lt;groupId&gt;com.alibaba&lt;/groupId&gt;         &lt;artifactId&gt;fastjson&lt;/artifactId&gt;         &lt;version&gt;1.2.72&lt;/version&gt;     &lt;/dependency&gt;</code></pre> <h1 id="3%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86.%C2%A0">3链路追踪</h1> <p>链路追踪一般采用sleuth和zipkin进行结合首先引入依赖</p> <pre><code class="language-java">    &lt;dependency&gt;         &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;         &lt;artifactId&gt;spring-cloud-starter-sleuth&lt;/artifactId&gt;     &lt;/dependency&gt;     &lt;dependency&gt;         &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;         &lt;artifactId&gt;spring-cloud-starter-zipkin&lt;/artifactId&gt;     &lt;/dependency&gt;</code></pre> <p>同时启用客户端 并且将数据存储到表中，</p> <blockquote> <p>&nbsp;java -jar zipkin-server-2.12.9-exec.jar --STORAGE_TYPE=mysql --MYSQL_HOST=localhost --MYSQL_TCP_PORT=3306 --MYSQL_DB=zipkin --MYSQL_USER=root --MYSQL_PASS=123456</p> </blockquote> <p>&nbsp;建表sql 数据库名zipkin</p> <pre><code class="language-sql">CREATE TABLE IF NOT EXISTS zipkin_spans (  `trace_id_high` BIGINT NOT NULL DEFAULT 0 COMMENT 'If non zero, this means the trace uses 128 bit traceIds instead of 64 bit',  `trace_id` BIGINT NOT NULL,  `id` BIGINT NOT NULL,  `name` VARCHAR(255) NOT NULL,  `parent_id` BIGINT,  `debug` BIT(1),  `start_ts` BIGINT COMMENT 'Span.timestamp(): epoch micros used for endTs query and to implement TTL', `duration` BIGINT COMMENT 'Span.duration(): micros used for minDuration and maxDuration query' )  ENGINE=InnoDB ROW_FORMAT=COMPRESSED CHARACTER SET=utf8 COLLATE utf8_general_ci;  ALTER TABLE zipkin_spans ADD UNIQUE KEY(`trace_id_high`, `trace_id`, `id`) COMMENT 'ignore insert on duplicate';  ALTER TABLE zipkin_spans ADD INDEX(`trace_id_high`, `trace_id`, `id`) COMMENT 'for joining with zipkin_annotations';  ALTER TABLE zipkin_spans ADD INDEX(`trace_id_high`, `trace_id`) COMMENT 'for getTracesByIds';  ALTER TABLE zipkin_spans ADD INDEX(`name`) COMMENT 'for getTraces and getSpanNames';  ALTER TABLE zipkin_spans ADD INDEX(`start_ts`) COMMENT 'for getTraces ordering and range'; CREATE TABLE IF NOT EXISTS zipkin_annotations (  `trace_id_high` BIGINT NOT NULL DEFAULT 0 COMMENT 'If non zero, this means the trace uses 128 bit traceIds instead of 64 bit',  `trace_id` BIGINT NOT NULL COMMENT 'coincides with zipkin_spans.trace_id',  `span_id` BIGINT NOT NULL COMMENT 'coincides with zipkin_spans.id',  `a_key` VARCHAR(255) NOT NULL COMMENT 'BinaryAnnotation.key or Annotation.value if type == -1',  `a_value` BLOB COMMENT 'BinaryAnnotation.value(), which must be smaller than 64KB',  `a_type` INT NOT NULL COMMENT 'BinaryAnnotation.type() or -1 if Annotation',  `a_timestamp` BIGINT COMMENT 'Used to implement TTL; Annotation.timestamp or zipkin_spans.timestamp',  `endpoint_ipv4` INT COMMENT 'Null when Binary/Annotation.endpoint is null',  `endpoint_ipv6` BINARY(16) COMMENT 'Null when Binary/Annotation.endpoint is null, or no IPv6 address',  `endpoint_port` SMALLINT COMMENT 'Null when Binary/Annotation.endpoint is null', `endpoint_service_name` VARCHAR(255) COMMENT 'Null when Binary/Annotation.endpoint is null' )  ENGINE=InnoDB ROW_FORMAT=COMPRESSED CHARACTER SET=utf8 COLLATE utf8_general_ci; ALTER TABLE zipkin_annotations ADD UNIQUE KEY(`trace_id_high`, `trace_id`, `span_id`, `a_key`, `a_timestamp`) COMMENT 'Ignore insert on duplicate';  ALTER TABLE zipkin_annotations ADD INDEX(`trace_id_high`, `trace_id`, `span_id`) COMMENT 'for joining with zipkin_spans';  ALTER TABLE zipkin_annotations ADD INDEX(`trace_id_high`, `trace_id`) COMMENT 'for getTraces/ByIds';  ALTER TABLE zipkin_annotations ADD INDEX(`endpoint_service_name`) COMMENT 'for getTraces and getServiceNames';  ALTER TABLE zipkin_annotations ADD INDEX(`a_type`) COMMENT 'for getTraces';  ALTER TABLE zipkin_annotations ADD INDEX(`a_key`) COMMENT 'for getTraces';  ALTER TABLE zipkin_annotations ADD INDEX(`trace_id`, `span_id`, `a_key`) COMMENT 'for dependencies job'; CREATE TABLE IF NOT EXISTS zipkin_dependencies (  `day` DATE NOT NULL,  `parent` VARCHAR(255) NOT NULL,  `child` VARCHAR(255) NOT NULL,  `call_count` BIGINT )  ENGINE=InnoDB ROW_FORMAT=COMPRESSED CHARACTER SET=utf8 COLLATE utf8_general_ci;  ALTER TABLE zipkin_dependencies ADD UNIQUE KEY(`day`, `parent`, `child`);</code></pre> <p>&nbsp;启动端口号时localhost:9411</p> <p><img loading="lazy" decoding="async" alt="" height="306" src="http://img.555519.xyz/uploads/20221117/ea21b57fbbe40bc6a7f4115012ce0fac.jpg"></p> <p>可以看出链路并且看出服务的时间以及出问题的环节</p> </div> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1533.htm">设置feign配置日志级别</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1535.htm">vue-cli3.0 吃过的坑</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1603.htm" title="linux磁盘文件清理">linux磁盘文件清理</a></li>
+                        <li class="py-2"><a href="/html/category/article-1627.htm" title="go语言编译过程概述">go语言编译过程概述</a></li>
+                        <li class="py-2"><a href="/html/category/article-1572.htm" title="IDEA部署Tomcat(超详细)">IDEA部署Tomcat(超详细)</a></li>
+                        <li class="py-2"><a href="/html/category/article-1619.htm" title="sql server排查死锁优化性能_MsSql_">sql server排查死锁优化性能_MsSql_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1624.htm" title="Java 18为什么要指定UTF-8为默认字符集_在线工具">Java 18为什么要指定UTF-8为默认字符集_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1587.htm" title="如何在vue3使用骨架屏">如何在vue3使用骨架屏</a></li>
+                        <li class="py-2"><a href="/html/category/article-1615.htm" title="使用 Docker 搭建 Confluence">使用 Docker 搭建 Confluence</a></li>
+                        <li class="py-2"><a href="/html/category/article-1576.htm" title="vuex几大模块和Vuex助手使用详解">vuex几大模块和Vuex助手使用详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1620.htm" title="Spring如何快速上手">Spring如何快速上手</a></li>
+                        <li class="py-2"><a href="/html/category/article-1569.htm" title="微信小程序自定义导航栏组件(完美适配手机),可自定义实现任何你想要的功能">微信小程序自定义导航栏组件(完美适配手机),可自定义实现任何你想要的功能</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

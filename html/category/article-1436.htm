@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1436.htm" />
+    <title>CentOS 8迁移Rocky Linux 8手记_在线工具 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">CentOS 8迁移Rocky Linux 8手记_在线工具</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<h2 id="前言">前言</h2> <p>由于CentOS 8的支持已经到期了，.NET 6也不支持了，然后也无法升级，导致使用起来已经非常不便，无奈只有迁移服务器这个选项了。</p> <p>选择发行版本一直是一个比较头疼的问题，首先我不是专门运维的，最好使用的人比较多的版本，然后.NET要官方支持的版本才行，最好是具有中国区的镜像服务。虽然Fedora、OpenSUSE、Debian也算用的人多，但是比起<code>Ubuntu</code>和<code>CentOS</code>还是稍微少一点，因此首选是<code>Ubuntu</code>。当然这里很多人觉得<code>Ubuntu</code>其实并不适合做服务器系统，我觉得应该差不多，毕竟支持周期来看，<code>Ubuntu</code>的标准声明周期也挺长的，而且如果一直用，一直升级的话，其实也无所谓。</p> <p>迁移CentOS 8到Ubuntu，找了很多资料都没找到可以比较简单实现迁移的方法，最简单的使用DVD或者U盘进行全新安装，这个对于一个已经在运行的系统来说，迁移的成本有点太高了。无奈只能继续寻找CentOS的替代。发现一个<code>Rocky Linux</code>好像还行，是<code>CentOS</code>的原作者主导开发的，而且渐渐的很多地方都开始支持并提供了国内的<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://rockylinux.cn/rocky-linux-geng-xin-yuan-hui-zong.html#more"  target="_blank"  rel="nofollow">镜像</a>，最重要的是，他直接提供了升级的工具：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://docs.rockylinux.org/guides/migrate2rocky/"  target="_blank"  rel="nofollow">migrate2rocky</a>。</p> <h2 id="从centos-8升级">从CentOS 8升级</h2> <p>使用比较简单，直接执行命令：</p> <pre><code class="language-shell">curl https://raw.githubusercontent.com/rocky-linux/rocky-tools/main/migrate2rocky/migrate2rocky.sh -o migrate2rocky.sh  chmod u+x migrate2rocky.sh  ./migrate2rocky.sh -r </code></pre> <p>三个命令下去就开始检查了，我正式执行更新的时候，出现了问题：</p> <pre><code class="language-log">Error: Check discovered 9 problem(s) libnsl-2.28-164.el8_5.3.i686 has missing requires of glibc(x86-32) = 2.28-164.el8_5.3 libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6 libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.0) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.1) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.1.3) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.2) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.2.3) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.28) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.4) </code></pre> <p>我以为是缺少这个包，使用<code>yum install libnsl</code>安装了一下，继续执行：</p> <pre><code class="language-log">libnsl-2.28-164.el8.x86_64 is a duplicate with libnsl-2.28-164.el8_5.3.i686 libnsl-2.28-164.el8_5.3.i686 has missing requires of glibc(x86-32) = 2.28-164.el8_5.3 libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6 libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.0) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.1) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.1.3) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.2) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.2.3) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.28) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.4) </code></pre> <p>好家伙，又多了一个，仔细检查，好像是64位程序和32位程序混装了，直接<code>yum remove libnsl</code>卸载，然后继续执行，会在这个界面上卡非常久，需要耐心等待。</p> <pre><code class="language-log">Running dnf update before we attempt the migration. Last metadata expiration check: 0:00:31 ago on Fri Apr 29 12:58:47 2022.  Dependencies resolved. Nothing to do. Complete! Added rockyappstream repo from https://dl.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/ Added rockybaseos repo from https://dl.rockylinux.org/pub/rocky/8/BaseOS/x86_64/os/ </code></pre> <p>我这边升级大概花费了不到半个小时吧，当提示出现以下信息，就成功了。</p> <pre><code>Done, please reboot your system. A log of this installation can be found at /var/log/migrate2rocky.log </code></pre> <p>最后reboot一下，使用<code>hostnamectl</code>命令检查是否更新成功，当看见下面的提示，就成功了。</p> <pre><code class="language-log">Operating System: Rocky Linux 8.5 (Green Obsidian) </code></pre> <h2 id="安装gui界面">安装GUI界面</h2> <p>说实在话，使用SSH进行命令行操作我觉得还是差点意思，自己使用起来还是有GUI比较顺手一点，为了远程访问比较简单，可以使用带界面的版本，并配置使用windows自带的远程桌面访问。</p> <p>详情可以查看：</p> <ol> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/bhoold/p/12266499.html"  target="_blank"  rel="nofollow">centos7安装xfce桌面及xrdp远程桌面服务</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://cloud.tencent.com/developer/article/1627252"  target="_blank"  rel="nofollow">centos8安装xfce图形界面</a></li> </ol> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1435.htm">Pycharm运行Flask项目指定运行参数</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1437.htm">service统一异常处理</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1623.htm" title="Java集合类型遍历和排序">Java集合类型遍历和排序</a></li>
+                        <li class="py-2"><a href="/html/category/article-1591.htm" title="netty系列之:netty中的frame解码器_在线工具">netty系列之:netty中的frame解码器_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1609.htm" title="聚类算法——python实现层次聚类（AGNES）">聚类算法——python实现层次聚类（AGNES）</a></li>
+                        <li class="py-2"><a href="/html/category/article-1605.htm" title="QCustomPlot开发笔记：QCustomPlot简介、下载以及基础绘图_在线工具">QCustomPlot开发笔记：QCustomPlot简介、下载以及基础绘图_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1616.htm" title="C ++程序进行Fermat原始性测试">C ++程序进行Fermat原始性测试</a></li>
+                        <li class="py-2"><a href="/html/category/article-1586.htm" title="tensorflow基础流程">tensorflow基础流程</a></li>
+                        <li class="py-2"><a href="/html/category/article-1592.htm" title="SpringBoot时区问题解决，彻底解决时差问题">SpringBoot时区问题解决，彻底解决时差问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-1583.htm" title="kubernetes实现分布式限流_云和虚拟化_">kubernetes实现分布式限流_云和虚拟化_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1599.htm" title="vue实现可以快进后退的跑马灯组件_vue.js">vue实现可以快进后退的跑马灯组件_vue.js</a></li>
+                        <li class="py-2"><a href="/html/category/article-1588.htm" title="JavaScript实现计数器、计时器——setTimeout与setInterval的区别">JavaScript实现计数器、计时器——setTimeout与setInterval的区别</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

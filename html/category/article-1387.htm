@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1387.htm" />
+    <title>java自带的四种线程池 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">java自带的四种线程池</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<h4 id="java预定义的哪四种线程池">java预定义的哪四种线程池？</h4> <ul> <li>newSingleThreadExexcutor：单线程数的线程池（核心线程数=最大线程数=1）</li> <li>newFixedThreadPool：固定线程数的线程池（核心线程数=最大线程数=自定义）</li> <li>newCacheThreadPool：可缓存的线程池（核心线程数=0，最大线程数=Integer.MAX_VALUE）</li> <li>newScheduledThreadPool：支持定时或周期任务的线程池（核心线程数=自定义，最大线程数=Integer.MAX_VALUE）</li> </ul> <h4 id="四种线程池有什么区别">四种线程池有什么区别？</h4> <p>上面四种线程池类都继承ThreadPoolExecutor，在创建时都是直接返回new ThreadPoolExecutor(参数)，它们的区别是定义的ThreadPoolExecutor(参数)中参数不同，而ThreadPoolExecutor又继承ExecutorService接口类</p> <ul> <li>newFixedThreadPool</li> </ul> <pre><code>定义： ExecutorService executorService=Executors.newFixedThreadPool(2);</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/253a9853e2c2fefc83a5d533fd1ae592.jpg" alt="java自带的四种线程池"></p> <p>缺点：使用了LinkBlockQueue的链表型阻塞队列，当任务的堆积速度大于处理速度时，容易堆积任务而导致OOM内存溢出</p> <ul> <li>newSingleThreadExecutor</li> </ul> <pre><code>定义：ExecutorService executorService =Executors.newSingleThreadExecutor();</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/3c223fcf8a728ff4463c0136dd956110.jpg" alt="java自带的四种线程池"></p> <p>上面代码神似new FixedThreadPoop(1)，但又有区别，因为外面多了一层FinalizableDelegatedExecutorService，其作用：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/c50d7860b125ccbab167cd47b463c3aa.jpg" alt="java自带的四种线程池"></p> <p>可知，fixedExecutorService的本质是ThreadPoolExecutor,所以fixedExecutorService可以强转成ThreadPoolExecutor，但singleExecutorService与ThreadPoolExecutor无任何关系，所以强转失败，故newSingleThreadExecutor()被创建后，无法再修改其线程池参数，真正地做到single单个线程。</p> <p>缺点：使用了LinkBlockQueue的链表型阻塞队列，当任务的堆积速度大于处理速度时，容易堆积任务而导致OOM内存溢出</p> <ul> <li>newCacheThreadPool</li> </ul> <pre><code>定义：ExecutorService executorService=Executors.newCacheThreadPool();</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/1c0a5c0a2ac3e7a10a24ed9dda619c1d.jpg" alt="java自带的四种线程池"></p> <p>缺点：SynchronousQueue是BlockingQueue的一种实现，它也是一个队列，因为最大线程数为Integer.MAX_VALUE，所有当线程过多时容易OOM内存溢出</p> <ul> <li>ScheduledThreadPool</li> </ul> <pre><code>定义：ExecutorService executorService=Executors.newScheduledThreadPool(2);</code></pre> <pre><code>源码： public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize) {         //ScheduledThreadPoolExecutor继承ThreadPoolExecutor         return new ScheduledThreadPoolExecutor(corePoolSize);     }      public ScheduledThreadPoolExecutor(int corePoolSize) {     //ScheduledThreadPoolExecutor继承ThreadPoolExecutor，故super()会调用ThreadPoolExecutor的构造函数初始化并返回一个ThreadPoolExecutor，而ThreadPoolExecutor使实现ExecutorService接口的     //最终ScheduledThreadPoolExecutor也和上面几种线程池一样返回的是ExecutorService接口的实现类ThreadPoolExecutor     super(corePoolSize, Integer.MAX_VALUE, 0, NANOSECONDS,           new DelayedWorkQueue()); }</code></pre> <h4 id="线程池有哪几个重要参数">线程池有哪几个重要参数？</h4> <p>ThreadPoolExecutor构造方法如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/32b7246bea606861a284670d7cfa7342.jpg" alt="java自带的四种线程池"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/a578d7e40926e855ec9e9592c4003441.jpg" alt="java自带的四种线程池"></p> <ul> <li>keepAliveTime是指当前线程数位于 [核心线程数,最大线程数] 之间的这些非核心线程等待多久空闲时间而没有活干时，就退出线程池；</li> <li>等待丢列的大小与最大线程数是没有任何关系的，线程创建优先级=核心线程 &gt; 阻塞队列 &gt; 扩容的线程(当前核心线程数小于最大线程数时才能扩容线程)</li> <li>假如核心线程数5，等待队列长度为3，最大线程数10：当线程数不断在增加时，先创建5个核心线程，核心线程数满了再把线程丢进等待丢列，等待队列满了(3个线程)，此时会比较最大线程数（只有等待丢列满了最大线程数才能出场），还可以继续创建2个线程（5+3+2），若线程数超过了最大线程数，则执行拒绝策略；</li> <li>假如核心线程数5，等待队列长度为3，最大线程数7：当线程数不断在增加时，先创建5个核心线程，核心线程数满了再把线程丢进等待丢列，当等待队列中有2个线程时达到了最大线程数(5+2=7)，但是等待丢列还没满所以不用管最大线程数，直到等待丢列满了（3个阻塞线程），此时会比较最大线程数（只有等待丢列满了最大线程数才能出场），此时核心+等待丢列=5+3=8&gt;7=最大线程数，即已经达到最大线程数了，则执行拒绝策略；</li> <li>如果把等待丢列设置为LinkedBlockingQueue无界丢列，这个丢列是无限大的，就永远不会走到判断最大线程数那一步了</li> </ul> <h4 id="如何自定义线程池">如何自定义线程池</h4> <p>可以使用有界队列，自定义线程创建工厂ThreadFactory和拒绝策略handler来自定义线程池</p> <pre><code>public class ThreadTest {     public static void main(String[] args) throws InterruptedException, IOException {         int corePoolSize = 2;         int maximumPoolSize = 4;         long keepAliveTime = 10;         TimeUnit unit = TimeUnit.SECONDS;         BlockingQueue&lt;Runnable&gt; workQueue = new ArrayBlockingQueue&lt;&gt;(2);         ThreadFactory threadFactory = new NameTreadFactory();         RejectedExecutionHandler handler = new MyIgnorePolicy();        ThreadPoolExecutor executor = new ThreadPoolExecutor(corePoolSize, maximumPoolSize, keepAliveTime, unit,                 workQueue, threadFactory, handler);         executor.prestartAllCoreThreads(); // 预启动所有核心线程                 for (int i = 1; i &lt;= 10; i++) {             MyTask task = new MyTask(String.valueOf(i));             executor.execute(task);         }         System.in.read(); //阻塞主线程     }     static class NameTreadFactory implements ThreadFactory {         private final AtomicInteger mThreadNum = new AtomicInteger(1);         @Override         public Thread newThread(Runnable r) {             Thread t = new Thread(r, "my-thread-" + mThreadNum.getAndIncrement());             System.out.println(t.getName() + " has been created");             return t;         }     }      public static class MyIgnorePolicy implements RejectedExecutionHandler {         @Override         public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {             doLog(r, e);         }         private void doLog(Runnable r, ThreadPoolExecutor e) {             // 可做日志记录等             System.err.println( r.toString() + " rejected"); //          System.out.println("completedTaskCount: " + e.getCompletedTaskCount());         }     }      static class MyTask implements Runnable {         private String name;         public MyTask(String name) {             this.name = name;         }         @Override         public void run() {             try {                 System.out.println(this.toString() + " is running!");                 Thread.sleep(3000); //让任务执行慢点             } catch (InterruptedException e) {                 e.printStackTrace();             }         }         public String getName() {             return name;         }         @Override         public String toString() {             return "MyTask [name=" + name + "]";         }     } }</code></pre> <p>运行结果：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/4270897989325bb9b56ceb6940858c59.jpg" alt="java自带的四种线程池"></p> <p>其中7-10号线程被拒绝策略拒绝了，1、2号线程执行完后，3、6号线程进入核心线程池执行，此时4、5号线程在任务队列等待执行，3、6线程执行完再通知4、5线程执行</p> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1386.htm">Java8 Stream源码精讲中间操作原理详解</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1388.htm">利用策略模式+单例模式+反射 替换if-else</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1622.htm" title="Anaconda 创建django不同版本开发环境">Anaconda 创建django不同版本开发环境</a></li>
+                        <li class="py-2"><a href="/html/category/article-1580.htm" title="EFCore 6.0入门看这篇就够了">EFCore 6.0入门看这篇就够了</a></li>
+                        <li class="py-2"><a href="/html/category/article-1619.htm" title="sql server排查死锁优化性能_MsSql_">sql server排查死锁优化性能_MsSql_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1587.htm" title="如何在vue3使用骨架屏">如何在vue3使用骨架屏</a></li>
+                        <li class="py-2"><a href="/html/category/article-1569.htm" title="微信小程序自定义导航栏组件(完美适配手机),可自定义实现任何你想要的功能">微信小程序自定义导航栏组件(完美适配手机),可自定义实现任何你想要的功能</a></li>
+                        <li class="py-2"><a href="/html/category/article-1577.htm" title="springboot 中注解@Async失效的情况">springboot 中注解@Async失效的情况</a></li>
+                        <li class="py-2"><a href="/html/category/article-1585.htm" title="pymysql增删改查之insert操作">pymysql增删改查之insert操作</a></li>
+                        <li class="py-2"><a href="/html/category/article-1626.htm" title="数据库四大特性与隔离级别">数据库四大特性与隔离级别</a></li>
+                        <li class="py-2"><a href="/html/category/article-1589.htm" title="浅谈Vue的双向绑定和单向数据流冲突吗_vue.js_">浅谈Vue的双向绑定和单向数据流冲突吗_vue.js_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1579.htm" title="Vue3项目中动态组件component的使用">Vue3项目中动态组件component的使用</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1564.htm" />
+    <title>数据结构——C语言实现带头双向循环链表 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">数据结构——C语言实现带头双向循环链表</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <p><strong>数据结构——C语言实现带头双向循环链表</strong><br /> 带头双向循环链表：结构最复杂，一般用在单独存储数据。实际中使用的链表数据结构，都是带头双向循环链表。另外这个结构虽然结构复杂，但是使用代码实现以后会发现结构会带来很多优势，实现反而简单了，后面我们代码实现了就知道了，比单链表实用的多。<br /> 图示：<br /><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads/20230203/b330e73cc14b0bc633e74fca4025aa2f.jpg"><br /> ListNode.h文件：</p> <pre><code>#include&lt;stdio.h&gt; typedef struct ListNode {  DataType _data;  struct ListNode* _next;  struct ListNode* _prev; }ListNode; typedef struct List {  struct ListNode* _head; }List; void ListInit(List* plist);//初始化带头双向循环链表 void ListDestory(List* plist);//销毁 ListNode* CreatListNode(DataType x);// void ListPushBack(List* plist, DataType x);//尾插 void ListPopBack(List* plist);//尾删 void ListPushFront(List* plist, DataType x);//头插 void ListPopFront(List* plist);//头删 void ListInsert(List* plist,ListNode* pos, DataType x);//在pos前面插入 void ListErase(List* plist,ListNode* pos); // 删除pos位置的结点 void ListPrint(List* plist); void testList(); </code></pre> <p>ListNode.c文件：</p> <pre><code>#include"ListNode.h" #include&lt;assert.h&gt; #include&lt;malloc.h&gt; //初始化链表 void ListInit(List* plist) {  assert(plist);  plist-&gt;_head = CreatListNode(0);  //仅有头结点时前驱结点和后继结点均指向自身  plist-&gt;_head-&gt;_next = plist-&gt;_head;  plist-&gt;_head-&gt;_prev = plist-&gt;_head; } //销毁链表 void ListDestory(List* plist) {  assert(plist);  ListNode* cur=plist-&gt;_head-&gt;_next;  while (cur != plist-&gt;_head)  {   ListNode* next = cur-&gt;_next;   //遍历释放空间   free(cur);   //释放空间后将其置为空   cur = next;  }  //最后释放头结点  free(plist-&gt;_head);  plist-&gt;_head = NULL; } //生成新结点 ListNode* CreatListNode(DataType x) { //分配空间  ListNode* newNode = (ListNode*)malloc(sizeof(ListNode));  //为新结点赋值  newNode-&gt;_data = x;  newNode-&gt;_next = newNode-&gt;_prev = NULL;  return newNode; } //尾插 void ListPushBack(List* plist, DataType x) {  assert(plist);  ListNode* newNode = CreatListNode(x);  ListNode* tail = plist-&gt;_head-&gt;_prev;  tail-&gt;_next = newNode;  newNode-&gt;_next = plist-&gt;_head;  newNode-&gt;_prev = tail;  plist-&gt;_head-&gt;_prev = newNode; } //尾删 void ListPopBack(List* plist) {  assert(plist);  ListNode* prev, * tail;  //判断是否为头结点  if (plist-&gt;_head == plist-&gt;_head-&gt;_next)  {   return;  }  tail = plist-&gt;_head-&gt;_prev;  prev = tail-&gt;_prev;  prev-&gt;_next = plist-&gt;_head;  plist-&gt;_head-&gt;_prev = prev;  free(tail);  tail = NULL; } //头插 void ListPushFront(List* plist, DataType x) {  assert(plist);  ListNode* newNode = CreatListNode(x);  ListNode* next = plist-&gt;_head-&gt;_next;  plist-&gt;_head-&gt;_next = newNode;   newNode-&gt;_prev = plist-&gt;_head;  newNode-&gt;_next = next;  next-&gt;_prev = newNode; } //头删 void ListPopFront(List* plist) {  assert(plist);  ListNode* next = plist-&gt;_head-&gt;_next;  ListNode* nextnext=next-&gt;_next;  //判断是否为头结点  if (plist-&gt;_head == plist-&gt;_head-&gt;_next)  {   return;  }  plist-&gt;_head-&gt;_next = nextnext;  nextnext-&gt;_prev = plist-&gt;_head;  free(next);  next = NULL; } //在pos位置前面插入 void ListInsert(List* plist, ListNode* pos, DataType x) {  assert(plist &amp;&amp; pos);  ListNode* prev = pos-&gt;_prev;  ListNode* newNode = CreatListNode(x);  prev-&gt;_next = newNode;  newNode-&gt;_prev = prev;  newNode-&gt;_next = pos;  pos-&gt;_prev = newNode; } //删除pos位置的结点 void ListErase(List* plist,ListNode* pos) {  assert(plist &amp;&amp; pos);  ListNode* prev, * next;  //判断是否为头结点  if (plist-&gt;_head == pos)  {   return;  }  prev = pos-&gt;_prev;  next = pos-&gt;_next;  prev-&gt;_next = next;  next-&gt;_prev = prev;  free(pos);  pos = NULL; } //打印链表 void ListPrint(List* plist) {  assert(plist);  ListNode* cur = plist-&gt;_head-&gt;_next;  while (cur != plist-&gt;_head)  {     printf("%d-&gt;", cur-&gt;_data);     cur = cur-&gt;_next;  }  printf("\n"); } //测试 void testList() {  List list;  ListInit(&amp;list);  ListPushBack(&amp;list, 1);  ListPushBack(&amp;list, 2);  ListPushBack(&amp;list, 3);  ListPushBack(&amp;list, 4);  ListPushFront(&amp;list, 1);  ListPushFront(&amp;list, 2);  ListPushFront(&amp;list, 3);  ListPushFront(&amp;list, 4);  ListPrint(&amp;list);  ListPopBack(&amp;list);  ListPopFront(&amp;list);  ListPrint(&amp;list);  ListDestory(&amp;list);  ListPrint(&amp;list); </code></pre> <p>main.c文件</p> <pre><code>int main() {  testList();  return 0; } </code></pre> </p></div> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1563.htm">vue如何实现Toast轻提示_vue.js_</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1565.htm">SpringBoot实现动态定时任务</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1610.htm" title="python3.5上使用virtualenv创建虚拟环境的坑">python3.5上使用virtualenv创建虚拟环境的坑</a></li>
+                        <li class="py-2"><a href="/html/category/article-1577.htm" title="springboot 中注解@Async失效的情况">springboot 中注解@Async失效的情况</a></li>
+                        <li class="py-2"><a href="/html/category/article-1587.htm" title="如何在vue3使用骨架屏">如何在vue3使用骨架屏</a></li>
+                        <li class="py-2"><a href="/html/category/article-1592.htm" title="SpringBoot时区问题解决，彻底解决时差问题">SpringBoot时区问题解决，彻底解决时差问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-1580.htm" title="EFCore 6.0入门看这篇就够了">EFCore 6.0入门看这篇就够了</a></li>
+                        <li class="py-2"><a href="/html/category/article-1596.htm" title="clickhouse智能提示编辑器">clickhouse智能提示编辑器</a></li>
+                        <li class="py-2"><a href="/html/category/article-1590.htm" title="Python  turtle  模块可以编写游戏，是真的吗？">Python  turtle  模块可以编写游戏，是真的吗？</a></li>
+                        <li class="py-2"><a href="/html/category/article-1604.htm" title="go语言panic函数详解">go语言panic函数详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1612.htm" title="C语言 模拟实现memcpy与memmove函数详解_C 语言">C语言 模拟实现memcpy与memmove函数详解_C 语言</a></li>
+                        <li class="py-2"><a href="/html/category/article-1599.htm" title="vue实现可以快进后退的跑马灯组件_vue.js">vue实现可以快进后退的跑马灯组件_vue.js</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

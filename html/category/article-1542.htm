@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1542.htm" />
+    <title>C#  iText 7 切分PDF，处理PDF页面大小_在线工具 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">C#  iText 7 切分PDF，处理PDF页面大小_在线工具</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<h2 id="一itext">一、itext</h2> <p>我要使用itext做一个pdf的页面大小一致性处理，然后再根据数据切分出需要的pdf.</p> <p>iText的官网有关于它的介绍，<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://itextpdf.com/"  target="_blank" rel="nofollow">https://itextpdf.com/</a> 然后在官网可以查找api文档https://api.itextpdf.com/。</p> <p>其中我要使用的是itext7+,主要在<code>iText.Kernel.Pdf</code> 命名空间下。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/0d04709ac5ccd915ee25c4f317e2c636.jpg" alt="C#  iText 7 切分PDF，处理PDF页面大小_在线工具"></p> <h2 id="二处理pdf页面大小一致">二、处理PDF页面大小一致</h2> <p>由于原始PDF 是扫描图片合成来的，有些页面扫描的图片规格不一致，导致pdf阅读性很差。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/a9e9a75b66dab8ce1844a320b2ceae8d.jpg" alt="C#  iText 7 切分PDF，处理PDF页面大小_在线工具"></p> <p>对于这个pdf我进行处理，首先是在nuget 里面搜索 itext 进行安装，使用itext7。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/c36764e1356d2d6b37950f1363d8eb8c.jpg" alt="C#  iText 7 切分PDF，处理PDF页面大小_在线工具"></p> <p>处理PDF大小方法：</p> <pre><code>        public void RestPageSize(string sourcePdfPath, string outputPdfPath)         {             PdfReader pdfReader = null;             PdfDocument pdfDocument = null;             PdfWriter pdfWriter = null;             PdfDocument outPDfDoc = null;             try             {                 pdfReader = new PdfReader(sourcePdfPath);                 pdfDocument = new PdfDocument(pdfReader);                 var outDir = System.IO.Path.GetDirectoryName(outputPdfPath);                 if (!Directory.Exists(outDir))                 {                     Directory.CreateDirectory(outDir);                 }                  pdfWriter = new PdfWriter(outputPdfPath);                 outPDfDoc = new PdfDocument(pdfWriter);                  outPDfDoc.SetDefaultPageSize(PageSize.A3);                   for (int i = 1; i &lt; pdfDocument.GetNumberOfPages() + 1; i++)                 {                     var page = pdfDocument.GetPage(i);                     var formXObject = page.CopyAsFormXObject(outPDfDoc);                     var xPercent = PageSize.A3.GetWidth() / page.GetPageSize().GetWidth();                     var yPercent = PageSize.A3.GetHeight() / page.GetPageSize().GetHeight();                     PdfCanvas pdfCanvas = new PdfCanvas(outPDfDoc.AddNewPage());                     pdfCanvas.AddXObjectWithTransformationMatrix(formXObject, xPercent, 0, 0, yPercent, 0, 0);                 }                  pdfWriter.Flush();              }             catch (Exception ex)             {                 Console.WriteLine(ex);             }             finally             {                 if (pdfReader != null)                 {                     pdfReader.Close();                 }                 if (pdfDocument != null)                 {                     pdfDocument.Close();                 }                 if (outPDfDoc != null)                 {                     outPDfDoc.Close();                 }                 if (pdfWriter != null)                 {                     pdfWriter.Close();                     pdfWriter.Dispose();                 }             }</code></pre> <p>思路：遍历原来的PDF页码，将原来的PDF页码对象拷贝<code>PdfFormXObject</code>到要生成的PDF文档中，首先要copy页面对象才能使用，不然直接获取的page对象是原来文档的，我们无法操作。</p> <pre><code>var formXObject = page.CopyAsFormXObject(outPDfDoc);</code></pre> <p>然后对页面进行缩放计算，我们新的PDF默认设置成A3大小，通过计算原始页面和新页面宽高比例进行缩放。</p> <p>计算完成后，在新文档中使用<code>PdfCanvas</code> 对象新添加一页，然后将<code>PdfFormXObject</code> 写入到新添加的页中。</p> <p>处理后的PDF:</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/92dc8d1ef004ffd919be8e24c753a2ac.jpg" alt="C#  iText 7 切分PDF，处理PDF页面大小_在线工具"></p> <h2 id="三切分pdf">三、切分PDF</h2> <p>切分PDF 就比较简单了，直接从原始文件中拷贝页面到新PDF文档中就行了。</p> <p>切分PDF 方法：</p> <pre><code>        public void ExtractPages(string sourcePdfPath, string outputPdfPath, int startPage, int endPage)         {             PdfReader pdfReader = null;             PdfDocument pdfDocument = null;             PdfWriter pdfWriter = null;             PdfDocument outPDfDoc = null;             try             {                 pdfReader = new PdfReader(sourcePdfPath);                 pdfDocument = new PdfDocument(pdfReader);                 var outDir = Path.GetDirectoryName(outputPdfPath);                 if (!Directory.Exists(outDir))                 {                     Directory.CreateDirectory(outDir);                 }                                  pdfWriter = new PdfWriter(outputPdfPath);                 outPDfDoc = new PdfDocument(pdfWriter);                  pdfDocument.CopyPagesTo(startPage, endPage, outPDfDoc);                 pdfWriter.Flush();              }             catch (Exception ex)             {                 Console.WriteLine(ex);              }             finally             {                 if (pdfReader != null)                 {                     pdfReader.Close();                 }                 if (pdfDocument != null)                 {                     pdfDocument.Close();                 }                 if (outPDfDoc != null)                 {                     outPDfDoc.Close();                 }                  if (pdfWriter != null)                 {                     pdfWriter.Close();                     pdfWriter.Dispose();                 }             }          }</code></pre> <p>注意：对写入流要进行<code>pdfWriter.Flush()</code>将缓冲区数据写入PDF后再关。</p> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1541.htm">数据库时间问题</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1543.htm">02-SpringMVC @RequestMapping注解</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1603.htm" title="linux磁盘文件清理">linux磁盘文件清理</a></li>
+                        <li class="py-2"><a href="/html/category/article-1613.htm" title="vue 动态组件组件复用_真正的动态声明性组件">vue 动态组件组件复用_真正的动态声明性组件</a></li>
+                        <li class="py-2"><a href="/html/category/article-1628.htm" title="etcd分布式键值数据库安装（单机版）">etcd分布式键值数据库安装（单机版）</a></li>
+                        <li class="py-2"><a href="/html/category/article-1595.htm" title="@RequestMapping注解最详细解析">@RequestMapping注解最详细解析</a></li>
+                        <li class="py-2"><a href="/html/category/article-1622.htm" title="Anaconda 创建django不同版本开发环境">Anaconda 创建django不同版本开发环境</a></li>
+                        <li class="py-2"><a href="/html/category/article-1597.htm" title="微信小程序，制作属于自己的Icon图标">微信小程序，制作属于自己的Icon图标</a></li>
+                        <li class="py-2"><a href="/html/category/article-1626.htm" title="数据库四大特性与隔离级别">数据库四大特性与隔离级别</a></li>
+                        <li class="py-2"><a href="/html/category/article-1606.htm" title="RabbitMQ链接不上异常">RabbitMQ链接不上异常</a></li>
+                        <li class="py-2"><a href="/html/category/article-1621.htm" title="SSM三大框架工作流程与原理详解">SSM三大框架工作流程与原理详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1602.htm" title="CSS：实现多行文本垂直居中的四种方法">CSS：实现多行文本垂直居中的四种方法</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

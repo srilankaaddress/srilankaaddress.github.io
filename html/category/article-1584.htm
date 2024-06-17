@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1584.htm" />
+    <title>access update语句执行_用pymysql实现对多行数据的insert和update加速 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">access update语句执行_用pymysql实现对多行数据的insert和update加速</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<div id="content_views" class="htmledit_views"> <div style="font-size:16px;"> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20221230/03a32113307ed739253a304f95bfec95.jpg" alt="access update语句执行_用pymysql实现对多行数据的insert和update加速"> </div> <h1>摘要</h1> <p>本文对pymysql操作MySQL，insert和update的速度优化测试对比。对于insert操作来说，“一个事务处理多行的方式”比“一个事务处理一行的方式”插入相同的数据快了313倍，即插入2000个记录，一个事务一行的方式需要30.99秒，优化方式仅需要0.099秒。MySQL原始语法是支持对insert语句一次插入多行记录，即insert into table_name values ，后面跟着多行值。</p> <p>但是对于update语句来说，MySQL并没有原始的语法支持一次update处理多行记录，update原始语句仅支持一次处理多个字段。本文将update语法和case when 语法结合起来，可以实现一个事务update更新多行记录，经测试这种方式比常规的方式快了283倍，即处理2000个记录，常规方式需要31.19秒，优化方式仅需要0.11秒。</p> <h1>pymysql包操作MySQL数据库</h1> <p>我们可以用Python封装一个MySQL连接的类，在类中实现对MySQL操作的类方法。</p> <p>例如，我们可以新建一个MySqlConnector的类，实现初始化类方法如下：</p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20221230/fcc91815f58e05c310f8e37490f1480f.jpg" alt="access update语句执行_用pymysql实现对多行数据的insert和update加速"> </div> <p>这个方法中，首先从mysql_config.ini配置文件中，加载MySQL的配置数据，如host、port、user、pwd、db_name等；然后利用pymysql包的连接方法，创建一个MySQL的连接。</p> <p>然后，我们定义MySqlConnector类的查询方法：</p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20221230/31beb2be765a6c05deee95f18ac264cb.jpg" alt="access update语句执行_用pymysql实现对多行数据的insert和update加速"> </div> <p>这个方法可以执行对mysql的查询操作。</p> <p>其次，我们再定义MySqlConnector类的update方法：</p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20221230/0c2a4d6f290bca1340e42bdfd8432ff8.jpg" alt="access update语句执行_用pymysql实现对多行数据的insert和update加速"> </div> <p>这个update方法，可以执行对mysql的插入、更新、删除操作。</p> <p>最后，定义MySqlConnector类的close方法：</p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20221230/fcdef275b9bf22efe77e8d269431bdc8.jpg" alt="access update语句执行_用pymysql实现对多行数据的insert和update加速"> </div> <p>对MySQL查询或者其他操作执行完毕之后，一定要执行该方法，关闭mysql的连接。因为单位时间里MySQL的连接数有最大的上限，当Mysql的连接数太多时，会造成MySQL的性能下，甚至会出现事务进程卡死的情况。</p> <h1>对insert 多行数据的性能优化</h1> <p>我们先定义一个函数来计算某个函数的执行时间：</p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20221230/75dd584766b423053a8b9cc32ba227dc.jpg" alt="access update语句执行_用pymysql实现对多行数据的insert和update加速"> </div> <p>我们网上任意找2000个文字，来做这个优化对比测试：</p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20221230/29c465133a18ce10993a39a4a4b0c74f.jpg" alt="access update语句执行_用pymysql实现对多行数据的insert和update加速"> </div> <p>所以现在的任务是需要将这2000行的文本，插入mysql中。</p> <p><strong>1、我们先定义一种插入方式：一个事务插入一行数据的方式</strong></p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20221230/17aab21a8e263f78b8ff7cb0e2c72970.jpg" alt="access update语句执行_用pymysql实现对多行数据的insert和update加速"> </div> <p>执行看看需要多少时间：</p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20221230/9cd92d7ab5215fcb1872b15755e658e6.jpg" alt="access update语句执行_用pymysql实现对多行数据的insert和update加速"> </div> <p>我们得到，一个事务插入一行的方式，将2000个文本全部插入，需要30.99秒。</p> <p><strong>2、我们定义另一种方式：一个事务插入多行记录值</strong></p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20221230/0bf8468e72878c204c0aac8d44cf35af.jpg" alt="access update语句执行_用pymysql实现对多行数据的insert和update加速"> </div> <p>看看这种方式的执行时间：</p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20221230/2091d024a343e148c4d90d8e1d6399c6.jpg" alt="access update语句执行_用pymysql实现对多行数据的insert和update加速"> </div> <p>我们发现这种方式，插入2000行数据，仅需要0.099秒，比之前的方式，速度快了313倍。</p> <h1>对update多行数据的性能优化</h1> <p>同样地，使用如上的2000行文本数据，现在需要根据 id 将mysql中的某个字段更新成这个2000行文本。</p> <p><strong>1、常规的方式是</strong></p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20221230/68cf25f365f28a85f3b339175bdf5865.jpg" alt="access update语句执行_用pymysql实现对多行数据的insert和update加速"> </div> <p>执行耗时：</p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20221230/3d1465ed0fa716f1271667ee3d1f8370.jpg" alt="access update语句执行_用pymysql实现对多行数据的insert和update加速"> </div> <p>这种一个事务更新一行记录的方式，处理2000行数据，需要耗时31.19秒。</p> <p><strong>2、能不能写成一个事务更新多行的方式</strong></p> <p>虽然MySQL原生语法，没有一次update更新多行记录的语法。但是，我们可以结合case when 语法，很优雅的实现这个需求。</p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20221230/61210e28fe36b2761746564aec06819f.jpg" alt="access update语句执行_用pymysql实现对多行数据的insert和update加速"> </div> <p>执行时间：</p> <div class="pgc-img">   <img decoding="async" src="http://img.555519.xyz/uploads/20221230/9a766def8d3468eff01ccfd8d3107810.jpg" alt="access update语句执行_用pymysql实现对多行数据的insert和update加速"> </div> <p>发现，采用这种方式，更新2000行文本的时间，仅需要0.11秒，比常规方式加速了283倍。</p> <h1>小结</h1> <p>对于MySQL的insert和update的操作，尽可能的使用一个事务处理多行记录值的方式，这样可以大大提升对MySQL的操作性能。另外需要注意的时，当使用一个事务处理多行记录值时，可能会出现如下的报错信息："Got a packet bigger than 'max_allowed_packet' bytes"。</p> <p>一个事务处理多行虽好，但是事务处理多行也是有最大上限的。当出现这个报错信息时，需要将数据分成几个batch，然后每个batch来使用一个事务处理多行的方式即可。</p> </div></div> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1583.htm">kubernetes实现分布式限流_云和虚拟化_</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1585.htm">pymysql增删改查之insert操作</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1618.htm" title="vue3中获取ref元素的几种方式">vue3中获取ref元素的几种方式</a></li>
+                        <li class="py-2"><a href="/html/category/article-1576.htm" title="vuex几大模块和Vuex助手使用详解">vuex几大模块和Vuex助手使用详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1578.htm" title="如何离线安装VSCode插件">如何离线安装VSCode插件</a></li>
+                        <li class="py-2"><a href="/html/category/article-1614.htm" title="我们如何更改MySQL AUTO_INCREMENT起始号码？">我们如何更改MySQL AUTO_INCREMENT起始号码？</a></li>
+                        <li class="py-2"><a href="/html/category/article-1606.htm" title="RabbitMQ链接不上异常">RabbitMQ链接不上异常</a></li>
+                        <li class="py-2"><a href="/html/category/article-1624.htm" title="Java 18为什么要指定UTF-8为默认字符集_在线工具">Java 18为什么要指定UTF-8为默认字符集_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1621.htm" title="SSM三大框架工作流程与原理详解">SSM三大框架工作流程与原理详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1627.htm" title="go语言编译过程概述">go语言编译过程概述</a></li>
+                        <li class="py-2"><a href="/html/category/article-1575.htm" title="经典数据结构解决迷宫问题（Python实现）">经典数据结构解决迷宫问题（Python实现）</a></li>
+                        <li class="py-2"><a href="/html/category/article-1590.htm" title="Python  turtle  模块可以编写游戏，是真的吗？">Python  turtle  模块可以编写游戏，是真的吗？</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

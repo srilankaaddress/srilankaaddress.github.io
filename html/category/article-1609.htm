@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1609.htm" />
+    <title>聚类算法——python实现层次聚类（AGNES） - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">聚类算法——python实现层次聚类（AGNES）</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2 id="算法思想">算法思想</h2> <p>层次聚类是在不同层次上对数据进行划分，从而形成树状的聚类结构。 <br /> AGNES算法是自底向上的层次聚类算法。开始时将数据集中的每个样本初始化为一个簇，然后找到距离最近的两个簇，将他们合并，不断重复这个过程，直达到到预设的聚类数目为止。 <br /> 计算距离的三个公式： <br /><img decoding="async" src="http://img.555519.xyz/uploads/20230202/8b0f2ae6f15af3d9fdf11327e18859e9.jpg" alt="聚类算法——python实现层次聚类（AGNES）"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230202/35c8283abdc65f728c76dac2631b7fb5.jpg" alt="聚类算法——python实现层次聚类（AGNES）"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230202/31985ed1368bea224e1d31721defcb3a.jpg" alt="聚类算法——python实现层次聚类（AGNES）"><br /> AGNES算法根据上面个三个不同的公式，相应的被称为均链接，单链接和全链接。 <br /> 算法步骤如下：</p> <ol> <li>将数据集中的每个样本初始化为一个簇，并放入集合C中。计算任意两个集合之间的距离，并存到M中。</li> <li>设置当前聚类数目q = m。</li> <li>当q大于k时执行如下步骤： <br /> 3.1找到距离最近的两个集合Ci和Cj, 将Ci和Cj合并。并赋值给Ci。 <br /> 3.2在集合C中将Cj删除，更新Cj+1到Cq的下标。 <br /> 3.3删除M的第j行和第j列。更新M的第i行和第i列。 <br /> 3.4q = q-1</li> <li>返回聚类集合C</li> </ol> <h2 id="python实现算法">python实现算法</h2> <pre class="prettyprint"><code class="hljs python"> <span class="hljs-comment">#-*- coding:utf-8 -*-</span>  <span class="hljs-keyword">import</span> math <span class="hljs-keyword">import</span> pylab <span class="hljs-keyword">as</span> pl  <span class="hljs-comment">#数据集：每三个是一组分别是西瓜的编号，密度，含糖量</span> data = <span class="hljs-string">""" 1,0.697,0.46,2,0.774,0.376,3,0.634,0.264,4,0.608,0.318,5,0.556,0.215, 6,0.403,0.237,7,0.481,0.149,8,0.437,0.211,9,0.666,0.091,10,0.243,0.267, 11,0.245,0.057,12,0.343,0.099,13,0.639,0.161,14,0.657,0.198,15,0.36,0.37, 16,0.593,0.042,17,0.719,0.103,18,0.359,0.188,19,0.339,0.241,20,0.282,0.257, 21,0.748,0.232,22,0.714,0.346,23,0.483,0.312,24,0.478,0.437,25,0.525,0.369, 26,0.751,0.489,27,0.532,0.472,28,0.473,0.376,29,0.725,0.445,30,0.446,0.459"""</span>  <span class="hljs-comment">#数据处理 dataset是30个样本（密度，含糖量）的列表</span> a = data.split(<span class="hljs-string">','</span>) dataset = [(float(a[i]), float(a[i+<span class="hljs-number">1</span>])) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, len(a)-<span class="hljs-number">1</span>, <span class="hljs-number">3</span>)]    <span class="hljs-comment">#计算欧几里得距离,a,b分别为两个元组</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dist</span><span class="hljs-params">(a, b)</span>:</span>     <span class="hljs-keyword">return</span> math.sqrt(math.pow(a[<span class="hljs-number">0</span>]-b[<span class="hljs-number">0</span>], <span class="hljs-number">2</span>)+math.pow(a[<span class="hljs-number">1</span>]-b[<span class="hljs-number">1</span>], <span class="hljs-number">2</span>))  <span class="hljs-comment">#dist_min</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dist_min</span><span class="hljs-params">(Ci, Cj)</span>:</span>     <span class="hljs-keyword">return</span> min(dist(i, j) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> Ci <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> Cj) <span class="hljs-comment">#dist_max</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dist_max</span><span class="hljs-params">(Ci, Cj)</span>:</span>     <span class="hljs-keyword">return</span> max(dist(i, j) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> Ci <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> Cj) <span class="hljs-comment">#dist_avg</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dist_avg</span><span class="hljs-params">(Ci, Cj)</span>:</span>     <span class="hljs-keyword">return</span> sum(dist(i, j) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> Ci <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> Cj)/(len(Ci)*len(Cj))  <span class="hljs-comment">#找到距离最小的下标</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">find_Min</span><span class="hljs-params">(M)</span>:</span>     min = <span class="hljs-number">1000</span>     x = <span class="hljs-number">0</span>; y = <span class="hljs-number">0</span>     <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(M)):         <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(len(M[i])):             <span class="hljs-keyword">if</span> i != j <span class="hljs-keyword">and</span> M[i][j] &lt; min:                 min = M[i][j];x = i; y = j     <span class="hljs-keyword">return</span> (x, y, min)  <span class="hljs-comment">#算法模型：</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">AGNES</span><span class="hljs-params">(dataset, dist, k)</span>:</span>     <span class="hljs-comment">#初始化C和M</span>     C = [];M = []     <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> dataset:         Ci = []         Ci.append(i)         C.append(Ci)     <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> C:         Mi = []         <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> C:             Mi.append(dist(i, j))         M.append(Mi)     q = len(dataset)     <span class="hljs-comment">#合并更新</span>     <span class="hljs-keyword">while</span> q &gt; k:         x, y, min = find_Min(M)         C[x].extend(C[y])         C.remove(C[y])         M = []         <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> C:             Mi = []             <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> C:                 Mi.append(dist(i, j))             M.append(Mi)         q -= <span class="hljs-number">1</span>     <span class="hljs-keyword">return</span> C <span class="hljs-comment">#画图</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">draw</span><span class="hljs-params">(C)</span>:</span>     colValue = [<span class="hljs-string">'r'</span>, <span class="hljs-string">'y'</span>, <span class="hljs-string">'g'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>, <span class="hljs-string">'k'</span>, <span class="hljs-string">'m'</span>]     <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(C)):         coo_X = []    <span class="hljs-comment">#x坐标列表</span>         coo_Y = []    <span class="hljs-comment">#y坐标列表</span>         <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(len(C[i])):             coo_X.append(C[i][j][<span class="hljs-number">0</span>])             coo_Y.append(C[i][j][<span class="hljs-number">1</span>])         pl.scatter(coo_X, coo_Y, marker=<span class="hljs-string">'x'</span>, color=colValue[i%len(colValue)], label=i)      pl.legend(loc=<span class="hljs-string">'upper right'</span>)     pl.show()  C = AGNES(dataset, dist_avg, <span class="hljs-number">3</span>) draw(C)    </code></pre> <p>这是采用dist_avg函数运行的结果图。 <br /><img decoding="async" src="http://img.555519.xyz/uploads/20230202/fb94e54a60340d9d4f24b8fe197f4374.jpg" alt="聚类算法——python实现层次聚类（AGNES）"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230202/7e1885c18c64b063e76eb48563694b07.jpg" alt="聚类算法——python实现层次聚类（AGNES）"></p> </p></div> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1608.htm">linux下安装tomcat9,linux tomcat 9 安装及配置教程</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1610.htm">python3.5上使用virtualenv创建虚拟环境的坑</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1613.htm" title="vue 动态组件组件复用_真正的动态声明性组件">vue 动态组件组件复用_真正的动态声明性组件</a></li>
+                        <li class="py-2"><a href="/html/category/article-1623.htm" title="Java集合类型遍历和排序">Java集合类型遍历和排序</a></li>
+                        <li class="py-2"><a href="/html/category/article-1611.htm" title="Druid10 监控">Druid10 监控</a></li>
+                        <li class="py-2"><a href="/html/category/article-1572.htm" title="IDEA部署Tomcat(超详细)">IDEA部署Tomcat(超详细)</a></li>
+                        <li class="py-2"><a href="/html/category/article-1618.htm" title="vue3中获取ref元素的几种方式">vue3中获取ref元素的几种方式</a></li>
+                        <li class="py-2"><a href="/html/category/article-1606.htm" title="RabbitMQ链接不上异常">RabbitMQ链接不上异常</a></li>
+                        <li class="py-2"><a href="/html/category/article-1625.htm" title="Linux源码安装RabbitMQ高可用集群">Linux源码安装RabbitMQ高可用集群</a></li>
+                        <li class="py-2"><a href="/html/category/article-1570.htm" title="基于 Apache Hudi 构建增量和无限回放事件流的 OLAP 平台">基于 Apache Hudi 构建增量和无限回放事件流的 OLAP 平台</a></li>
+                        <li class="py-2"><a href="/html/category/article-1579.htm" title="Vue3项目中动态组件component的使用">Vue3项目中动态组件component的使用</a></li>
+                        <li class="py-2"><a href="/html/category/article-1586.htm" title="tensorflow基础流程">tensorflow基础流程</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

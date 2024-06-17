@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1599.htm" />
+    <title>vue实现可以快进后退的跑马灯组件_vue.js - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">vue实现可以快进后退的跑马灯组件_vue.js</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<p>本文实例为大家分享了vue开发实现跑马灯效果组件的具体代码，供大家参考，具体内容如下</p> <p><strong>用vue编写一个可以快进后退的跑马灯组件</strong></p> <p>由于业务需求，要实现一个会可以控制速度的跑马灯，初开始用js的setinterval每隔几毫秒来减取一个字符拼接到后面，效果不理想就放弃了。后查询用js的animate这个api改造大功告成！</p> <p>效果图</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220424/df6ffc8cb8ca166453225e5475f7fc71.jpg"></p> <p><strong>组件代码</strong></p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;template&gt;    &lt;div class="marquee" @mouseover="pause(true)" @mouseleave="pause()"&gt;      &lt;i        class="marquee-btn btn-left el-icon-d-arrow-left"        @mousedown="speedUp(true)"        @mouseup="speedStop()"      &gt;&lt;/i&gt;      &lt;div ref="marqueeText" class="marquee-text"&gt;        &lt;div v-if="itemClick"&gt;          &lt;span            v-for="item in text.split(splitSymbol)"            :key="item"            @click="$emit('itemClickEvent', item)"          &gt;{{item + ' 、'}}&lt;/span&gt;        &lt;/div&gt;        &lt;div v-else&gt;{{text}}&lt;/div&gt;      &lt;/div&gt;      &lt;i        class="marquee-btn btn-right el-icon-d-arrow-right"        @mousedown="speedUp()"        @mouseup="speedStop()"      &gt;&lt;/i&gt;    &lt;/div&gt;  &lt;/template&gt;    &lt;script&gt;  export default {    name: "marquee",    props: {      text: {        type: String,        required: true      },      speed: {        type: Number,        required: false,        default: 110      },      // 是否每个都可以点击触发事件      itemClick: {        type: Boolean,        required: false,        default: false      },      // 每个触发事件元素的分割符号      splitSymbol: {        type: String,        required: false,        default: ''      }    },    data() {      return {        aniInstance: null,        speedTimer: null      };    },    methods: {      setAnimate() {        const contentWidth = this.$refs.marqueeText.scrollWidth;        const keyframes = [          { transform: "translateX(100%)" },          { transform: `translateX(-${contentWidth}px)` }        ];        const animateOptions = {          duration: (contentWidth / this.speed) * 1000,          iterations: Infinity,          easing: "linear"        };        this.aniInstance = document.querySelector(".marquee-text").animate(keyframes, animateOptions);      },      /**       * 快进       * @param { Boolean } isLeft 是否为左方向       */      speedUp(isLeft = false) {        const set = () =&gt; {          if (this.aniInstance.currentTime &gt; 0) {            this.aniInstance.currentTime = this.aniInstance.currentTime + (isLeft ? 2000 : -2000);            this.aniInstance.currentTime &lt;= 0 &amp;&amp; (this.aniInstance.currentTime = 0);          }        }        // 鼠标单击        set();        // 鼠标长按        this.speedTimer = setInterval(() =&gt; {          set()        }, 100);      },      // 快进停止      speedStop() {        clearInterval(this.speedTimer);        this.speedTimer = null;      },      /**       * 暂停、播放       * @param { Boolean } isPause 是否暂停       */      pause(isPause = false) {        this.aniInstance[["play", "pause"][Number(isPause)]]();      }    },    mounted() {      this.$nextTick(() =&gt; {        this.setAnimate();      });    }  };  &lt;/script&gt;    &lt;style lang="less" scoped&gt;  .marquee {    position: relative;    padding: 10px 0;    overflow: hidden;    width: 100%;    font-size: 16px;    color: #fff;    background-image: linear-gradient(      to left,      #b9565e,      #cb655a,      #da7655,      #e58a50,      #eb9f4b    );    &amp;:hover .marquee-btn {      opacity: 1;    }  }  .marquee-btn {    position: absolute;    top: 50%;    transform: translateY(-50%);    padding: 15px;    color: #fff;    background: rgba(1, 1, 1, 0.4);    z-index: 999;    cursor: pointer;    opacity: 0;    transition: all 0.2s linear;  }  .btn-left {    left: 0;  }  .btn-right {    right: 0;  }  .marquee-text {    white-space: nowrap;    span {      &amp;:hover {        cursor: pointer;        color: #2c3e50;      }    }  }  &lt;/style&gt;</pre> </div> <p><strong>父组件代码</strong></p> <div class="ay1code"> <pre class="brush:js;">&lt;Marquee    :text="overdueInfo.content"    :itemClick="true"    :speed="120"    splitSymbol="、"    @itemClickEvent="marqueeSearch"    class="marquee-box__container"  &gt;&lt;/Marquee&gt;</pre> </div> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1598.htm">Unity实现简单的对象池_在线工具</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1600.htm">xpath的使用</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1628.htm" title="etcd分布式键值数据库安装（单机版）">etcd分布式键值数据库安装（单机版）</a></li>
+                        <li class="py-2"><a href="/html/category/article-1587.htm" title="如何在vue3使用骨架屏">如何在vue3使用骨架屏</a></li>
+                        <li class="py-2"><a href="/html/category/article-1618.htm" title="vue3中获取ref元素的几种方式">vue3中获取ref元素的几种方式</a></li>
+                        <li class="py-2"><a href="/html/category/article-1604.htm" title="go语言panic函数详解">go语言panic函数详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1584.htm" title="access update语句执行_用pymysql实现对多行数据的insert和update加速">access update语句执行_用pymysql实现对多行数据的insert和update加速</a></li>
+                        <li class="py-2"><a href="/html/category/article-1615.htm" title="使用 Docker 搭建 Confluence">使用 Docker 搭建 Confluence</a></li>
+                        <li class="py-2"><a href="/html/category/article-1590.htm" title="Python  turtle  模块可以编写游戏，是真的吗？">Python  turtle  模块可以编写游戏，是真的吗？</a></li>
+                        <li class="py-2"><a href="/html/category/article-1581.htm" title="SpringBoot导入导出数据">SpringBoot导入导出数据</a></li>
+                        <li class="py-2"><a href="/html/category/article-1616.htm" title="C ++程序进行Fermat原始性测试">C ++程序进行Fermat原始性测试</a></li>
+                        <li class="py-2"><a href="/html/category/article-1606.htm" title="RabbitMQ链接不上异常">RabbitMQ链接不上异常</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

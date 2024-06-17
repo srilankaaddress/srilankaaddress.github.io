@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1463.htm" />
+    <title>Apache Hudi 如何加速传统的批处理模式 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">Apache Hudi 如何加速传统的批处理模式</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<h1 id="1-现状说明">1. 现状说明</h1> <h2 id="11-数据湖摄取和计算过程---处理更新">1.1 数据湖摄取和计算过程 - 处理更新</h2> <p>在我们的用例中1-10% 是对历史记录的更新。当记录更新时，我们需要从之前的 updated_date 分区中删除之前的条目，并将条目添加到最新的分区中，在没有删除和更新功能的情况下，我们必须重新读取整个历史表分区 -&gt; 去重数据 -&gt; 用新的去重数据覆盖整个表分区</p> <h2 id="12-当前批处理过程中的挑战">1.2 当前批处理过程中的挑战</h2> <p>这个过程有效，但也有其自身的缺陷：</p> <ol> <li>时间和成本——每天都需要覆盖整个历史表</li> <li>数据版本控制——没有开箱即用的数据和清单版本控制（回滚、并发读取和写入、时间点查询、时间旅行以及相关功能不存在）</li> <li>写入放大——日常历史数据覆盖场景中的外部（或自我管理）数据版本控制增加了写入放大，从而占用更多的 S3 存储</li> </ol> <p>借助Apache Hudi，我们希望在将数据摄取到数据湖中的同时，找到更好的重复数据删除和数据版本控制优化解决方案。</p> <h1 id="2-hudi-数据湖--查询模式">2. Hudi 数据湖 — 查询模式</h1> <p>当我们开始在我们的数据湖上实现 Apache Hudi 的旅程时，我们根据表的主要用户的查询模式将表分为 2 类。</p> <ul> <li>面向ETL ：这是指我们从各种生产系统摄取到数据湖中的大多数原始/基本快照表。 如果这些表被 ETL 作业广泛使用，那么我们将每日数据分区保持在 updated_date，这样下游作业可以简单地读取最新的 updated_at 分区并（重新）处理数据。</li> <li>面向分析师：通常包括维度表和业务分析师查询的大部分计算 OLAP，分析师通常需要查看基于事务（或事件）created_date 的数据，而不太关心 updated_date。</li> </ul> <p>这是一个示例电子商务订单数据流，从摄取到数据湖到创建 OLAP，最后到业务分析师查询它</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/918f6216521338353ce69d4854b9ec63.jpg" alt="Apache Hudi 如何加速传统的批处理模式"></p> <p>由于两种类型的表的日期分区列不同，我们采用不同的策略来解决这两个用例。</p> <h2 id="21-面向分析师的表olap按-created_date-分区">2.1 面向分析师的表/OLAP（按 created_date 分区）</h2> <p>在 Hudi 中，我们需要指定分区列和主键列，以便 Hudi 可以为我们处理更新和删除。<br /> 以下是我们如何处理面向分析师的表中的更新和删除的逻辑：</p> <ul> <li>读取上游数据的 D-n 个 updated_date 分区。</li> <li>应用数据转换。 现在这个数据将只有新的插入和很少的更新记录。</li> <li>发出 hudi  upsert 操作，将处理后的数据 upsert 到目标 Hudi 表。</li> </ul> <p>由于主键和 created_date 对于退出和传入记录保持相同，Hudi 通过使用来自传入记录 created_date 和 primary_key 列的此信息获取现有记录的分区和分区文件路径。</p> <h2 id="22-面向etl按更新日期分区">2.2 面向ETL（按更新日期分区）</h2> <p>当我们开始使用 Hudi 时，在阅读了许多博客和文档之后，在 created_date 上对面向 ETL 的表进行分区似乎是合乎逻辑的。<br /> 此外 Hudi 提供增量消费功能，允许我们在 created_date 上对表进行分区，并仅获取在 D-1 或 D-n 上插入（插入或更新）的那些记录。</p> <h3 id="1-created_date分区的挑战">1. “created_date”分区的挑战</h3> <p>这种方法在理论上效果很好，但在改造传统的日常批处理过程中的增量消费时，它带来了其他一系列挑战：<br /> Hudi 维护了在不同时刻在表上执行的所有操作的时间表，这些提交包含有关作为 upsert 的一部分插入或重写的部分文件的信息，我们将此 Hudi 表称为 Commit Timeline。<br /> 这里要注意的重要信息是增量查询基于提交时间线，而不依赖于数据记录中存在的实际更新/创建日期信息。</p> <ul> <li>冷启动：当我们将现有的上游表迁移到 Hudi 时，D-1 Hudi 增量查询将获取完整的表，而不仅仅是 D-1 更新。发生这种情况是因为在开始时，整个表是通过在 D-1 提交时间线内发生的单个初始提交或多个提交创建的，并且缺少真正的增量提交信息。</li> <li>历史数据重新摄取：在每个常规增量 D-1 拉取中，我们期望仅在 D-1 上更新的记录作为输出。但是在重新摄取历史数据的情况下，会再次出现类似于前面描述的冷启动问题的问题，并且下游作业也会出现 OOM。</li> </ul> <p>作为面向 ETL 的作业的解决方法，我们尝试将数据分区保持在 updated_date 本身，然而这种方法也有其自身的挑战。</p> <h3 id="2-updated_date分区的挑战">2. “updated_date”分区的挑战</h3> <p>我们知道 Hudi 表的本地索引，Hudi 依靠索引来获取存储在数据分区本地目录中的 Row-to-Part_file 映射。因此，如果我们的表在 updated_date 进行分区，Hudi 无法跨分区自动删除重复记录。<br /> Hudi 的全局索引策略要求我们保留一个内部或外部索引来维护跨分区的数据去重。对于大数据量，每天大约 2 亿条记录，这种方法要么运行缓慢，要么因 OOM 而失败。<br /> 因此，为了解决更新日期分区的数据重复挑战，我们提出了一种全新的重复数据删除策略，该策略也具有很高的性能。</p> <h1 id="3-新重复数据删除策略">3. “新”重复数据删除策略</h1> <ul> <li>查找更新 - 从每日增量负载中，仅过滤掉更新（1-10% 的 DI 数据）（其中 updated_date&gt; created_date）（快速，仅映射操作）</li> <li>找到过时更新 - 将这些“更新”与下游 Hudi 基表广播连接。 由于我们只获取更新的记录（仅占每日增量的 1-10%），因此可以实现高性能的广播连接。 这为我们提供了与更新记录相对应的基础 Hudi 表中的所有现有记录</li> <li>删除过时更新——在基本 Hudi 表路径上的这些“过时更新”上发出 Hudi 删除命令</li> <li>插入 - 在基本 hudi 表路径上的完整每日增量负载上发出 hudi insert 命令</li> </ul> <p>进一步优化用 true 填充陈旧更新中的 _hoodie_is_deleted 列，并将其与每日增量负载结合。 通过基本 hudi 表路径发出此数据的 upsert 命令。 它将在单个操作（和单个提交）中执行插入和删除。</p> <h1 id="4-apache-hudi-的优势">4. Apache Hudi 的优势</h1> <ol> <li>时间和成本——Hudi 在重复数据删除时不会覆盖整个表。 它只是重写接收更新的部分文件。 因此较小的 upsert 工作</li> <li>数据版本控制——Hudi 保留表版本（提交历史），因此提供实时查询（时间旅行）和表版本回滚功能。</li> <li>写入放大——由于只有部分文件被更改并保留用于数据清单版本控制，我们不需要保留完整数据的版本。 因此整体写入放大是最小的。</li> </ol> <p>作为数据版本控制的另一个好处，它解决了并发读取和写入问题，因为数据版本控制使并发读取器可以读取数据文件的版本控制副本，并且当并发写入器用新数据覆盖同一分区时不会抛出 FileNotFoundException 文件。</p> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1462.htm">element UI-级联选择器（el-cascader）</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1464.htm">EF Core 的 Code First 模式</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1570.htm" title="基于 Apache Hudi 构建增量和无限回放事件流的 OLAP 平台">基于 Apache Hudi 构建增量和无限回放事件流的 OLAP 平台</a></li>
+                        <li class="py-2"><a href="/html/category/article-1579.htm" title="Vue3项目中动态组件component的使用">Vue3项目中动态组件component的使用</a></li>
+                        <li class="py-2"><a href="/html/category/article-1613.htm" title="vue 动态组件组件复用_真正的动态声明性组件">vue 动态组件组件复用_真正的动态声明性组件</a></li>
+                        <li class="py-2"><a href="/html/category/article-1615.htm" title="使用 Docker 搭建 Confluence">使用 Docker 搭建 Confluence</a></li>
+                        <li class="py-2"><a href="/html/category/article-1578.htm" title="如何离线安装VSCode插件">如何离线安装VSCode插件</a></li>
+                        <li class="py-2"><a href="/html/category/article-1577.htm" title="springboot 中注解@Async失效的情况">springboot 中注解@Async失效的情况</a></li>
+                        <li class="py-2"><a href="/html/category/article-1628.htm" title="etcd分布式键值数据库安装（单机版）">etcd分布式键值数据库安装（单机版）</a></li>
+                        <li class="py-2"><a href="/html/category/article-1576.htm" title="vuex几大模块和Vuex助手使用详解">vuex几大模块和Vuex助手使用详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1573.htm" title="大数据系列(3)-HDFS 常用命令">大数据系列(3)-HDFS 常用命令</a></li>
+                        <li class="py-2"><a href="/html/category/article-1627.htm" title="go语言编译过程概述">go语言编译过程概述</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1575.htm" />
+    <title>经典数据结构解决迷宫问题（Python实现） - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">经典数据结构解决迷宫问题（Python实现）</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<div id="content_views" class="htmledit_views"> <p><strong>首先自定义一个二维数组</strong></p> <p><strong>maze = [<br /> &nbsp; &nbsp; [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],<br /> &nbsp; &nbsp; [1, 0, 0, 1, 0, 0, 0, 1, 0, 1],<br /> &nbsp; &nbsp; [1, 0, 0, 1, 0, 0, 0, 1, 0, 1],<br /> &nbsp; &nbsp; [1, 0, 0, 0, 0, 1, 1, 0, 0, 1],<br /> &nbsp; &nbsp; [1, 0, 1, 1, 1, 0, 0, 0, 0, 1],<br /> &nbsp; &nbsp; [1, 0, 0, 0, 1, 0, 0, 0, 0, 1],<br /> &nbsp; &nbsp; [1, 0, 1, 0, 0, 0, 1, 0, 0, 1],<br /> &nbsp; &nbsp; [1, 0, 1, 1, 1, 0, 1, 1, 0, 1],<br /> &nbsp; &nbsp; [1, 1, 0, 0, 0, 0, 0, 0, 0, 1],<br /> &nbsp; &nbsp; [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]</strong></p> <p><strong>0：表示路</strong></p> <p><strong>1：表示墙体</strong></p> <p><strong>一.深度优先搜索+回溯（使用栈来存储已走过的路径）</strong></p> <p><strong>1,定义四个lambda表达式作为右左下上四个方向。</strong></p> <p><strong>2.从初始结点开始，当下一个结点可以走的时候，自己的坐标点入栈。并标记为已经走过。</strong></p> <p><strong>3.当没有下一个结点可以走的时候，出栈，说明此路不通。回溯到可以有下一个结点可以走的结点处。重新开始步骤2.</strong></p> <p><strong>4.当找到目标结点的时候，遍历栈中的元素，即为一条可以走通的路。<span style="color:#fe2c24;">不一定是最优的路线规划。</span></strong></p> <pre><code class="language-python">#使用栈来存储路径 maze = [     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],     [1, 0, 0, 1, 0, 0, 0, 1, 0, 1],     [1, 0, 0, 1, 0, 0, 0, 1, 0, 1],     [1, 0, 0, 0, 0, 1, 1, 0, 0, 1],     [1, 0, 1, 1, 1, 0, 0, 0, 0, 1],     [1, 0, 0, 0, 1, 0, 0, 0, 0, 1],     [1, 0, 1, 0, 0, 0, 1, 0, 0, 1],     [1, 0, 1, 1, 1, 0, 1, 1, 0, 1],     [1, 1, 0, 0, 0, 0, 0, 0, 0, 1],     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1] ] dirs = [     lambda x, y: (x + 1, y),     lambda x, y: (x - 1, y),     lambda x, y: (x, y - 1),     lambda x, y: (x, y + 1) ]  def maze_path(x1,y1,x2,y2):     stack = []     stack.append((x1,y1))     while len(stack)&gt;0:         curNode = stack[-1]  #当前的节点         if curNode[0] == x2 and curNode[1] == y2:             for p in stack:                 print(p)             return True          for di in dirs:             nextNode = di(curNode[0],curNode[1])  #如果下一个结点可以走             if maze[nextNode[0]][nextNode[1]] ==0:                 stack.append(nextNode)                 maze[nextNode[0]][nextNode[1]] = 2  #标记为已经走过                 break         else:             maze[nextNode[0]][nextNode[1]] = 2             stack.pop()     else:         print("没有路")         return False  maze_path(1,1,8,8)</code></pre> <p><strong>二.广度优先算法（使用队列来储存已经走过的路线）</strong></p> <p><strong>1.定义四个lambda表达式作为右左下上四个方向。</strong></p> <p><strong>2..从初始结点开始，如果有一个节点可以走的时候，自己的坐标点+自己的上一个结点入队列，并表示为已经走过。</strong></p> <p><strong>3.只要队列中铀元素就把步骤2的队列中的元素出队列存放在数组path中。</strong></p> <p><strong>4.当找到目标结点的时候，结束查找。如果找不到目标结点，即没有一条路可以到达。</strong></p> <p><strong>5.通过path数组中第三项元素指向的位置，逆序打印path中前两项元素，即为最后的路线。<span style="color:#fe2c24;">一定时最优的路线。</span></strong></p> <pre><code class="language-python">from collections import deque #使用队列 maze = [     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],     [1, 0, 0, 1, 0, 0, 0, 1, 0, 1],     [1, 0, 0, 1, 0, 0, 0, 1, 0, 1],     [1, 0, 0, 0, 0, 1, 1, 0, 0, 1],     [1, 0, 1, 1, 1, 0, 0, 0, 0, 1],     [1, 0, 0, 0, 1, 0, 0, 0, 0, 1],     [1, 0, 1, 0, 0, 0, 1, 0, 0, 1],     [1, 0, 1, 1, 1, 0, 1, 1, 0, 1],     [1, 1, 0, 0, 0, 0, 0, 0, 0, 1],     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1] ] dirs = [     lambda x, y: (x + 1, y),     lambda x, y: (x - 1, y),     lambda x, y: (x, y - 1),     lambda x, y: (x, y + 1) ]   def print_r(path):     curNode = path[-1]     print(curNode)      realpath=[]      while curNode[2] != -1:         realpath.append(curNode[0:2])         curNode = path[curNode[2]]      realpath.append(curNode[0:2])  # 起点     realpath.reverse()     for node in realpath:         print(node)   def maze_path_queue(x1, y1, x2, y2):     queue = deque()     queue.append((x1, y1, -1))   #起点     path = []     while len(queue) &gt; 0:    #只要队不为空         curNode = queue.pop()   #队首出队         path.append(curNode)         if curNode[0] == x2 and curNode[1] == y2:             print_r(path)             return True         for dir in dirs:             nextNode = dir(curNode[0], curNode[1])      #下一个节点             if maze[nextNode[0]][nextNode[1]] == 0:                 queue.append((nextNode[0], nextNode[1], len(path) - 1))  # 后续节点进队，记录哪个结点带她来的                 maze[nextNode[0]][nextNode[1]] = 2  # 标记已经走过     else:         print("没有路")         return False maze_path_queue(1,1,8,8)</code></pre> </div> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1574.htm">Quartz高可用定时任务快速上手</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1576.htm">vuex几大模块和Vuex助手使用详解</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1625.htm" title="Linux源码安装RabbitMQ高可用集群">Linux源码安装RabbitMQ高可用集群</a></li>
+                        <li class="py-2"><a href="/html/category/article-1627.htm" title="go语言编译过程概述">go语言编译过程概述</a></li>
+                        <li class="py-2"><a href="/html/category/article-1605.htm" title="QCustomPlot开发笔记：QCustomPlot简介、下载以及基础绘图_在线工具">QCustomPlot开发笔记：QCustomPlot简介、下载以及基础绘图_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1601.htm" title="java数组去重">java数组去重</a></li>
+                        <li class="py-2"><a href="/html/category/article-1584.htm" title="access update语句执行_用pymysql实现对多行数据的insert和update加速">access update语句执行_用pymysql实现对多行数据的insert和update加速</a></li>
+                        <li class="py-2"><a href="/html/category/article-1616.htm" title="C ++程序进行Fermat原始性测试">C ++程序进行Fermat原始性测试</a></li>
+                        <li class="py-2"><a href="/html/category/article-1603.htm" title="linux磁盘文件清理">linux磁盘文件清理</a></li>
+                        <li class="py-2"><a href="/html/category/article-1619.htm" title="sql server排查死锁优化性能_MsSql_">sql server排查死锁优化性能_MsSql_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1586.htm" title="tensorflow基础流程">tensorflow基础流程</a></li>
+                        <li class="py-2"><a href="/html/category/article-1580.htm" title="EFCore 6.0入门看这篇就够了">EFCore 6.0入门看这篇就够了</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

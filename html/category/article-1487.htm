@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1487.htm" />
+    <title>CPF 使用C#的Native AOT 发布程序 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">CPF 使用C#的Native AOT 发布程序</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<p>微软已经将AOT的包移到Nuget了，之前是在实验测试服务器上的。并且由之前的alpha版本改成了preview版本。</p> <p>C#的开发效率，接近C++的运行效率，而且可以防止反编译，可以支持大部分反射功能。还有几个小问题，暂时不能支持x86，win7上运行aot的程序可能需要打补丁！</p> <p>CPF里使用AOT需要将项目改成net5以上版本，因为net5之后才有COM的包装器，如果你只是给自己的控制台程序AOT的话，可以用低版本的netcore（.NET 7 Preview 3 开始，NativeAOT 将只支持 .NET 6+）</p> <p>使用方式很简单，编辑csproj，加入下面一段代码，另外CPF的包版本需要换成最新的</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">PropertyGroup</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span><span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">IlcOptimizationPreference</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>Size<span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">IlcOptimizationPreference</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span><span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">IlcGenerateStackTraceData</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>false<span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">IlcGenerateStackTraceData</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span><span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">PropertyGroup</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span><span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">ItemGroup</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span><span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">RdXmlFile</span><span style="color: rgba(255, 0, 0, 1)">Include</span><span style="color: rgba(0, 0, 255, 1)">="rd.xml"</span><span style="color: rgba(0, 0, 255, 1)">/&gt;</span><span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">PackageReference</span><span style="color: rgba(255, 0, 0, 1)">Include</span><span style="color: rgba(0, 0, 255, 1)">="Microsoft.DotNet.ILCompiler"</span><span style="color: rgba(255, 0, 0, 1)"> Version</span><span style="color: rgba(0, 0, 255, 1)">="7.0.0-preview.2.22152.2"</span><span style="color: rgba(0, 0, 255, 1)">/&gt;</span><span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">ItemGroup</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span></pre> </div> <blockquote> <p>一般建议根据发布平台的注释掉其他平台的适配器，以及删除其他平台的引用，用来减少发布的程序大小。比如如果发布Windows上的，可以把Mac和Linux的注释掉。</p> <p>另外需要注意的是使用AOT方式发布的话，需要到对应系统上发布，比如发布Linux的程序，就需要到Linux上发布。不支持跨操作系统编译。</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/b3dc8d20a5032b425336853decf70a71.jpg" alt="CPF 使用C#的Native AOT 发布程序"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/c52a70a44a32a9c83da19dfe055b6f4c.jpg" alt="CPF 使用C#的Native AOT 发布程序"></p> <p>项目里增加个rd.xml文件，你可以根据需要添加一些反射的元数据描述</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">Directives</span><span style="color: rgba(255, 0, 0, 1)">xmlns</span><span style="color: rgba(0, 0, 255, 1)">="http://schemas.microsoft.com/netfx/2013/01/metadata"</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span><span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">Application</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span><span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">Assembly</span><span style="color: rgba(255, 0, 0, 1)">Name</span><span style="color: rgba(0, 0, 255, 1)">="CPF"</span><span style="color: rgba(255, 0, 0, 1)"> Dynamic</span><span style="color: rgba(0, 0, 255, 1)">="Required All"</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span><span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">Type</span><span style="color: rgba(255, 0, 0, 1)">Name</span><span style="color: rgba(0, 0, 255, 1)">="CPF.Animation.KeyFrame`1[[CPF.Drawing.Color,CPF]]"</span><span style="color: rgba(255, 0, 0, 1)"> Dynamic</span><span style="color: rgba(0, 0, 255, 1)">="Required All"</span><span style="color: rgba(0, 0, 255, 1)">/&gt;</span><span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">Assembly</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span><span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">Assembly</span><span style="color: rgba(255, 0, 0, 1)">Name</span><span style="color: rgba(0, 0, 255, 1)">="CPF.Windows"</span><span style="color: rgba(255, 0, 0, 1)"> Dynamic</span><span style="color: rgba(0, 0, 255, 1)">="Required All"</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span><span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">Type</span><span style="color: rgba(255, 0, 0, 1)">Name</span><span style="color: rgba(0, 0, 255, 1)">="CPF.Windows.OpenGL.WglCreateContextAttribsARBDelegate"</span><span style="color: rgba(255, 0, 0, 1)"> MarshalDelegate</span><span style="color: rgba(0, 0, 255, 1)">="Required All"</span><span style="color: rgba(0, 0, 255, 1)">/&gt;</span><span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">Assembly</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span><span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">Application</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span><span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">Directives</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span></pre> </div> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/993cee7e1fe4f1efed1212eeffa7555d.jpg" alt="CPF 使用C#的Native AOT 发布程序"></p> <p>一般的，项目右键，选择发布。 如果你喜欢用命令行也是可以的。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/64dd680e95dff59af122b05acfa704be.jpg" alt="CPF 使用C#的Native AOT 发布程序"></p> <p>选择文件夹</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/00b7154f353d978f525ccbb2e444117f.jpg" alt="CPF 使用C#的Native AOT 发布程序"></p> <p>设置好发布路径，完成。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/e64f6b3f319b01c91c0e2714cb859d6b.jpg" alt="CPF 使用C#的Native AOT 发布程序"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/563abeb12fc66b075a475877e6f12503.jpg" alt="CPF 使用C#的Native AOT 发布程序"></p> <p>需要注意的是Windows端暂时只能用x64的，x86的好像还不行。需要用Release方式，Debug模式效果不好。设置好了之后，直接点发布。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/dfede5e82a72cd14887fbff60006c753.jpg" alt="CPF 使用C#的Native AOT 发布程序"></p> <p>之后一般等待一两分钟就行，你可以看到输出那边的相关信息</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/b9d6d523005a1dee331e049b9c015639.jpg" alt="CPF 使用C#的Native AOT 发布程序"></p> <p>发布成功之后的程序，双击启动秒开，比非AOT发布的启动速度快多了。主程序小于30M，另外依赖一个7M的skia的dll</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/f4773c86279940f30ac9bb7d3cec385e.jpg" alt="CPF 使用C#的Native AOT 发布程序"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/94d42b2445a953239fd6df2880012951.jpg" alt="CPF 使用C#的Native AOT 发布程序"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/c378915c1079eb391d0247763890c05f.jpg" alt="CPF 使用C#的Native AOT 发布程序"></p> <p>&nbsp;AOT后的程序也是可以调试的，带上对应的pdb文件，然后采用附加进程的方式附加刚才启动的程序，然后就可以进入断点了</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/7c85615866717155f2a66679f9af2925.jpg" alt="CPF 使用C#的Native AOT 发布程序"></p> <p>如果出现无法启动程序的情况，你可以先把项目输出类型改成控制台再AOT之后运行，这样就可以看到相关异常信息。比如反射类型缺失什么的，你可以编辑rd.xml文档</p> <p>更加详细说明可以看看微软的文档&nbsp;&nbsp;https://github.com/dotnet/runtime/tree/main/src/coreclr/nativeaot/docs</p> <p><audio controls="controls" style="display: none" rel="nofollow"></audio></p> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-1486.htm">node_modules/lodash.template/index.js:1558 throw result； ^  SyntaxError: Unexpected token = 报错解决</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1488.htm">Golang | 测试与性能调优</a></p>
+                                                                    </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1613.htm" title="vue 动态组件组件复用_真正的动态声明性组件">vue 动态组件组件复用_真正的动态声明性组件</a></li>
+                        <li class="py-2"><a href="/html/category/article-1580.htm" title="EFCore 6.0入门看这篇就够了">EFCore 6.0入门看这篇就够了</a></li>
+                        <li class="py-2"><a href="/html/category/article-1570.htm" title="基于 Apache Hudi 构建增量和无限回放事件流的 OLAP 平台">基于 Apache Hudi 构建增量和无限回放事件流的 OLAP 平台</a></li>
+                        <li class="py-2"><a href="/html/category/article-1607.htm" title="ASP.NET和ASP.NETCore多环境配置对比">ASP.NET和ASP.NETCore多环境配置对比</a></li>
+                        <li class="py-2"><a href="/html/category/article-1619.htm" title="sql server排查死锁优化性能_MsSql_">sql server排查死锁优化性能_MsSql_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1602.htm" title="CSS：实现多行文本垂直居中的四种方法">CSS：实现多行文本垂直居中的四种方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-1627.htm" title="go语言编译过程概述">go语言编译过程概述</a></li>
+                        <li class="py-2"><a href="/html/category/article-1600.htm" title="xpath的使用">xpath的使用</a></li>
+                        <li class="py-2"><a href="/html/category/article-1614.htm" title="我们如何更改MySQL AUTO_INCREMENT起始号码？">我们如何更改MySQL AUTO_INCREMENT起始号码？</a></li>
+                        <li class="py-2"><a href="/html/category/article-1572.htm" title="IDEA部署Tomcat(超详细)">IDEA部署Tomcat(超详细)</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>
