@@ -2,8 +2,8 @@
 <html lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1436.htm" />
-    <title>CentOS 8迁移Rocky Linux 8手记_在线工具 - Sri Lanka Address</title>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1921.htm" />
+    <title>IDEA Debug过程中使用Drop Frame或Reset Frame实现操作回退 - Sri Lanka Address</title>
         <meta charset="utf-8">
     <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -80,7 +80,7 @@ var _hmt = _hmt || [];
                     <div class="row">
                         <div class="col">
                             <div class="home_content">
-                                <div class="home_title">CentOS 8迁移Rocky Linux 8手记_在线工具</div>
+                                <div class="home_title">IDEA Debug过程中使用Drop Frame或Reset Frame实现操作回退</div>
                                 <div class="breadcrumbs">
                                     <ul class="d-flex flex-row align-items-center justify-content-start">
                                         <li><a href="/">首页</a></li>
@@ -101,12 +101,31 @@ var _hmt = _hmt || [];
                     <div class="col-md-9">
                         <div class="row row-eq-height">
                             <div class="col-md-12">
-                                  				  				  				<h2 id="前言">前言</h2> <p>由于CentOS 8的支持已经到期了，.NET 6也不支持了，然后也无法升级，导致使用起来已经非常不便，无奈只有迁移服务器这个选项了。</p> <p>选择发行版本一直是一个比较头疼的问题，首先我不是专门运维的，最好使用的人比较多的版本，然后.NET要官方支持的版本才行，最好是具有中国区的镜像服务。虽然Fedora、OpenSUSE、Debian也算用的人多，但是比起<code>Ubuntu</code>和<code>CentOS</code>还是稍微少一点，因此首选是<code>Ubuntu</code>。当然这里很多人觉得<code>Ubuntu</code>其实并不适合做服务器系统，我觉得应该差不多，毕竟支持周期来看，<code>Ubuntu</code>的标准声明周期也挺长的，而且如果一直用，一直升级的话，其实也无所谓。</p> <p>迁移CentOS 8到Ubuntu，找了很多资料都没找到可以比较简单实现迁移的方法，最简单的使用DVD或者U盘进行全新安装，这个对于一个已经在运行的系统来说，迁移的成本有点太高了。无奈只能继续寻找CentOS的替代。发现一个<code>Rocky Linux</code>好像还行，是<code>CentOS</code>的原作者主导开发的，而且渐渐的很多地方都开始支持并提供了国内的<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://rockylinux.cn/rocky-linux-geng-xin-yuan-hui-zong.html#more"  target="_blank"  rel="nofollow">镜像</a>，最重要的是，他直接提供了升级的工具：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://docs.rockylinux.org/guides/migrate2rocky/"  target="_blank"  rel="nofollow">migrate2rocky</a>。</p> <h2 id="从centos-8升级">从CentOS 8升级</h2> <p>使用比较简单，直接执行命令：</p> <pre><code class="language-shell">curl https://raw.githubusercontent.com/rocky-linux/rocky-tools/main/migrate2rocky/migrate2rocky.sh -o migrate2rocky.sh  chmod u+x migrate2rocky.sh  ./migrate2rocky.sh -r </code></pre> <p>三个命令下去就开始检查了，我正式执行更新的时候，出现了问题：</p> <pre><code class="language-log">Error: Check discovered 9 problem(s) libnsl-2.28-164.el8_5.3.i686 has missing requires of glibc(x86-32) = 2.28-164.el8_5.3 libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6 libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.0) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.1) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.1.3) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.2) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.2.3) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.28) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.4) </code></pre> <p>我以为是缺少这个包，使用<code>yum install libnsl</code>安装了一下，继续执行：</p> <pre><code class="language-log">libnsl-2.28-164.el8.x86_64 is a duplicate with libnsl-2.28-164.el8_5.3.i686 libnsl-2.28-164.el8_5.3.i686 has missing requires of glibc(x86-32) = 2.28-164.el8_5.3 libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6 libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.0) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.1) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.1.3) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.2) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.2.3) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.28) libnsl-2.28-164.el8_5.3.i686 has missing requires of libc.so.6(GLIBC_2.4) </code></pre> <p>好家伙，又多了一个，仔细检查，好像是64位程序和32位程序混装了，直接<code>yum remove libnsl</code>卸载，然后继续执行，会在这个界面上卡非常久，需要耐心等待。</p> <pre><code class="language-log">Running dnf update before we attempt the migration. Last metadata expiration check: 0:00:31 ago on Fri Apr 29 12:58:47 2022.  Dependencies resolved. Nothing to do. Complete! Added rockyappstream repo from https://dl.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/ Added rockybaseos repo from https://dl.rockylinux.org/pub/rocky/8/BaseOS/x86_64/os/ </code></pre> <p>我这边升级大概花费了不到半个小时吧，当提示出现以下信息，就成功了。</p> <pre><code>Done, please reboot your system. A log of this installation can be found at /var/log/migrate2rocky.log </code></pre> <p>最后reboot一下，使用<code>hostnamectl</code>命令检查是否更新成功，当看见下面的提示，就成功了。</p> <pre><code class="language-log">Operating System: Rocky Linux 8.5 (Green Obsidian) </code></pre> <h2 id="安装gui界面">安装GUI界面</h2> <p>说实在话，使用SSH进行命令行操作我觉得还是差点意思，自己使用起来还是有GUI比较顺手一点，为了远程访问比较简单，可以使用带界面的版本，并配置使用windows自带的远程桌面访问。</p> <p>详情可以查看：</p> <ol> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/bhoold/p/12266499.html"  target="_blank"  rel="nofollow">centos7安装xfce桌面及xrdp远程桌面服务</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://cloud.tencent.com/developer/article/1627252"  target="_blank"  rel="nofollow">centos8安装xfce图形界面</a></li> </ol> 			
+                                  				  				  				<p>大家在Debug程序的时候，是否遇到过因为“下一步”按太快，而导致跳过了想要深入分析的那段代码？是不是很想要有“回到上一步”这样的操作呢？</p> <p>在IDEA中就提供了一个帮助你回退代码的机会，但这个方法并不是万能的。好了，下面就来具体说说这个功能的使用！</p> <h2 id="使用reset-frame回退操作">使用Reset Frame回退操作</h2> <p>不知道你在Debug的时候，是否有注意过下图标出的按钮<code>Reset Frame</code>，这就是今天要介绍的主角。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/cd73bff44632a63ce1d888c4fb35a334.jpg" alt="IDEA Debug过程中使用Drop Frame或Reset Frame实现操作回退"></p> <h3 id="什么情况不能回退">什么情况不能回退</h3> <p>比如：下面这样的顺序结构，是无法会退的：</p> <pre><code class="language-java">void test() {     int a = 1;     int b = 2;     int c = a + b;     System.out.println(c); }</code></pre> <h3 id="什么情况可以回退">什么情况可以回退</h3> <p>再来看看下面这种情况：</p> <pre><code class="language-java">void test2() {     int a = 1;     int b = 2;     int c = add(a, b);     System.out.println(c); }  int add(int a, int b) {     System.out.println("a = " + a);     System.out.println("b = " + b);     return a + b; }</code></pre> <p>这里有两个函数，<code>test2</code>函数会调用<code>add</code>函数。当程序执行到<code>int c = add(a, b)</code>这句的话，会进入到<code>add</code>函数。此时，<code>add</code>函数中执行的内容就可以通过<code>Reset Frame</code>来回退回上一层函数进入的那句语句。</p> <p>如果文字你看着理解困难，这里DD<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.bilibili.com/video/BV1KF411g77W/"  target="_blank" rel="nofollow">录了个视频</a>，可以看看具体操作帮助理解，当然自己实操一把会更有感觉哦！</p> <h2 id="找不到reset-frame找找drop-frame">找不到Reset Frame？找找Drop Frame</h2> <p>这里顺带提一句，可能有小伙伴会问：怎么我Debug的时候找不到<code>Reset Frame</code>呢？</p> <p>其实这个跟版本有关，<code>Reset Frame</code>是IDEA 2022.1版本之后才有的。但不要担心，该版本之前也有这个功能，只是名字不叫这个，而是叫<code>Drop Frame</code>，就是下图所示这个按钮。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/4b7991f274e7fb708aba7a365e51ce6d.jpg" alt="IDEA Debug过程中使用Drop Frame或Reset Frame实现操作回退"></p> <p>好了，今天的分享就到这里，如果你觉得这个分享对你有用的话，一定记得实操练习一下！最后，记得帮忙三连支持一下，关注我，持续为大家分享更多开发小知识！</p> 			
                                 <div class="col-md-12 mt-5">
-                                                                        <p>上一个：<a href="/html/category/article-1435.htm">Pycharm运行Flask项目指定运行参数</a></p>
-                                                                        <p>下一个：<a href="/html/category/article-1437.htm">service统一异常处理</a></p>
+                                                                        <p>上一个：<a href="/html/category/article-1640.htm">promise和async await的区别</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1922.htm">SpringCloud 之Hystrix Dashboard 服务监控</a></p>
                                                                     </div>
 
+                                                                <div class="panel panel-default mt-5">
+                                    <div class="panel-heading">
+                                        <h3 class="m-0">推荐文章</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul class="p-0 x-0">
+                                                                                        <li class="py-2"><a href="/html/category/article-1566.htm">is not eligible for getting processed by all BeanPostProcessors 导致找不到路径报404</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1565.htm">SpringBoot实现动态定时任务</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1562.htm">Feign调用传输文件异常</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1558.htm">win10查看电脑保存过的wifi密码</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1476.htm">Python项目：学生信息管理系统（完整版）</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1460.htm">Typescript和Javascript之间的区别</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1448.htm">Python 文件定位</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1431.htm">vue中Element UI表格分页功能的实现</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1420.htm">【Java分享客栈】一文搞定京东零售开源的AsyncTool，彻底解决异步编排问题</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1407.htm">一行代码让你的项目轻松使用Dapr</a></li>
+                                                                                    </ul>
+                                    </div>
+                                </div>
                                                             </div>
                         </div>
                     </div>
@@ -117,16 +136,16 @@ var _hmt = _hmt || [];
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/html/category/article-1587.htm" title="如何在vue3使用骨架屏">如何在vue3使用骨架屏</a></li>
+                        <li class="py-2"><a href="/html/category/article-1607.htm" title="ASP.NET和ASP.NETCore多环境配置对比">ASP.NET和ASP.NETCore多环境配置对比</a></li>
+                        <li class="py-2"><a href="/html/category/article-1627.htm" title="go语言编译过程概述">go语言编译过程概述</a></li>
+                        <li class="py-2"><a href="/html/category/article-1623.htm" title="Java集合类型遍历和排序">Java集合类型遍历和排序</a></li>
+                        <li class="py-2"><a href="/html/category/article-1606.htm" title="RabbitMQ链接不上异常">RabbitMQ链接不上异常</a></li>
                         <li class="py-2"><a href="/html/category/article-1640.htm" title="promise和async await的区别">promise和async await的区别</a></li>
-                        <li class="py-2"><a href="/html/category/article-1580.htm" title="EFCore 6.0入门看这篇就够了">EFCore 6.0入门看这篇就够了</a></li>
-                        <li class="py-2"><a href="/html/category/article-1578.htm" title="如何离线安装VSCode插件">如何离线安装VSCode插件</a></li>
-                        <li class="py-2"><a href="/html/category/article-1591.htm" title="netty系列之:netty中的frame解码器_在线工具">netty系列之:netty中的frame解码器_在线工具</a></li>
-                        <li class="py-2"><a href="/html/category/article-1922.htm" title="SpringCloud 之Hystrix Dashboard 服务监控">SpringCloud 之Hystrix Dashboard 服务监控</a></li>
-                        <li class="py-2"><a href="/html/category/article-1583.htm" title="kubernetes实现分布式限流_云和虚拟化_">kubernetes实现分布式限流_云和虚拟化_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1613.htm" title="vue 动态组件组件复用_真正的动态声明性组件">vue 动态组件组件复用_真正的动态声明性组件</a></li>
+                        <li class="py-2"><a href="/html/category/article-1597.htm" title="微信小程序，制作属于自己的Icon图标">微信小程序，制作属于自己的Icon图标</a></li>
+                        <li class="py-2"><a href="/html/category/article-1587.htm" title="如何在vue3使用骨架屏">如何在vue3使用骨架屏</a></li>
                         <li class="py-2"><a href="/html/category/article-1605.htm" title="QCustomPlot开发笔记：QCustomPlot简介、下载以及基础绘图_在线工具">QCustomPlot开发笔记：QCustomPlot简介、下载以及基础绘图_在线工具</a></li>
-                        <li class="py-2"><a href="/html/category/article-1610.htm" title="python3.5上使用virtualenv创建虚拟环境的坑">python3.5上使用virtualenv创建虚拟环境的坑</a></li>
-                        <li class="py-2"><a href="/html/category/article-1588.htm" title="JavaScript实现计数器、计时器——setTimeout与setInterval的区别">JavaScript实现计数器、计时器——setTimeout与setInterval的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-1593.htm" title="Linux中磁盘分区清理方法">Linux中磁盘分区清理方法</a></li>
                     </ul>
     </div>
 </div>
