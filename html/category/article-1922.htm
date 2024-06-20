@@ -104,6 +104,7 @@ var _hmt = _hmt || [];
                                   				  				  				<div id="content_views" class="htmledit_views"> <h3>简介：</h3> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Hystrix Dashboard 服务监控 &nbsp; ，<span style="color:#f33b45;">提供了准时的调用监控（Hystrix Dashboard ）</span> ，Hystrix 会持续记录所有通过&nbsp;Hystrix 发起的请求的执行信息，并以<span style="color:#7c79e5;">统计报表和图形的形式展示给客户</span>，包括执行多少请求多少成功，多少失败等。</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Hystrix通过Hystrix-metrics-event-stream项目实现了对以上指标的监控。SpringCloud也提供了&nbsp;&nbsp;Hystrix Dashboard的整合，对监控呢绒转化成可视化界面。</p> <p><span style="color:#f33b45;">主要是为了构建高可用的服务架构体系</span></p> <h3>上代码&nbsp;：</h3> <h3><span style="color:#7c79e5;">&nbsp; pom.xml</span></h3> <pre class="has"><code>&lt;!-- hystrix和 hystrix-dashboard相关 --&gt; 	&lt;dependency&gt; 		&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; 		&lt;artifactId&gt;spring-cloud-starter-hystrix&lt;/artifactId&gt; 	&lt;/dependency&gt; 	&lt;dependency&gt; 		&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; 		&lt;artifactId&gt;spring-cloud-starter-hystrix-dashboard&lt;/artifactId&gt; 	&lt;/dependency&gt;</code></pre> <h3><span style="color:#7c79e5;">启动类</span></h3> <pre class="has"><code>@SpringBootApplication @EnableHystrixDashboard //重点 public class DeptConsumer_DashBoard_App { 	public static void main(String[] args) 	{ 		SpringApplication.run(DeptConsumer_DashBoard_App.class, args); 	} }</code></pre> <h3><span style="color:#7c79e5;">yml文件</span></h3> <pre class="has"><code>server:   port: 9001</code></pre> <p>本人这里有三个微服务注册了三个Eureka</p> <p><img fetchpriority="high" decoding="async" alt="" class="has" height="135" src="http://img.555519.xyz/uploads/20221201/1e075dc058bb96617c5abb6b71278652.jpg"></p> <h3><span style="color:#7c79e5;">服务开启之后会进到这个页面</span></h3> <p><img decoding="async" alt="" class="has" height="493" src="http://img.555519.xyz/uploads/20221201/c7f355e960b975eec8dd64184f4ab28f.jpg"></p> <h3><span style="color:#7c79e5;">&nbsp;这里访问到的是你监控的那个服务8001</span></h3> <p><span style="color:#f33b45;">注意要以Hystrix.stream结尾访问</span></p> <p><img decoding="async" alt="" class="has" height="493" src="http://img.555519.xyz/uploads/20221201/749634e8a139baa0fcb4c14935d30830.jpg"></p> <h3><span style="color:#7c79e5;">&nbsp;前面说服务监控是以</span><span style="color:#f33b45;">统计报表</span><span style="color:#7c79e5;">或者</span><span style="color:#f33b45;">图形</span><span style="color:#7c79e5;">的形式展示</span></h3> <h3><span style="color:#7c79e5;">以下面图形操作</span></h3> <p><img loading="lazy" decoding="async" alt="" class="has" height="547" src="http://img.555519.xyz/uploads/20221201/fed7111cacf261f32a4b49716514568e.jpg"></p> <p><img loading="lazy" decoding="async" alt="" class="has" height="163" src="http://img.555519.xyz/uploads/20221201/cb365d8878c427fc722b6c05fa82f464.jpg"></p> <h3><span style="color:#f33b45;">点击Monitor &nbsp;Stream</span></h3> <p>&nbsp;会得到以下页面<img loading="lazy" decoding="async" alt="" class="has" height="398" src="http://img.555519.xyz/uploads/20221201/c659e709581b0157a40d1f9268e9c3f9.jpg"></p> <p><span style="color:#f33b45;"></span></p> <h3><span style="color:#f33b45;">实心圆圈，线条，参数的解释</span></h3> <p>圆圈：有两种含义。</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; 1. 它通过颜色的变化代表了实例的监控程度，它的健康度从<span style="color:#f33b45;">绿色&lt;黄色&lt;橙色&lt;红色递减。</span></p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2.它的大小会根据实例的请求流量发生变化，流量越大该实心圆就越大。所以通过该实心圆的展示，就可以大量的实例中快速的发现<span style="color:#f33b45;">故障实例和高压实例</span></p> <p>线条：</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;用来记录两分钟内流量的相对比较，可以通过它来观察到流量的上升和下降趋势</p> <p>参数：</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; 如图<img loading="lazy" decoding="async" alt="" class="has" height="404" src="http://img.555519.xyz/uploads/20221201/b56a582478fc1b4783649c645cafffe4.jpg"></p> <p><img loading="lazy" decoding="async" alt="" class="has" height="184" src="http://img.555519.xyz/uploads/20221201/ea80ddba3853feef1174f55225ce18e8.jpg"></p> </div> 			
                                 <div class="col-md-12 mt-5">
                                                                         <p>上一个：<a href="/html/category/article-1921.htm">IDEA Debug过程中使用Drop Frame或Reset Frame实现操作回退</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1935.htm">JS脚本按顺序依次加载执行</a></p>
                                                                     </div>
 
                                                                 <div class="panel panel-default mt-5">
@@ -135,16 +136,16 @@ var _hmt = _hmt || [];
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/html/category/article-1625.htm" title="Linux源码安装RabbitMQ高可用集群">Linux源码安装RabbitMQ高可用集群</a></li>
-                        <li class="py-2"><a href="/html/category/article-1611.htm" title="Druid10 监控">Druid10 监控</a></li>
-                        <li class="py-2"><a href="/html/category/article-1609.htm" title="聚类算法——python实现层次聚类（AGNES）">聚类算法——python实现层次聚类（AGNES）</a></li>
+                        <li class="py-2"><a href="/html/category/article-1596.htm" title="clickhouse智能提示编辑器">clickhouse智能提示编辑器</a></li>
                         <li class="py-2"><a href="/html/category/article-1587.htm" title="如何在vue3使用骨架屏">如何在vue3使用骨架屏</a></li>
-                        <li class="py-2"><a href="/html/category/article-1584.htm" title="access update语句执行_用pymysql实现对多行数据的insert和update加速">access update语句执行_用pymysql实现对多行数据的insert和update加速</a></li>
-                        <li class="py-2"><a href="/html/category/article-1591.htm" title="netty系列之:netty中的frame解码器_在线工具">netty系列之:netty中的frame解码器_在线工具</a></li>
-                        <li class="py-2"><a href="/html/category/article-1593.htm" title="Linux中磁盘分区清理方法">Linux中磁盘分区清理方法</a></li>
-                        <li class="py-2"><a href="/html/category/article-1607.htm" title="ASP.NET和ASP.NETCore多环境配置对比">ASP.NET和ASP.NETCore多环境配置对比</a></li>
-                        <li class="py-2"><a href="/html/category/article-1626.htm" title="数据库四大特性与隔离级别">数据库四大特性与隔离级别</a></li>
-                        <li class="py-2"><a href="/html/category/article-1598.htm" title="Unity实现简单的对象池_在线工具">Unity实现简单的对象池_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1612.htm" title="C语言 模拟实现memcpy与memmove函数详解_C 语言">C语言 模拟实现memcpy与memmove函数详解_C 语言</a></li>
+                        <li class="py-2"><a href="/html/category/article-1617.htm" title="C#和TS/JS的对比学习02：函数与方法">C#和TS/JS的对比学习02：函数与方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-1595.htm" title="@RequestMapping注解最详细解析">@RequestMapping注解最详细解析</a></li>
+                        <li class="py-2"><a href="/html/category/article-1586.htm" title="tensorflow基础流程">tensorflow基础流程</a></li>
+                        <li class="py-2"><a href="/html/category/article-1582.htm" title="Qt 实现文字输入框，带字数限制">Qt 实现文字输入框，带字数限制</a></li>
+                        <li class="py-2"><a href="/html/category/article-1603.htm" title="linux磁盘文件清理">linux磁盘文件清理</a></li>
+                        <li class="py-2"><a href="/html/category/article-1621.htm" title="SSM三大框架工作流程与原理详解">SSM三大框架工作流程与原理详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1622.htm" title="Anaconda 创建django不同版本开发环境">Anaconda 创建django不同版本开发环境</a></li>
                     </ul>
     </div>
 </div>
@@ -156,7 +157,7 @@ var _hmt = _hmt || [];
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">38</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+                <h4><span class="badge" style="float: right;">40</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>

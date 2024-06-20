@@ -2,8 +2,8 @@
 <html lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1613.htm" />
-    <title>vue 动态组件组件复用_真正的动态声明性组件 - Sri Lanka Address</title>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1936.htm" />
+    <title>数字的所有数字的递归乘积-JavaScript - Sri Lanka Address</title>
         <meta charset="utf-8">
     <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -80,7 +80,7 @@ var _hmt = _hmt || [];
                     <div class="row">
                         <div class="col">
                             <div class="home_content">
-                                <div class="home_title">vue 动态组件组件复用_真正的动态声明性组件</div>
+                                <div class="home_title">数字的所有数字的递归乘积-JavaScript</div>
                                 <div class="breadcrumbs">
                                     <ul class="d-flex flex-row align-items-center justify-content-start">
                                         <li><a href="/">首页</a></li>
@@ -101,12 +101,30 @@ var _hmt = _hmt || [];
                     <div class="col-md-9">
                         <div class="row row-eq-height">
                             <div class="col-md-12">
-                                  				  				  				<div id="content_views" class="htmledit_views"> <div class="entry" style="font-size: 16px;"> <p>vue 动态组件组件复用</p> <div class="e3lan-post"> <div>    <span class="bt-uid-tg"></span>   </div> </p></div> <p> 在这篇简短的文章中，我将重点介绍ADF动态声明性组件。 我的意思是一个众所周知的ADF标签<b class="raw_b_node">af：declarativeComponent</b> 。 它可以用作将页面设计为页面片段和组件组成的一种非常便捷的方法。 例如，我们的页面可以包含以下代码片段： </p> <pre class="has"><code class="notranslate  brush:xml">&lt;af:declarativeComponent viewId="PageFragment.jsff" id="dc1"&gt; &nbsp;&nbsp; &lt;f:facet name="TheFacet"&gt; &nbsp;&nbsp;&nbsp;&nbsp; &lt;af:button text="button 1" id="b1"/&gt; &nbsp;&nbsp; &lt;/f:facet&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&lt;/af:declarativeComponent&gt;</code></pre> <p> PageFragment.jsff是像这样的普通页面片段： </p> <pre class="has"><code class="notranslate  brush:xml">&lt;?xml version='1.0' encoding='UTF-8'?&gt; &lt;jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xmlns:af="http://xmlns.oracle.com/adf/faces/rich"&gt; &nbsp; &lt;af:panelGroupLayout id="pgl1"&gt; &nbsp;&nbsp;&nbsp; &lt;af:outputText value="This is a page fragment.  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You can add your content to the following facet:" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; id="ot1"/&gt; &nbsp;&nbsp;&nbsp; &lt;af:facetRef facetName="TheFacet"/&gt; &nbsp; &lt;/af:panelGroupLayout&gt; &lt;/jsp:root&gt;</code></pre> <p> 如果我们需要将一些参数传递给页面片段，可以将片段定义为组件： </p> <pre class="has"><code class="notranslate  brush:xml">&lt;?xml version='1.0' encoding='UTF-8'?&gt; &lt;jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xmlns:af="http://xmlns.oracle.com/adf/faces/rich"&gt; &lt;af:componentDef var="attrs"&gt; &nbsp; &lt;af:xmlContent&gt; &nbsp;&nbsp;&nbsp; &lt;component xmlns="http://xmlns.oracle.com/adf/faces/rich/component"&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;facet&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;facet-name&gt;TheFacet&lt;/facet-name&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/facet&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;attribute&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;attribute-name&gt;Title&lt;/attribute-name&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/attribute&gt; &nbsp;&nbsp;&nbsp; &lt;/component&gt; &nbsp; &lt;/af:xmlContent&gt; &nbsp; &lt;af:panelGroupLayout id="pgl1"&gt; &nbsp;&nbsp;&nbsp; &lt;af:outputText value="This is a component #{attrs.Title}. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You can add your content to the following facet:" id="ot1"/&gt; &nbsp;&nbsp;&nbsp; &lt;af:facetRef facetName="TheFacet"/&gt; &nbsp; &lt;/af:panelGroupLayout&gt; &nbsp;&lt;/af:componentDef&gt;  &lt;/jsp:root&gt;</code></pre> <p> 在此示例中，我们可以传递如以下代码片段所示的<b class="raw_b_node">Title</b>属性的值： </p> <pre class="has"><code class="notranslate  brush:xml">&lt;af:declarativeComponent viewId="ComponentFragment.jsff" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; id="dc2" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Title="Buttom Container"&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp; &lt;f:facet name="TheFacet"&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;af:button text="button 2" id="b2"/&gt; &nbsp;&nbsp;&nbsp; &lt;/f:facet&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;/af:declarativeComponent&gt;</code></pre> <p> 这项技术最酷的地方是<b class="raw_b_node">viewId</b>属性不仅可以接受静态字符串，而且还可以接受EL表达式： </p> <pre class="has"><code class="notranslate  brush:xml">&lt;af:declarativeComponent viewId="#{TheBean.fragmentViewID}" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; id="dc1"&gt; &nbsp;&nbsp; &lt;f:facet name="TheFacet"&gt; &nbsp;&nbsp;&nbsp;&nbsp; &lt;af:button text="button 1" id="b1"/&gt; &nbsp;&nbsp; &lt;/f:facet&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&lt;/af:declarativeComponent&gt;</code></pre> <pre class="has"><code class="notranslate  brush:java">public String getFragmentViewID() { &nbsp;&nbsp;&nbsp; return "PageFragment.jsff"; }</code></pre> <p> 实际上，这就是为什么这种构造称为<b class="raw_b_node">dynamic</b>的原因，因此可以将此功能视为构建结构良好，灵活而动态的UI的强大工具。 </p> <p> 而已！ </p> <blockquote> <p>翻译自: <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.javacodegeeks.com/2014/09/really-dynamic-declarative-components.html"  rel="nofollow">https://www.javacodegeeks.com/2014/09/really-dynamic-declarative-components.html</a></p> </blockquote> <p>vue 动态组件组件复用</p> </div></div> 			
+                                  				  				  				<p>我们需要编写一个JavaScript函数，该函数接受一个数字并查找其所有数字的乘积。如果该数字的任何数字为0，则应考虑该数字并将其乘以1。</p> <p>例如-如果数字为5720，则输出应为70</p> <h2>示例</h2> <p>以下是代码-</p> <pre>const&nbsp;num&nbsp;=&nbsp;5720; const&nbsp;recursiveProduct&nbsp;=&nbsp;(num,&nbsp;res&nbsp;=&nbsp;1)&nbsp;=&gt;&nbsp;{ &nbsp;&nbsp;&nbsp;if(num){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;recursiveProduct(Math.floor(num&nbsp;/&nbsp;10),&nbsp;res&nbsp;*&nbsp;(num&nbsp;%&nbsp;10&nbsp;||&nbsp;1)); &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;return&nbsp;res; }; console.log(recursiveProduct(num));</pre> <p>输出结果</p> <p>这将在控制台中产生以下输出-</p> <pre>70</pre> <div></div> 			
                                 <div class="col-md-12 mt-5">
-                                                                        <p>上一个：<a href="/html/category/article-1612.htm">C语言 模拟实现memcpy与memmove函数详解_C 语言</a></p>
-                                                                        <p>下一个：<a href="/html/category/article-1614.htm">我们如何更改MySQL AUTO_INCREMENT起始号码？</a></p>
+                                                                        <p>上一个：<a href="/html/category/article-1935.htm">JS脚本按顺序依次加载执行</a></p>
                                                                     </div>
 
+                                                                <div class="panel panel-default mt-5">
+                                    <div class="panel-heading">
+                                        <h3 class="m-0">推荐文章</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul class="p-0 x-0">
+                                                                                        <li class="py-2"><a href="/html/category/article-1627.htm">go语言编译过程概述</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1614.htm">我们如何更改MySQL AUTO_INCREMENT起始号码？</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1595.htm">@RequestMapping注解最详细解析</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1585.htm">pymysql增删改查之insert操作</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1526.htm">Golang 异常panic</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1521.htm">echarts实现动态折线图</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1519.htm">电脑上查看已连接过的WiFi密码</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1476.htm">Python项目：学生信息管理系统（完整版）</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1461.htm">NC102_在二叉树中找到两个节点的最近公共祖先</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1404.htm">@Column注解属性详解</a></li>
+                                                                                    </ul>
+                                    </div>
+                                </div>
                                                             </div>
                         </div>
                     </div>
@@ -117,16 +135,16 @@ var _hmt = _hmt || [];
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/html/category/article-1593.htm" title="Linux中磁盘分区清理方法">Linux中磁盘分区清理方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-1605.htm" title="QCustomPlot开发笔记：QCustomPlot简介、下载以及基础绘图_在线工具">QCustomPlot开发笔记：QCustomPlot简介、下载以及基础绘图_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1606.htm" title="RabbitMQ链接不上异常">RabbitMQ链接不上异常</a></li>
                         <li class="py-2"><a href="/html/category/article-1576.htm" title="vuex几大模块和Vuex助手使用详解">vuex几大模块和Vuex助手使用详解</a></li>
-                        <li class="py-2"><a href="/html/category/article-1935.htm" title="JS脚本按顺序依次加载执行">JS脚本按顺序依次加载执行</a></li>
-                        <li class="py-2"><a href="/html/category/article-1577.htm" title="springboot 中注解@Async失效的情况">springboot 中注解@Async失效的情况</a></li>
-                        <li class="py-2"><a href="/html/category/article-1620.htm" title="Spring如何快速上手">Spring如何快速上手</a></li>
-                        <li class="py-2"><a href="/html/category/article-1578.htm" title="如何离线安装VSCode插件">如何离线安装VSCode插件</a></li>
-                        <li class="py-2"><a href="/html/category/article-1617.htm" title="C#和TS/JS的对比学习02：函数与方法">C#和TS/JS的对比学习02：函数与方法</a></li>
-                        <li class="py-2"><a href="/html/category/article-1628.htm" title="etcd分布式键值数据库安装（单机版）">etcd分布式键值数据库安装（单机版）</a></li>
-                        <li class="py-2"><a href="/html/category/article-1621.htm" title="SSM三大框架工作流程与原理详解">SSM三大框架工作流程与原理详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1590.htm" title="Python  turtle  模块可以编写游戏，是真的吗？">Python  turtle  模块可以编写游戏，是真的吗？</a></li>
+                        <li class="py-2"><a href="/html/category/article-1922.htm" title="SpringCloud 之Hystrix Dashboard 服务监控">SpringCloud 之Hystrix Dashboard 服务监控</a></li>
+                        <li class="py-2"><a href="/html/category/article-1626.htm" title="数据库四大特性与隔离级别">数据库四大特性与隔离级别</a></li>
                         <li class="py-2"><a href="/html/category/article-1624.htm" title="Java 18为什么要指定UTF-8为默认字符集_在线工具">Java 18为什么要指定UTF-8为默认字符集_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1599.htm" title="vue实现可以快进后退的跑马灯组件_vue.js">vue实现可以快进后退的跑马灯组件_vue.js</a></li>
+                        <li class="py-2"><a href="/html/category/article-1580.htm" title="EFCore 6.0入门看这篇就够了">EFCore 6.0入门看这篇就够了</a></li>
+                        <li class="py-2"><a href="/html/category/article-1615.htm" title="使用 Docker 搭建 Confluence">使用 Docker 搭建 Confluence</a></li>
                     </ul>
     </div>
 </div>
