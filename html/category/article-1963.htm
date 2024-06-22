@@ -2,8 +2,8 @@
 <html lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1516.htm" />
-    <title>Typescript的三种运行方式 - Sri Lanka Address</title>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1963.htm" />
+    <title>C++默认参数报错 - Sri Lanka Address</title>
         <meta charset="utf-8">
     <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -80,7 +80,7 @@ var _hmt = _hmt || [];
                     <div class="row">
                         <div class="col">
                             <div class="home_content">
-                                <div class="home_title">Typescript的三种运行方式</div>
+                                <div class="home_title">C++默认参数报错</div>
                                 <div class="breadcrumbs">
                                     <ul class="d-flex flex-row align-items-center justify-content-start">
                                         <li><a href="/">首页</a></li>
@@ -101,12 +101,31 @@ var _hmt = _hmt || [];
                     <div class="col-md-9">
                         <div class="row row-eq-height">
                             <div class="col-md-12">
-                                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h1 id="typescript的三种编译运行方式">Typescript的三种编译运行方式</h1> <h2 id="一在线complier">一、在线complier</h2> <p>这种方式最简单，不需在本地做任何配置安装，只需进入<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://www.typescriptlang.org/"  rel="nofollow">Typescript的官网</a>，点击里面的playground就可以直接写代码了。但这种方式只适用于测试而不适用于开发。</p> <h2 id="二本地命令行编译">二、本地命令行编译</h2> <p>1、在本地编译运行Typescript需要使用npm下载typescript<br /><code>npm install -g typescript</code><br /> 至于npm，就是node的包管理工具，<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://nodejs.org/en/"  rel="nofollow">下载node</a>后就自动带了。<br /> 2、下载完成后可以使用<code>tsc -v</code> 查看版本<br /> 3、使用：如在本地创建Hello.ts<br /><code><br /> export class Hello {<br /> }<br /></code><br /> 在命令行中<code>tsc Hello.ts</code><br /> 运行后就会发现在同一文件夹下生成了Hello.js</p> <h2 id="三使用ide">三、使用IDE</h2> <p>这里以webstrom为例。<br /><strong>注意</strong>：使用IDE的前提是已经在全局安装了typescript（方法二），只是每次不需要用命令手动编译而是IDE自动帮我们生成js文件。<br /> 1、在webstrom中新建Typescript文件<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/6909b5a0f46417546df44ae77b2f608b.jpg" alt="Typescript的三种运行方式"><br /> 2、这时在代码编辑区域上方就会看到<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/7ba8018731d56c3af635e44525b879a6.jpg" alt="Typescript的三种运行方式"><br /> 3、这里我们选择configue配置<br /> 在打开的配置项中勾选Enable TypeScript Complier<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/8314dd841a81a692248fefe6bf497e0a.jpg" alt="Typescript的三种运行方式"><br /> 4、这样我们编写的.ts文件IDE就自动帮助我们生成了相对应的.js文件。</p> </div> 			
+                                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2> <a id="C_0" rel="nofollow"></a>C++默认参数</h2> <p>经过测试，默认参数在声明中给出，在实现中不用给出，否则会报“default argument given for parameter 2 of”错误。并且在MinGW7.3.0测试，在实现中给出，声明中不给出会在调用时报错；在声明中给出，实现中不给出的方式则没有发现问题。<br /> 另外默认参数要在最右边开始定义，否则会报语法错误</p> <p>例如</p> <pre><code class="prism language-cpp"><span class="token keyword">class</span> <span class="token class-name">test</span> <span class="token punctuation">{<!-- --></span> <span class="token keyword">public</span><span class="token operator">:</span> 	<span class="token keyword">int</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> b<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> test<span class="token operator">::</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> b<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span> </code></pre> <p>这种写法经过测试是没有问题的。</p> </p></div> 			
                                 <div class="col-md-12 mt-5">
-                                                                        <p>上一个：<a href="/html/category/article-1515.htm">MySQL——union(合并结果集)、limit(获取部分数据)、关于MySQL中常用数据类型</a></p>
-                                                                        <p>下一个：<a href="/html/category/article-1517.htm">Python中的基本数据类型（7个）</a></p>
+                                                                        <p>上一个：<a href="/html/category/article-1950.htm">Pandas 错误记录</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1964.htm">python查看包版本、更新单个包、卸载单个包</a></p>
                                                                     </div>
 
+                                                                <div class="panel panel-default mt-5">
+                                    <div class="panel-heading">
+                                        <h3 class="m-0">推荐文章</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul class="p-0 x-0">
+                                                                                        <li class="py-2"><a href="/html/category/article-1922.htm">SpringCloud 之Hystrix Dashboard 服务监控</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1921.htm">IDEA Debug过程中使用Drop Frame或Reset Frame实现操作回退</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1628.htm">etcd分布式键值数据库安装（单机版）</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1604.htm">go语言panic函数详解</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1595.htm">@RequestMapping注解最详细解析</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1552.htm">反射 三种获得class对象的方式</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1532.htm">MySQL 获取系统时间/系统日期/日期时间的函数</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1503.htm">用JS实现一个秒表计时器</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1501.htm">PowerDotNet平台化软件架构设计与实现系列应用监控平台</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1448.htm">Python 文件定位</a></li>
+                                                                                    </ul>
+                                    </div>
+                                </div>
                                                             </div>
                         </div>
                     </div>
@@ -117,16 +136,16 @@ var _hmt = _hmt || [];
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/html/category/article-1602.htm" title="CSS：实现多行文本垂直居中的四种方法">CSS：实现多行文本垂直居中的四种方法</a></li>
-                        <li class="py-2"><a href="/html/category/article-1588.htm" title="JavaScript实现计数器、计时器——setTimeout与setInterval的区别">JavaScript实现计数器、计时器——setTimeout与setInterval的区别</a></li>
-                        <li class="py-2"><a href="/html/category/article-1612.htm" title="C语言 模拟实现memcpy与memmove函数详解_C 语言">C语言 模拟实现memcpy与memmove函数详解_C 语言</a></li>
-                        <li class="py-2"><a href="/html/category/article-1615.htm" title="使用 Docker 搭建 Confluence">使用 Docker 搭建 Confluence</a></li>
-                        <li class="py-2"><a href="/html/category/article-1597.htm" title="微信小程序，制作属于自己的Icon图标">微信小程序，制作属于自己的Icon图标</a></li>
+                        <li class="py-2"><a href="/html/category/article-1590.htm" title="Python  turtle  模块可以编写游戏，是真的吗？">Python  turtle  模块可以编写游戏，是真的吗？</a></li>
+                        <li class="py-2"><a href="/html/category/article-1594.htm" title="Vue watch中监听值的变化,判断后修改值方式_vue.js_">Vue watch中监听值的变化,判断后修改值方式_vue.js_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1611.htm" title="Druid10 监控">Druid10 监控</a></li>
+                        <li class="py-2"><a href="/html/category/article-1617.htm" title="C#和TS/JS的对比学习02：函数与方法">C#和TS/JS的对比学习02：函数与方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-1936.htm" title="数字的所有数字的递归乘积-JavaScript">数字的所有数字的递归乘积-JavaScript</a></li>
+                        <li class="py-2"><a href="/html/category/article-1608.htm" title="linux下安装tomcat9,linux tomcat 9 安装及配置教程">linux下安装tomcat9,linux tomcat 9 安装及配置教程</a></li>
+                        <li class="py-2"><a href="/html/category/article-1640.htm" title="promise和async await的区别">promise和async await的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-1616.htm" title="C ++程序进行Fermat原始性测试">C ++程序进行Fermat原始性测试</a></li>
+                        <li class="py-2"><a href="/html/category/article-1596.htm" title="clickhouse智能提示编辑器">clickhouse智能提示编辑器</a></li>
                         <li class="py-2"><a href="/html/category/article-1593.htm" title="Linux中磁盘分区清理方法">Linux中磁盘分区清理方法</a></li>
-                        <li class="py-2"><a href="/html/category/article-1627.htm" title="go语言编译过程概述">go语言编译过程概述</a></li>
-                        <li class="py-2"><a href="/html/category/article-1580.htm" title="EFCore 6.0入门看这篇就够了">EFCore 6.0入门看这篇就够了</a></li>
-                        <li class="py-2"><a href="/html/category/article-1618.htm" title="vue3中获取ref元素的几种方式">vue3中获取ref元素的几种方式</a></li>
-                        <li class="py-2"><a href="/html/category/article-1582.htm" title="Qt 实现文字输入框，带字数限制">Qt 实现文字输入框，带字数限制</a></li>
                     </ul>
     </div>
 </div>

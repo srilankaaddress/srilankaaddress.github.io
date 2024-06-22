@@ -104,6 +104,7 @@ var _hmt = _hmt || [];
                                   				  				  				<div id="content_views" class="markdown_views prism-github-gist"> <p>1.错误发生在从hdfs下载csv文件到本地，利用pandas读取报错<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/7ace0bd6cef47da07d2b3334a0296c76.jpg" alt="Pandas 错误记录"><br /> 出现此错误的原因是因为输入文件的路径是文件夹路径，而不是文件本身。<br /> 查看本地文件，果然data_rh.csv是个假数据文件打开里面有很多小文件。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/0d50ea54f3295cd4dd1352d8f0d4e814.jpg" alt="Pandas 错误记录"><br /> 主要是利用spark df.write.format(“csv”).save("/tmp/myFile.csv") 保存的是一个myFile.csv的文件夹，有两个问题：</p> <ul> <li>hadoop fs -get 命令得到是一堆文件。</li> <li>文件都是以snappy格式压缩的</li> </ul> <p>第一个问题，可以使用coalesce进行合并，df.coalesce(1).write.option(“header”, “true”).csv(“myFile.csv”)<br /> 这样的写法同样会产生一个myFile.csv的文件夹，但其中的数据会全部保存到单个csv文件中<br /> 第二个问题，由于我使用的是sparkmagic，所以默认压缩是snappy, 可以在csv的compression参数进行设置。</p> <pre><code class="prism language-python">df<span class="token punctuation">.</span>coalesce<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>\   <span class="token punctuation">.</span>write<span class="token punctuation">.</span>option<span class="token punctuation">(</span><span class="token string">"header"</span><span class="token punctuation">,</span> <span class="token string">"true"</span><span class="token punctuation">)</span>\   <span class="token punctuation">.</span>csv<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">"myFile.csv"</span><span class="token punctuation">,</span> compression<span class="token operator">=</span><span class="token string">"none"</span><span class="token punctuation">)</span> </code></pre> </p></div> 			
                                 <div class="col-md-12 mt-5">
                                                                         <p>上一个：<a href="/html/category/article-1949.htm">微信小程序开发笔记2——自定义导航栏组件</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-1963.htm">C++默认参数报错</a></p>
                                                                     </div>
 
                                                                 <div class="panel panel-default mt-5">
@@ -135,16 +136,16 @@ var _hmt = _hmt || [];
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1612.htm" title="C语言 模拟实现memcpy与memmove函数详解_C 语言">C语言 模拟实现memcpy与memmove函数详解_C 语言</a></li>
+                        <li class="py-2"><a href="/html/category/article-1639.htm" title="Spring源码分析Spring BeanFactory 是怎么创建的？">Spring源码分析Spring BeanFactory 是怎么创建的？</a></li>
                         <li class="py-2"><a href="/html/category/article-1921.htm" title="IDEA Debug过程中使用Drop Frame或Reset Frame实现操作回退">IDEA Debug过程中使用Drop Frame或Reset Frame实现操作回退</a></li>
-                        <li class="py-2"><a href="/html/category/article-1617.htm" title="C#和TS/JS的对比学习02：函数与方法">C#和TS/JS的对比学习02：函数与方法</a></li>
-                        <li class="py-2"><a href="/html/category/article-1615.htm" title="使用 Docker 搭建 Confluence">使用 Docker 搭建 Confluence</a></li>
-                        <li class="py-2"><a href="/html/category/article-1595.htm" title="@RequestMapping注解最详细解析">@RequestMapping注解最详细解析</a></li>
-                        <li class="py-2"><a href="/html/category/article-1609.htm" title="聚类算法——python实现层次聚类（AGNES）">聚类算法——python实现层次聚类（AGNES）</a></li>
-                        <li class="py-2"><a href="/html/category/article-1592.htm" title="SpringBoot时区问题解决，彻底解决时差问题">SpringBoot时区问题解决，彻底解决时差问题</a></li>
-                        <li class="py-2"><a href="/html/category/article-1580.htm" title="EFCore 6.0入门看这篇就够了">EFCore 6.0入门看这篇就够了</a></li>
-                        <li class="py-2"><a href="/html/category/article-1590.htm" title="Python  turtle  模块可以编写游戏，是真的吗？">Python  turtle  模块可以编写游戏，是真的吗？</a></li>
-                        <li class="py-2"><a href="/html/category/article-1601.htm" title="java数组去重">java数组去重</a></li>
-                        <li class="py-2"><a href="/html/category/article-1603.htm" title="linux磁盘文件清理">linux磁盘文件清理</a></li>
+                        <li class="py-2"><a href="/html/category/article-1963.htm" title="C++默认参数报错">C++默认参数报错</a></li>
+                        <li class="py-2"><a href="/html/category/article-1621.htm" title="SSM三大框架工作流程与原理详解">SSM三大框架工作流程与原理详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-1627.htm" title="go语言编译过程概述">go语言编译过程概述</a></li>
+                        <li class="py-2"><a href="/html/category/article-1607.htm" title="ASP.NET和ASP.NETCore多环境配置对比">ASP.NET和ASP.NETCore多环境配置对比</a></li>
+                        <li class="py-2"><a href="/html/category/article-1608.htm" title="linux下安装tomcat9,linux tomcat 9 安装及配置教程">linux下安装tomcat9,linux tomcat 9 安装及配置教程</a></li>
+                        <li class="py-2"><a href="/html/category/article-1614.htm" title="我们如何更改MySQL AUTO_INCREMENT起始号码？">我们如何更改MySQL AUTO_INCREMENT起始号码？</a></li>
+                        <li class="py-2"><a href="/html/category/article-1622.htm" title="Anaconda 创建django不同版本开发环境">Anaconda 创建django不同版本开发环境</a></li>
                     </ul>
     </div>
 </div>
@@ -156,7 +157,7 @@ var _hmt = _hmt || [];
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">42</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
