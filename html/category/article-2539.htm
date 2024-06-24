@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-2539.htm" />
+    <title>Vue如何使用Element-ui表单发送数据与多张图片到后端详解_vue.js - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">Vue如何使用Element-ui表单发送数据与多张图片到后端详解_vue.js</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<p>在做项目的时候遇到一个问题，前端需要上传表单到后端，表单数据包括文本内容和图片，后端我用的是Nodejs，效果类似下图</p> <p style="text-align:center"><img fetchpriority="high" decoding="async" alt="" height="347" src="http://img.555519.xyz/uploads3/20220420/6e5fd5b6b661bad569654feaf1fc3577.jpg"></p> <p>前端需要向后端传商品名称，价格，描述，商品图片</p> <p>前端准备，利用Element-ui中的表单功能和上传功能，将upload代码嵌套在表单中，代码如下</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;template&gt;      &lt;div class="content"&gt;        &lt;div class="form"&gt;          &lt;el-form ref="form" :model="Form" label-width="80px"&gt;             &lt;el-form-item label="商品名称"&gt;              &lt;el-input v-model="Form.name"&gt;&lt;/el-input&gt;            &lt;/el-form-item&gt;            &lt;el-form-item label="商品价格"&gt;              &lt;el-input v-model="Form.price"&gt;&lt;/el-input&gt;            &lt;/el-form-item&gt;            &lt;el-form-item label="商品描述"&gt;              &lt;el-input v-model="Form.description"&gt;&lt;/el-input&gt;            &lt;/el-form-item&gt;            &lt;el-form-item&gt;             &lt;el-upload              action="/api/users/addProduct"              list-type="picture-card"              :on-preview="handlePictureCardPreview"              :on-remove="handleRemove"              :before-upload="beforeProductUpload"&gt;              &lt;i class="el-icon-plus"&gt;&lt;/i&gt;            &lt;/el-upload&gt;          &lt;el-dialog :visible.sync="dialogVisible"&gt;            &lt;img width="100%" :src="dialogImageUrl" alt=""&gt;          &lt;/el-dialog&gt;           &lt;/el-form-item&gt;           &lt;el-form-item&gt;              &lt;el-button type="primary" @click="submit"&gt;立即创建&lt;/el-button&gt;              &lt;el-button&gt;取消&lt;/el-button&gt;            &lt;/el-form-item&gt;          &lt;/el-form&gt;        &lt;/div&gt;               &lt;/div&gt;  &lt;/template&gt;</pre> </div> <p>需要注意的是，upload中的action传的是对应的后端接口</p> <p style="text-align:center"><img decoding="async" alt="" height="256" src="http://img.555519.xyz/uploads3/20220420/4bf93389bb9b32ab3035eaa4c5903397.jpg"></p> <p>在上传图片前，需要先将图片转成base64格式的字符串后再上传给后端，这里定义了 beforeProductUpload函数进行转码处理</p> <div class="ay1code"> <pre class="brush:js;"> beforeProductUpload(file){            var _this = this          return new Promise(function(resolve, reject) {            var reader = new FileReader()           reader.readAsDataURL(file)// 这里是最关键的一步，转换成base64            reader.onload = function(event) {              _this.Form.imageurl.push(event.target.result) //定义参数获取图片路径            }          })</pre> </div> <p>script部分的代码</p> <div class="ay1code"> <pre class="brush:js;">   &lt;script&gt;    export default {      data() {        return {            Form: {         	  name:'',            imageurl:[],            price:'',            description:''           },          dialogImageUrl: '',          dialogVisible: false        };              },      methods: {        handleRemove(file, fileList) {          //移除图片          console.log(file, fileList);        },        handlePictureCardPreview(file) {          //图片预览          this.dialogImageUrl = file.url;          this.dialogVisible = true;        },        beforeProductUpload(file){            var _this = this          return new Promise(function(resolve, reject) {            var reader = new FileReader()           reader.readAsDataURL(file)// 这里是最关键的一步，转换成base64            reader.onload = function(event) {              _this.Form.imageurl.push(event.target.result) //定义参数获取图片路径            }          })                  },        submit(){          var form = {            name:this.Form.name,            imgdata: this.Form.imageurl,            price:this.Form.price,            description:this.Form.description          }           this.$axios.post('/api/users/addProduct',form).then(res=&gt;{              console.log(res.data)              this.$message('发布成功')              this.Form = ''              console.log('上传成功')          })        }      }    }  &lt;/script&gt;</pre> </div> <p>定义一个imageurl数组来接收传入的图片base64码，然后在保存在form对象中传过去给Node后端保存到数据库中，这里我用的是mongodb数据库，可以看到数据已经传到数据库了，imgdata就是存放图片base64的对象。</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220420/d31be3aef76fd8ee21835c78f162c747.jpg"></p> <p> 自此已成功完成该问题</p> <p><strong>总结</strong></p> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-2250.htm">Citus 11(分布式 PostgreSQL) 文档贡献与本地运行_在线工具</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-2540.htm">SpringBoot 加入AOP后无法注入的解决办法</a></p>
+                                                                    </div>
+
+                                                                <div class="panel panel-default mt-5">
+                                    <div class="panel-heading">
+                                        <h3 class="m-0">推荐文章</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul class="p-0 x-0">
+                                                                                        <li class="py-2"><a href="/html/category/article-1604.htm">go语言panic函数详解</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1565.htm">SpringBoot实现动态定时任务</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1557.htm">SpringBoot 2.3.x 分层构建 Docker 镜像实践详解</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1530.htm">ASP.NET Core使用EF创建模型(索引、备用键、继承、支持字段)_实用技巧</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1515.htm">MySQL——union(合并结果集)、limit(获取部分数据)、关于MySQL中常用数据类型</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1497.htm">iOS全埋点解决方案-控件点击事件</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1460.htm">Typescript和Javascript之间的区别</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1441.htm">Sqlalchemy异步操作详解</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1404.htm">@Column注解属性详解</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1391.htm">理解OIDC协议和认证机制</a></li>
+                                                                                    </ul>
+                                    </div>
+                                </div>
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1624.htm" title="Java 18为什么要指定UTF-8为默认字符集_在线工具">Java 18为什么要指定UTF-8为默认字符集_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1619.htm" title="sql server排查死锁优化性能_MsSql_">sql server排查死锁优化性能_MsSql_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1620.htm" title="Spring如何快速上手">Spring如何快速上手</a></li>
+                        <li class="py-2"><a href="/html/category/article-2539.htm" title="Vue如何使用Element-ui表单发送数据与多张图片到后端详解_vue.js">Vue如何使用Element-ui表单发送数据与多张图片到后端详解_vue.js</a></li>
+                        <li class="py-2"><a href="/html/category/article-1591.htm" title="netty系列之:netty中的frame解码器_在线工具">netty系列之:netty中的frame解码器_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1606.htm" title="RabbitMQ链接不上异常">RabbitMQ链接不上异常</a></li>
+                        <li class="py-2"><a href="/html/category/article-1594.htm" title="Vue watch中监听值的变化,判断后修改值方式_vue.js_">Vue watch中监听值的变化,判断后修改值方式_vue.js_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1628.htm" title="etcd分布式键值数据库安装（单机版）">etcd分布式键值数据库安装（单机版）</a></li>
+                        <li class="py-2"><a href="/html/category/article-1614.htm" title="我们如何更改MySQL AUTO_INCREMENT起始号码？">我们如何更改MySQL AUTO_INCREMENT起始号码？</a></li>
+                        <li class="py-2"><a href="/html/category/article-1639.htm" title="Spring源码分析Spring BeanFactory 是怎么创建的？">Spring源码分析Spring BeanFactory 是怎么创建的？</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">48</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>
