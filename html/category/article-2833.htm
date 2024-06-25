@@ -2,8 +2,8 @@
 <html lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-1921.htm" />
-    <title>IDEA Debug过程中使用Drop Frame或Reset Frame实现操作回退 - Sri Lanka Address</title>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-2833.htm" />
+    <title>windows查看已经连过wifi的密码 - Sri Lanka Address</title>
         <meta charset="utf-8">
     <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -80,7 +80,7 @@ var _hmt = _hmt || [];
                     <div class="row">
                         <div class="col">
                             <div class="home_content">
-                                <div class="home_title">IDEA Debug过程中使用Drop Frame或Reset Frame实现操作回退</div>
+                                <div class="home_title">windows查看已经连过wifi的密码</div>
                                 <div class="breadcrumbs">
                                     <ul class="d-flex flex-row align-items-center justify-content-start">
                                         <li><a href="/">首页</a></li>
@@ -101,10 +101,10 @@ var _hmt = _hmt || [];
                     <div class="col-md-9">
                         <div class="row row-eq-height">
                             <div class="col-md-12">
-                                  				  				  				<p>大家在Debug程序的时候，是否遇到过因为“下一步”按太快，而导致跳过了想要深入分析的那段代码？是不是很想要有“回到上一步”这样的操作呢？</p> <p>在IDEA中就提供了一个帮助你回退代码的机会，但这个方法并不是万能的。好了，下面就来具体说说这个功能的使用！</p> <h2 id="使用reset-frame回退操作">使用Reset Frame回退操作</h2> <p>不知道你在Debug的时候，是否有注意过下图标出的按钮<code>Reset Frame</code>，这就是今天要介绍的主角。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/cd73bff44632a63ce1d888c4fb35a334.jpg" alt="IDEA Debug过程中使用Drop Frame或Reset Frame实现操作回退"></p> <h3 id="什么情况不能回退">什么情况不能回退</h3> <p>比如：下面这样的顺序结构，是无法会退的：</p> <pre><code class="language-java">void test() {     int a = 1;     int b = 2;     int c = a + b;     System.out.println(c); }</code></pre> <h3 id="什么情况可以回退">什么情况可以回退</h3> <p>再来看看下面这种情况：</p> <pre><code class="language-java">void test2() {     int a = 1;     int b = 2;     int c = add(a, b);     System.out.println(c); }  int add(int a, int b) {     System.out.println("a = " + a);     System.out.println("b = " + b);     return a + b; }</code></pre> <p>这里有两个函数，<code>test2</code>函数会调用<code>add</code>函数。当程序执行到<code>int c = add(a, b)</code>这句的话，会进入到<code>add</code>函数。此时，<code>add</code>函数中执行的内容就可以通过<code>Reset Frame</code>来回退回上一层函数进入的那句语句。</p> <p>如果文字你看着理解困难，这里DD<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.bilibili.com/video/BV1KF411g77W/"  target="_blank" rel="nofollow">录了个视频</a>，可以看看具体操作帮助理解，当然自己实操一把会更有感觉哦！</p> <h2 id="找不到reset-frame找找drop-frame">找不到Reset Frame？找找Drop Frame</h2> <p>这里顺带提一句，可能有小伙伴会问：怎么我Debug的时候找不到<code>Reset Frame</code>呢？</p> <p>其实这个跟版本有关，<code>Reset Frame</code>是IDEA 2022.1版本之后才有的。但不要担心，该版本之前也有这个功能，只是名字不叫这个，而是叫<code>Drop Frame</code>，就是下图所示这个按钮。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/4b7991f274e7fb708aba7a365e51ce6d.jpg" alt="IDEA Debug过程中使用Drop Frame或Reset Frame实现操作回退"></p> <p>好了，今天的分享就到这里，如果你觉得这个分享对你有用的话，一定记得实操练习一下！最后，记得帮忙三连支持一下，关注我，持续为大家分享更多开发小知识！</p> 			
+                                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h1><a id="1__0" rel="nofollow"></a>1. 用鼠标进入网络设置中查看</h1> <p><strong>1. 右键任务栏左下角的wifi图标,点击打开网络和Internet设置</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220610/89014c870a1c1a3ef7adb8a0d65284e1.jpg" alt="windows查看已经连过wifi的密码"><br /><strong>2. 点击网络和共享中心</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220610/2cdbe4ea2fc4070b5c1a6511dadf02a3.jpg" alt="windows查看已经连过wifi的密码"><br /><strong>3.点击正在连接的网络</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220610/5d84ed7dcd3528689c242d41bdf772d3.jpg" alt="windows查看已经连过wifi的密码"><br /><strong>4. 点击无线设置</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220610/f782d83a2a057d4f6fc989a2bc486a20.jpg" alt="windows查看已经连过wifi的密码"><br /><strong>5.选择安全</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220610/1c037927f3b2188c5be25b200d23e666.jpg" alt="windows查看已经连过wifi的密码"><br /><strong>6.勾选显示字符</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220610/82fb8af938d8cf52ef9c19a87bf1cbc2.jpg" alt="windows查看已经连过wifi的密码"></p> <h1><a id="_14" rel="nofollow"></a>使用命令查看</h1> <p><strong>1. 按win+r打开运行cmd</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220610/028ea0dfb40bcadbe1bb8a65d5825edf.jpg" alt="windows查看已经连过wifi的密码"><br /><strong>2. 在控制台下输入</strong><code>netsh wlan show profiles</code><strong>查看历史连接过的wifi</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220610/054eba741c92d9747229986ca11493d3.jpg" alt="windows查看已经连过wifi的密码"><br /><strong>3.找到你想要看密码的wifi,如wifi名为Tina-605,输入</strong><br /><code>netsh wlan show profiles "Tina-605" key=clear</code><strong>关键内容里的值就是wifi密码</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220610/f4bbffd35866d4c625106c98784d4440.jpg" alt="windows查看已经连过wifi的密码"></p> </div> 			
                                 <div class="col-md-12 mt-5">
-                                                                        <p>上一个：<a href="/html/category/article-1640.htm">promise和async await的区别</a></p>
-                                                                        <p>下一个：<a href="/html/category/article-1922.htm">SpringCloud 之Hystrix Dashboard 服务监控</a></p>
+                                                                        <p>上一个：<a href="/html/category/article-2540.htm">SpringBoot 加入AOP后无法注入的解决办法</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-2834.htm">springboot嵌入式数据库derby初探</a></p>
                                                                     </div>
 
                                                                 <div class="panel panel-default mt-5">
@@ -113,16 +113,16 @@ var _hmt = _hmt || [];
                                     </div>
                                     <div class="panel-body">
                                         <ul class="p-0 x-0">
-                                                                                        <li class="py-2"><a href="/html/category/article-1566.htm">is not eligible for getting processed by all BeanPostProcessors 导致找不到路径报404</a></li>
-                                                                                        <li class="py-2"><a href="/html/category/article-1565.htm">SpringBoot实现动态定时任务</a></li>
-                                                                                        <li class="py-2"><a href="/html/category/article-1562.htm">Feign调用传输文件异常</a></li>
-                                                                                        <li class="py-2"><a href="/html/category/article-1558.htm">win10查看电脑保存过的wifi密码</a></li>
-                                                                                        <li class="py-2"><a href="/html/category/article-1476.htm">Python项目：学生信息管理系统（完整版）</a></li>
-                                                                                        <li class="py-2"><a href="/html/category/article-1460.htm">Typescript和Javascript之间的区别</a></li>
-                                                                                        <li class="py-2"><a href="/html/category/article-1448.htm">Python 文件定位</a></li>
-                                                                                        <li class="py-2"><a href="/html/category/article-1431.htm">vue中Element UI表格分页功能的实现</a></li>
-                                                                                        <li class="py-2"><a href="/html/category/article-1420.htm">【Java分享客栈】一文搞定京东零售开源的AsyncTool，彻底解决异步编排问题</a></li>
-                                                                                        <li class="py-2"><a href="/html/category/article-1407.htm">一行代码让你的项目轻松使用Dapr</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1612.htm">C语言 模拟实现memcpy与memmove函数详解_C 语言</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1581.htm">SpringBoot导入导出数据</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1542.htm">C#  iText 7 切分PDF，处理PDF页面大小_在线工具</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1524.htm">“TypeError: Cannot read property ‘xxx‘ of undefined“报错情况分析</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1518.htm">PHP比较对象</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1515.htm">MySQL——union(合并结果集)、limit(获取部分数据)、关于MySQL中常用数据类型</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1452.htm">pgpool-II 4.3中文手册入门教程</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1449.htm">分布式之一行代码解决缓存击穿问题</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1402.htm">序列化多表操作、请求与响应、视图组件(子类与拓展类)、继承GenericAPIView类重写接口</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1389.htm">vue init download template_vue.extend和vue.component的区别</a></li>
                                                                                     </ul>
                                     </div>
                                 </div>
@@ -136,16 +136,16 @@ var _hmt = _hmt || [];
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/html/category/article-1625.htm" title="Linux源码安装RabbitMQ高可用集群">Linux源码安装RabbitMQ高可用集群</a></li>
-                        <li class="py-2"><a href="/html/category/article-2250.htm" title="Citus 11(分布式 PostgreSQL) 文档贡献与本地运行_在线工具">Citus 11(分布式 PostgreSQL) 文档贡献与本地运行_在线工具</a></li>
-                        <li class="py-2"><a href="/html/category/article-1598.htm" title="Unity实现简单的对象池_在线工具">Unity实现简单的对象池_在线工具</a></li>
-                        <li class="py-2"><a href="/html/category/article-1609.htm" title="聚类算法——python实现层次聚类（AGNES）">聚类算法——python实现层次聚类（AGNES）</a></li>
-                        <li class="py-2"><a href="/html/category/article-1922.htm" title="SpringCloud 之Hystrix Dashboard 服务监控">SpringCloud 之Hystrix Dashboard 服务监控</a></li>
-                        <li class="py-2"><a href="/html/category/article-1620.htm" title="Spring如何快速上手">Spring如何快速上手</a></li>
-                        <li class="py-2"><a href="/html/category/article-1639.htm" title="Spring源码分析Spring BeanFactory 是怎么创建的？">Spring源码分析Spring BeanFactory 是怎么创建的？</a></li>
-                        <li class="py-2"><a href="/html/category/article-1599.htm" title="vue实现可以快进后退的跑马灯组件_vue.js">vue实现可以快进后退的跑马灯组件_vue.js</a></li>
                         <li class="py-2"><a href="/html/category/article-1585.htm" title="pymysql增删改查之insert操作">pymysql增删改查之insert操作</a></li>
-                        <li class="py-2"><a href="/html/category/article-1604.htm" title="go语言panic函数详解">go语言panic函数详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-2540.htm" title="SpringBoot 加入AOP后无法注入的解决办法">SpringBoot 加入AOP后无法注入的解决办法</a></li>
+                        <li class="py-2"><a href="/html/category/article-1620.htm" title="Spring如何快速上手">Spring如何快速上手</a></li>
+                        <li class="py-2"><a href="/html/category/article-1607.htm" title="ASP.NET和ASP.NETCore多环境配置对比">ASP.NET和ASP.NETCore多环境配置对比</a></li>
+                        <li class="py-2"><a href="/html/category/article-1606.htm" title="RabbitMQ链接不上异常">RabbitMQ链接不上异常</a></li>
+                        <li class="py-2"><a href="/html/category/article-1596.htm" title="clickhouse智能提示编辑器">clickhouse智能提示编辑器</a></li>
+                        <li class="py-2"><a href="/html/category/article-1608.htm" title="linux下安装tomcat9,linux tomcat 9 安装及配置教程">linux下安装tomcat9,linux tomcat 9 安装及配置教程</a></li>
+                        <li class="py-2"><a href="/html/category/article-1627.htm" title="go语言编译过程概述">go语言编译过程概述</a></li>
+                        <li class="py-2"><a href="/html/category/article-1602.htm" title="CSS：实现多行文本垂直居中的四种方法">CSS：实现多行文本垂直居中的四种方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-1626.htm" title="数据库四大特性与隔离级别">数据库四大特性与隔离级别</a></li>
                     </ul>
     </div>
 </div>
