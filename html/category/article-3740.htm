@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-3740.htm" />
+    <title>Vue中transition单个节点过渡与transition-group列表过渡全过程_vue.js - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">Vue中transition单个节点过渡与transition-group列表过渡全过程_vue.js</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">transition单个节点过渡与transition-group列表过渡</a></li> <li><a href="#_label1" rel="nofollow">transition的过渡作用和transition-group</a></li> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>transition单个节点过渡与transition-group列表过渡</h2> <ul> <li> <code>transition</code>：<strong>只能满足单个节点的过渡效果，在多个节点的渲染上显得力不从心</strong> </li> </ul> <p>为了更好适用于更多的场景，vue 提供 &lt;transition-ground&gt;来多个元素的过渡</p> <p>首先创建了一个简单的应用，通过button  来实现动态的加减，使用了啊你，实际效果可运行一下代码</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;body&gt;           &lt;div id="app"&gt;           &lt;button @click="add"&gt;add&lt;/button&gt;           &lt;button @click="move"&gt;remove&lt;/button&gt;               &lt;transition-group               name="list"               enter-active-class="animated bounceInDown"               leave-active-class="animated bounceOut"               &gt;                   &lt;li v-for="item in num" :key="item"&gt;{{item}}&lt;/li&gt;               &lt;/transition-group&gt;           &lt;/div&gt;           &lt;/body&gt;  </pre> </div> <div class="ay1code"> <pre class="brush:js;">   &lt;script&gt;           var app=new Vue({               el:"#app",               data:{                   show:true,                   num:10,                   statu:false               },               methods:{                   add:function(){                         this.num++;                       },                   move:function(){                       this.num--;                   }               }           });       &lt;/script&gt;  </pre> </div> <ul> <li> <code>transition-group</code>：​​​​​​​<strong>拥有transition所有属性</strong> </li> </ul> <p>但是需要关注的是它们的不同之处：</p> <ul> <li>transition本身不会渲染出元素</li> <li>但是transition-group 会渲染出元素节点；默认  tag属性为&lt;span&gt;，可修改。</li> </ul> <p>ps:transition-group 的元素必须指定key 属性</p> <p>在列表元素的动态加入移除中，整个列表会因为元素的改变而相应的改变位子，这些位子属性的改变会很生硬，所以transition-group给出prop  move-class;支持通过 CSS transform 过渡移动。当一个子节点被更新，从屏幕上的位置发生变化，它将会获取应用 CSS 移动类</p> <div class="ay1code"> <pre class="brush:css;">      &lt;style&gt;            .div1{                width:156px;            }            .cla1{                border:1px solid #222;                display:inline-block;                width:50px;                height:50px;                text-align: center;                vertical-align: middle;            }                .flip-list-move {      transition: transform 1s;    }            &lt;/style&gt;  </pre> </div> <div class="ay1code"> <pre class="brush:xhtml;">    &lt;body&gt;            &lt;div id="app"&gt;            &lt;button @click="chang"&gt;reverse&lt;/button&gt;            &lt;transition-group tag="div" class="div1" name="flip-list"&gt;                &lt;span class="cla1" v-for="item in list" :key="item"&gt;{{item}}&lt;/span&gt;            &lt;/transition-group&gt;                &lt;button @click="add"&gt;add&lt;/button&gt;            &lt;button @click="move"&gt;remove&lt;/button&gt;                &lt;transition-group                tag="ul"                name="flip-list"                enter-active-class="animated bounceInDown"                leave-active-class="animated bounceOut"                &gt;                    &lt;li v-for="(item,index) in num" :key="item"&gt;{{item}}={{index}}&lt;/li&gt;                &lt;/transition-group&gt;            &lt;/div&gt;        &lt;/body&gt;  </pre> </div> <div class="ay1code"> <pre class="brush:js;">    &lt;script&gt;        function shuffle(arr){        var result = [],            random;        while(arr.length&gt;0){            random = Math.floor(Math.random() * arr.length);            result.push(arr[random])            arr.splice(random, 1)        }        return result;    }            var app=new Vue({                el:"#app",                data:{                    show:true,                    n:3,                    num:[1,2,3],                    list:[1,2,3,4,5,6,7,8,9],                    statu:false                },                methods:{                    chang:function(){                        this.list=shuffle(app.list);                    },                    add:function(){                          this.num.splice(3,0,++this.n)                        },                    move:function(){                         this.num.splice(3,1)                         console.log(this.num)                    }                }            });        &lt;/script&gt;  </pre> </div> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>transition的过渡作用和transition-group</h2> <p>&lt;transition&gt;标签有两个属性，name 属性和 mode 属性。</p> <ul> <li> <code>transition</code>：里的 name 值fade 就是 .fade-enter-active,类名开头的 fade，</li> </ul> <div class="ay1code"> <pre class="brush:xhtml;">&lt;transition name="fade" mode="out-in"&gt;     &lt;router-view/&gt;     &lt;router-view class="left" name="nav" /&gt;     &lt;router-view class="right" name="con" /&gt;  &lt;/transition&gt;          .fade-enter-active, .fade-leave-active {    transition:opacity .4s;  }  .fade-enter, .fade-leave-to {    opacity:0;  }</pre> </div> <p>注意：transition 里面的&lt;div key="c"&gt;111222&lt;/div&gt;的内容是不显示，如果要显示内容需要把 transition 标签换成 transition-group 标签，</p> <ul> <li> <code>transition-group</code>：标里的所有子元素都要有key值，不然过渡效果是显示不出来的，而且每个子元素标签的key值是不一样的，不能重复。</li> </ul> <div class="ay1code"> <pre class="brush:xhtml;">&lt;transition-group name="aaa" mode="in-out"&gt;      &lt;router-view key="d"/&gt;      &lt;router-view class="left" name="nav" key="a" /&gt;      &lt;router-view class="right" name="con" key="b" /&gt;      &lt;div key="c"&gt;111222&lt;/div&gt;  &lt;/transition-group&gt;</pre> </div> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-3739.htm">ASP.NET Core中的Ocelot网关介绍_实用技巧</a></p>
+                                                                    </div>
+
+                                                                <div class="panel panel-default mt-5">
+                                    <div class="panel-heading">
+                                        <h3 class="m-0">推荐文章</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul class="p-0 x-0">
+                                                                                        <li class="py-2"><a href="/html/category/article-1612.htm">C语言 模拟实现memcpy与memmove函数详解_C 语言</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1606.htm">RabbitMQ链接不上异常</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1586.htm">tensorflow基础流程</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1564.htm">数据结构——C语言实现带头双向循环链表</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1552.htm">反射 三种获得class对象的方式</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1490.htm">swift用xib 自定义View</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1473.htm">jackson在springboot中的使用-自定义参数转换器</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1457.htm">Vue前端js循环遍历数组八种方法总结最新</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1409.htm">你还不知道责任链模式的使用场景吗</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1374.htm">Hive插入数据</a></li>
+                                                                                    </ul>
+                                    </div>
+                                </div>
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2540.htm" title="SpringBoot 加入AOP后无法注入的解决办法">SpringBoot 加入AOP后无法注入的解决办法</a></li>
+                        <li class="py-2"><a href="/html/category/article-1598.htm" title="Unity实现简单的对象池_在线工具">Unity实现简单的对象池_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1964.htm" title="python查看包版本、更新单个包、卸载单个包">python查看包版本、更新单个包、卸载单个包</a></li>
+                        <li class="py-2"><a href="/html/category/article-1622.htm" title="Anaconda 创建django不同版本开发环境">Anaconda 创建django不同版本开发环境</a></li>
+                        <li class="py-2"><a href="/html/category/article-1608.htm" title="linux下安装tomcat9,linux tomcat 9 安装及配置教程">linux下安装tomcat9,linux tomcat 9 安装及配置教程</a></li>
+                        <li class="py-2"><a href="/html/category/article-1616.htm" title="C ++程序进行Fermat原始性测试">C ++程序进行Fermat原始性测试</a></li>
+                        <li class="py-2"><a href="/html/category/article-1613.htm" title="vue 动态组件组件复用_真正的动态声明性组件">vue 动态组件组件复用_真正的动态声明性组件</a></li>
+                        <li class="py-2"><a href="/html/category/article-1611.htm" title="Druid10 监控">Druid10 监控</a></li>
+                        <li class="py-2"><a href="/html/category/article-1600.htm" title="xpath的使用">xpath的使用</a></li>
+                        <li class="py-2"><a href="/html/category/article-1621.htm" title="SSM三大框架工作流程与原理详解">SSM三大框架工作流程与原理详解</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">56</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

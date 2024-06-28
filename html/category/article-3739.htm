@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://srilankaaddress.github.io/html/category/article-3739.htm" />
+    <title>ASP.NET Core中的Ocelot网关介绍_实用技巧 - Sri Lanka Address</title>
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/addons/xcblog/img/srilankaaddress/favicon.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="AerobicsFit template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e8fff5fa52c11c99c5cdad6284174bdb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about.css">
+    <link rel="stylesheet" type="text/css" href="/assets/addons/xcblog/css/srilankaaddress/about_responsive.css">
+</head>
+
+<body>
+    <div class="super_container">
+                <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">Sri Lanka<span> Address</span></div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/html/category/">文章分类</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social header_social">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <div class="menu">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center">
+                <ul class="menu_nav_list text-center">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/about.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">ASP.NET Core中的Ocelot网关介绍_实用技巧</div>
+                                <div class="breadcrumbs">
+                                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/html/category/">文章分类</a></li>
+                                        <li>正文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Classes -->
+        <div class="classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row row-eq-height">
+                            <div class="col-md-12">
+                                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">1.简介</a></li> <li><a href="#_label1" rel="nofollow">2.Ocelot配置</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_1_0" rel="nofollow">2.1基础集成（Basic Implementation）</a></li> <li><a href="#_lab2_1_1" rel="nofollow">2.2集成IdentityServer（With IdentityServer）</a></li> <li><a href="#_lab2_1_2" rel="nofollow">2.3多个网关实例集群（Multiple Instances）</a></li> <li><a href="#_lab2_1_3" rel="nofollow">2.4集成Consul服务发现（With Consul）</a></li> <li><a href="#_lab2_1_4" rel="nofollow">2.5集成Service Fabric（With Service Fabric）</a></li> </ul> <li><a href="#_label2" rel="nofollow">3.总结</a></li> <ul class="second_class_ul"></ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>1.简介</h2> <p>Ocelot原本设计仅为与.NET Core一起使用的，它是一个.NET API网关，作为面向使用.NET运行微型服务/面向服务的体系结构需要统一的系统入口点，即当客户端（Web站点，手机APP）等访问Web API的时候，Ocelot作为统一的入口点会根据请求地址分发到对应的API站点去（寻址）。而Ocelot还集成很多功能，例路由，认证，授权，限速等等功能点，Ocelot官网还建议认证这块最好跟身份验证（IdentityServer4）一起使用，承载令牌轻松集成。具体详情大家可以去官网（<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://ocelot.readthedocs.io/en/latest/introduction/bigpicture.html"   target="_blank" rel="nofollow">https://ocelot.readthedocs.io/en/latest/introduction/bigpicture.html</a>）了解下。</p> <p>而查看Ocelot源码，我们会看到Ocelot是按特定顺序排列的一堆中间件（Middleware）组成的管道。</p> <p>Ocelot将HttpRequest对象操作到由其配置指定的状态，直到到达请求构建器中间件，在中间件中它创建一个HttpRequestMessage对象，该对象用于向下游服务发出请求。发出请求的中间件是Ocelot管道中的最后一件事。它不会调用下一个中间件。来自下游服务的响应存储在每个请求范围的存储库中，并在请求返回Ocelot管道时进行检索。有一块中间件将HttpResponseMessage映射到HttpResponse对象，然后将其返回给客户端。</p> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>2.Ocelot配置</h2> <p>根据官网介绍，Ocelot有五种配置：</p> <p class="maodian"><a name="_lab2_1_0" rel="nofollow"></a></p> <h3>2.1基础集成（Basic Implementation）</h3> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220423/2740f4b8f344e37d44e1d9c320428c55.jpg"></p> <p>当客户端访问下游服务站点时候，会统一经过Ocelot网关，Ocelot网关Host主机首先会读取configuration.json配置信息，根据配置文件去寻找对应下游服务站点并返回处理结果给客户端。这一个过程可以称为路由寻址。</p> <p class="maodian"><a name="_lab2_1_1" rel="nofollow"></a></p> <h3>2.2集成IdentityServer（With IdentityServer）</h3> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220423/50c9683263c75bada86aaa564699483e.jpg"></p> <p>当服务站点涉及认证跟授权的时候，可以通过在Ocelot网关上集成IdentityServer，当客户端访问下游服务站点时候，会先通过IdentityServer认证跟授权后才分发到下游服务站点。</p> <p class="maodian"><a name="_lab2_1_2" rel="nofollow"></a></p> <h3>2.3多个网关实例集群（Multiple Instances）</h3> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220423/bf27af96acf4628160edb5967ebcc8c5.jpg"></p> <p>单个Ocelot网关是比较危险的，如果这个网关挂掉了，所有下游服务站点都将无法访问，这样子是无法做到高可用的。要解决这个问题，可以部署多台Ocelot网关集群，而Ocelot也集成了负载均衡器。</p> <p class="maodian"><a name="_lab2_1_3" rel="nofollow"></a></p> <h3>2.4集成Consul服务发现（With Consul）</h3> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220423/1df7b7472363fbe30670d051225676dd.jpg"></p> <p>查看官网文档负载均衡这一栏目，我们知道Ocelot已经支持简单的负载功能，当下游站点存在多个服务结点的时候，Ocelot能够承担起负载均衡的作用。但是它不提供健康检查，服务的注册也只能通过手动在配置文件里面添加完成。这不够灵活并且在一定程度下会有风险。这个时候我们就可以用Consul来做服务发现，它能与Ocelot完美结合。</p> <p class="maodian"><a name="_lab2_1_4" rel="nofollow"></a></p> <h3>2.5集成Service Fabric（With Service Fabric）</h3> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220423/95ccee5becf96d3c2750b9b965c87fe2.jpg"></p> <p>如果您在Service Fabric中部署了服务，则通常将使用命名服务来访问它们。</p> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2>3.总结</h2> <p>Ocelot网关是系统给外部唯一访问入口，就好比公司的门卫承担着寻址、出入限制、安全检查、位置引导等等功能。它还提供了路由，身份验证、监控、负载均衡、缓存、请求分片与管理、静态响应处理等等功能。Ocelot网关的核心要点是，所有的客户端和消费端都通过统一的网关接入微服务，在网关层处理所有的非业务功能。通常网关也是提供REST/HTTP的访问API，服务端通过网关注册和管理服务。该章节之后，我会继续根据GitHub贡献者开源项目上面Ocelot Demo实例介绍它的功能。</p> <p>Ocelot Demo地址：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/catcherwong-archive/APIGatewayDemo"   target="_blank" rel="nofollow">https://github.com/catcherwong-archive/APIGatewayDemo</a>。</p> 			
+                                <div class="col-md-12 mt-5">
+                                                                        <p>上一个：<a href="/html/category/article-3434.htm">PHP取消引用方法详解</a></p>
+                                                                        <p>下一个：<a href="/html/category/article-3740.htm">Vue中transition单个节点过渡与transition-group列表过渡全过程_vue.js</a></p>
+                                                                    </div>
+
+                                                                <div class="panel panel-default mt-5">
+                                    <div class="panel-heading">
+                                        <h3 class="m-0">推荐文章</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul class="p-0 x-0">
+                                                                                        <li class="py-2"><a href="/html/category/article-1628.htm">etcd分布式键值数据库安装（单机版）</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1596.htm">clickhouse智能提示编辑器</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1589.htm">浅谈Vue的双向绑定和单向数据流冲突吗_vue.js_</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1566.htm">is not eligible for getting processed by all BeanPostProcessors 导致找不到路径报404</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1564.htm">数据结构——C语言实现带头双向循环链表</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1536.htm">Elasticsearch -from + size设置</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1506.htm">Ubuntu环境Docker+K8s+Dashboard的安装配置(无坑亲测)_在线工具</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1493.htm">vue父组件向子组件传递函数方法</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1465.htm">AOT和单文件发布对程序性能的影响</a></li>
+                                                                                        <li class="py-2"><a href="/html/category/article-1365.htm">Java基础|Java8接口新特性</a></li>
+                                                                                    </ul>
+                                    </div>
+                                </div>
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-1605.htm" title="QCustomPlot开发笔记：QCustomPlot简介、下载以及基础绘图_在线工具">QCustomPlot开发笔记：QCustomPlot简介、下载以及基础绘图_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1921.htm" title="IDEA Debug过程中使用Drop Frame或Reset Frame实现操作回退">IDEA Debug过程中使用Drop Frame或Reset Frame实现操作回退</a></li>
+                        <li class="py-2"><a href="/html/category/article-1611.htm" title="Druid10 监控">Druid10 监控</a></li>
+                        <li class="py-2"><a href="/html/category/article-1592.htm" title="SpringBoot时区问题解决，彻底解决时差问题">SpringBoot时区问题解决，彻底解决时差问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-1593.htm" title="Linux中磁盘分区清理方法">Linux中磁盘分区清理方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-1640.htm" title="promise和async await的区别">promise和async await的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-1624.htm" title="Java 18为什么要指定UTF-8为默认字符集_在线工具">Java 18为什么要指定UTF-8为默认字符集_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-1594.htm" title="Vue watch中监听值的变化,判断后修改值方式_vue.js_">Vue watch中监听值的变化,判断后修改值方式_vue.js_</a></li>
+                        <li class="py-2"><a href="/html/category/article-1602.htm" title="CSS：实现多行文本垂直居中的四种方法">CSS：实现多行文本垂直居中的四种方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-1614.htm" title="我们如何更改MySQL AUTO_INCREMENT起始号码？">我们如何更改MySQL AUTO_INCREMENT起始号码？</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">56</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Footer -->
+        <footer class="footer">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/addons/xcblog/img/srilankaaddress/footer.jpg" data-speed="0.8"></div>
+            <div class="footer_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content text-center d-flex flex-column align-items-center justify-content-center">
+                            <p>
+                                Sri Lanka Address 版权所有
+                                <br />
+                                Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/jquery-3.2.1.min.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/popper.js"></script>
+    <script src="/assets/addons/xcblog/css/srilankaaddress/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/owl.carousel.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/easing/easing.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/srilankaaddress/about.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function(){
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>
