@@ -101,7 +101,7 @@ var _hmt = _hmt || [];
                     <div class="col-md-9">
                         <div class="row row-eq-height">
                             <div class="col-md-12">
-                                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h3> <a id="1__0" rel="nofollow"></a>1. 打断点本地测试异步处理，在异步处理子线程里操作数据库报数据库连接池已关闭错误</h3> <p><strong>这里使用 SpringBoot 自带的数据库连接池（HikariDataSource）为例</strong></p> <pre><code>&lt;!-- 错误1 --&gt; Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: HikariDataSource HikariDataSource (HikariPool-1) has been closed. </code></pre> <pre><code>&lt;!-- 错误2 --&gt; java.sql.SQLException: Connection has already been closed </code></pre> <h4> <a id="_10" rel="nofollow"></a>解决方法：</h4> <p><strong>本地测试时，在主线程里加个线程休眠（Thread.sleep()）,以确保子线程可以执行完毕。</strong></p> </p></div> 			
+                                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h3> 1. 打断点本地测试异步处理，在异步处理子线程里操作数据库报数据库连接池已关闭错误</h3> <p><strong>这里使用 SpringBoot 自带的数据库连接池（HikariDataSource）为例</strong></p> <pre><code><!-- 错误1 --> Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: HikariDataSource HikariDataSource (HikariPool-1) has been closed. </code></pre> <pre><code><!-- 错误2 --> java.sql.SQLException: Connection has already been closed </code></pre> <h4> 解决方法：</h4> <p><strong>本地测试时，在主线程里加个线程休眠（Thread.sleep()）,以确保子线程可以执行完毕。</strong></p> </p></div> 			
                                 <div class="col-md-12 mt-5">
                                                                         <p>上一个：<a href="/html/category/article-1479.htm">java中序列化如果有些字段不想进行序列化怎么办</a></p>
                                                                         <p>下一个：<a href="/html/category/article-1481.htm">mmap库：Python内存映射文件操作</a></p>
@@ -117,16 +117,16 @@ var _hmt = _hmt || [];
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/html/category/article-1618.htm" title="vue3中获取ref元素的几种方式">vue3中获取ref元素的几种方式</a></li>
-                        <li class="py-2"><a href="/html/category/article-1619.htm" title="sql server排查死锁优化性能_MsSql_">sql server排查死锁优化性能_MsSql_</a></li>
-                        <li class="py-2"><a href="/html/category/article-4303.htm" title="宠物领养条件和要求（宠物领养的法律法规）">宠物领养条件和要求（宠物领养的法律法规）</a></li>
-                        <li class="py-2"><a href="/html/category/article-3739.htm" title="ASP.NET Core中的Ocelot网关介绍_实用技巧">ASP.NET Core中的Ocelot网关介绍_实用技巧</a></li>
+                        <li class="py-2"><a href="/html/category/article-1950.htm" title="Pandas 错误记录">Pandas 错误记录</a></li>
+                        <li class="py-2"><a href="/html/category/article-1624.htm" title="Java 18为什么要指定UTF-8为默认字符集_在线工具">Java 18为什么要指定UTF-8为默认字符集_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3434.htm" title="PHP取消引用方法详解">PHP取消引用方法详解</a></li>
                         <li class="py-2"><a href="/html/category/article-1620.htm" title="Spring如何快速上手">Spring如何快速上手</a></li>
-                        <li class="py-2"><a href="/html/category/article-1639.htm" title="Spring源码分析Spring BeanFactory 是怎么创建的？">Spring源码分析Spring BeanFactory 是怎么创建的？</a></li>
-                        <li class="py-2"><a href="/html/category/article-4412.htm" title="最有名的动物医院排名（最有名的动物医院排名第一）">最有名的动物医院排名（最有名的动物医院排名第一）</a></li>
+                        <li class="py-2"><a href="/html/category/article-4453.htm" title="大香肠披萨（大香肠披萨梗）">大香肠披萨（大香肠披萨梗）</a></li>
+                        <li class="py-2"><a href="/html/category/article-4488.htm" title="猫是招鬼还是辟邪的蓝猫（猫是招鬼还是辟邪的蓝猫呢）">猫是招鬼还是辟邪的蓝猫（猫是招鬼还是辟邪的蓝猫呢）</a></li>
+                        <li class="py-2"><a href="/html/category/article-4452.htm" title="南京哪里领养宠物比较好一点（南京领养宠物都要做什么条件）">南京哪里领养宠物比较好一点（南京领养宠物都要做什么条件）</a></li>
+                        <li class="py-2"><a href="/html/category/article-1628.htm" title="etcd分布式键值数据库安装（单机版）">etcd分布式键值数据库安装（单机版）</a></li>
+                        <li class="py-2"><a href="/html/category/article-1627.htm" title="go语言编译过程概述">go语言编译过程概述</a></li>
                         <li class="py-2"><a href="/html/category/article-2833.htm" title="windows查看已经连过wifi的密码">windows查看已经连过wifi的密码</a></li>
-                        <li class="py-2"><a href="/html/category/article-3433.htm" title="一文看懂HBase倒序分页查询（实现分页跳转）">一文看懂HBase倒序分页查询（实现分页跳转）</a></li>
-                        <li class="py-2"><a href="/html/category/article-4413.htm" title="动物医院有宠物卖吗现在多少钱（动物医院贵吗）">动物医院有宠物卖吗现在多少钱（动物医院贵吗）</a></li>
                     </ul>
     </div>
 </div>
@@ -138,7 +138,7 @@ var _hmt = _hmt || [];
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">20</span> <a href="/html/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+                <h4><span class="badge" style="float: right;">24</span> <a href="/html/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>

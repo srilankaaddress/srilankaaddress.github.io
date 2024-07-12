@@ -101,7 +101,7 @@ var _hmt = _hmt || [];
                     <div class="col-md-9">
                         <div class="row row-eq-height">
                             <div class="col-md-12">
-                                  				  				  				<p>大家在Debug程序的时候，是否遇到过因为“下一步”按太快，而导致跳过了想要深入分析的那段代码？是不是很想要有“回到上一步”这样的操作呢？</p> <p>在IDEA中就提供了一个帮助你回退代码的机会，但这个方法并不是万能的。好了，下面就来具体说说这个功能的使用！</p> <h2 id="使用reset-frame回退操作">使用Reset Frame回退操作</h2> <p>不知道你在Debug的时候，是否有注意过下图标出的按钮<code>Reset Frame</code>，这就是今天要介绍的主角。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/cd73bff44632a63ce1d888c4fb35a334.jpg" alt="IDEA Debug过程中使用Drop Frame或Reset Frame实现操作回退"></p> <h3 id="什么情况不能回退">什么情况不能回退</h3> <p>比如：下面这样的顺序结构，是无法会退的：</p> <pre><code class="language-java">void test() {     int a = 1;     int b = 2;     int c = a + b;     System.out.println(c); }</code></pre> <h3 id="什么情况可以回退">什么情况可以回退</h3> <p>再来看看下面这种情况：</p> <pre><code class="language-java">void test2() {     int a = 1;     int b = 2;     int c = add(a, b);     System.out.println(c); }  int add(int a, int b) {     System.out.println("a = " + a);     System.out.println("b = " + b);     return a + b; }</code></pre> <p>这里有两个函数，<code>test2</code>函数会调用<code>add</code>函数。当程序执行到<code>int c = add(a, b)</code>这句的话，会进入到<code>add</code>函数。此时，<code>add</code>函数中执行的内容就可以通过<code>Reset Frame</code>来回退回上一层函数进入的那句语句。</p> <p>如果文字你看着理解困难，这里DD<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.bilibili.com/video/BV1KF411g77W/"  target="_blank" rel="nofollow">录了个视频</a>，可以看看具体操作帮助理解，当然自己实操一把会更有感觉哦！</p> <h2 id="找不到reset-frame找找drop-frame">找不到Reset Frame？找找Drop Frame</h2> <p>这里顺带提一句，可能有小伙伴会问：怎么我Debug的时候找不到<code>Reset Frame</code>呢？</p> <p>其实这个跟版本有关，<code>Reset Frame</code>是IDEA 2022.1版本之后才有的。但不要担心，该版本之前也有这个功能，只是名字不叫这个，而是叫<code>Drop Frame</code>，就是下图所示这个按钮。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/4b7991f274e7fb708aba7a365e51ce6d.jpg" alt="IDEA Debug过程中使用Drop Frame或Reset Frame实现操作回退"></p> <p>好了，今天的分享就到这里，如果你觉得这个分享对你有用的话，一定记得实操练习一下！最后，记得帮忙三连支持一下，关注我，持续为大家分享更多开发小知识！</p> 			
+                                  				  				  				<p>大家在Debug程序的时候，是否遇到过因为“下一步”按太快，而导致跳过了想要深入分析的那段代码？是不是很想要有“回到上一步”这样的操作呢？</p> <p>在IDEA中就提供了一个帮助你回退代码的机会，但这个方法并不是万能的。好了，下面就来具体说说这个功能的使用！</p> <h2 id="使用reset-frame回退操作">使用Reset Frame回退操作</h2> <p>不知道你在Debug的时候，是否有注意过下图标出的按钮<code>Reset Frame</code>，这就是今天要介绍的主角。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/cd73bff44632a63ce1d888c4fb35a334.jpg" alt="IDEA Debug过程中使用Drop Frame或Reset Frame实现操作回退"></p> <h3 id="什么情况不能回退">什么情况不能回退</h3> <p>比如：下面这样的顺序结构，是无法会退的：</p> <pre><code class="language-java">void test() {     int a = 1;     int b = 2;     int c = a + b;     System.out.println(c); }</code></pre> <h3 id="什么情况可以回退">什么情况可以回退</h3> <p>再来看看下面这种情况：</p> <pre><code class="language-java">void test2() {     int a = 1;     int b = 2;     int c = add(a, b);     System.out.println(c); }  int add(int a, int b) {     System.out.println("a = " + a);     System.out.println("b = " + b);     return a + b; }</code></pre> <p>这里有两个函数，<code>test2</code>函数会调用<code>add</code>函数。当程序执行到<code>int c = add(a, b)</code>这句的话，会进入到<code>add</code>函数。此时，<code>add</code>函数中执行的内容就可以通过<code>Reset Frame</code>来回退回上一层函数进入的那句语句。</p> <p>如果文字你看着理解困难，这里DD录了个视频，可以看看具体操作帮助理解，当然自己实操一把会更有感觉哦！</p> <h2 id="找不到reset-frame找找drop-frame">找不到Reset Frame？找找Drop Frame</h2> <p>这里顺带提一句，可能有小伙伴会问：怎么我Debug的时候找不到<code>Reset Frame</code>呢？</p> <p>其实这个跟版本有关，<code>Reset Frame</code>是IDEA 2022.1版本之后才有的。但不要担心，该版本之前也有这个功能，只是名字不叫这个，而是叫<code>Drop Frame</code>，就是下图所示这个按钮。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/4b7991f274e7fb708aba7a365e51ce6d.jpg" alt="IDEA Debug过程中使用Drop Frame或Reset Frame实现操作回退"></p> <p>好了，今天的分享就到这里，如果你觉得这个分享对你有用的话，一定记得实操练习一下！最后，记得帮忙三连支持一下，关注我，持续为大家分享更多开发小知识！</p> 			
                                 <div class="col-md-12 mt-5">
                                                                         <p>上一个：<a href="/html/category/article-1640.htm">promise和async await的区别</a></p>
                                                                         <p>下一个：<a href="/html/category/article-1922.htm">SpringCloud 之Hystrix Dashboard 服务监控</a></p>
@@ -136,16 +136,16 @@ var _hmt = _hmt || [];
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/html/category/article-4559.htm" title="动物疫苗价格表最新图片大全（动物疫苗的使用方法及注意事项）">动物疫苗价格表最新图片大全（动物疫苗的使用方法及注意事项）</a></li>
-                        <li class="py-2"><a href="/html/category/article-1949.htm" title="微信小程序开发笔记2——自定义导航栏组件">微信小程序开发笔记2——自定义导航栏组件</a></li>
-                        <li class="py-2"><a href="/html/category/article-1627.htm" title="go语言编译过程概述">go语言编译过程概述</a></li>
-                        <li class="py-2"><a href="/html/category/article-2833.htm" title="windows查看已经连过wifi的密码">windows查看已经连过wifi的密码</a></li>
+                        <li class="py-2"><a href="/html/category/article-1621.htm" title="SSM三大框架工作流程与原理详解">SSM三大框架工作流程与原理详解</a></li>
                         <li class="py-2"><a href="/html/category/article-1624.htm" title="Java 18为什么要指定UTF-8为默认字符集_在线工具">Java 18为什么要指定UTF-8为默认字符集_在线工具</a></li>
-                        <li class="py-2"><a href="/html/category/article-4077.htm" title="Vuex状态管理-mapState的基本用法详细介绍">Vuex状态管理-mapState的基本用法详细介绍</a></li>
-                        <li class="py-2"><a href="/html/category/article-1625.htm" title="Linux源码安装RabbitMQ高可用集群">Linux源码安装RabbitMQ高可用集群</a></li>
-                        <li class="py-2"><a href="/html/category/article-1623.htm" title="Java集合类型遍历和排序">Java集合类型遍历和排序</a></li>
+                        <li class="py-2"><a href="/html/category/article-1964.htm" title="python查看包版本、更新单个包、卸载单个包">python查看包版本、更新单个包、卸载单个包</a></li>
+                        <li class="py-2"><a href="/html/category/article-1619.htm" title="sql server排查死锁优化性能_MsSql_">sql server排查死锁优化性能_MsSql_</a></li>
+                        <li class="py-2"><a href="/html/category/article-4412.htm" title="最有名的动物医院排名（最有名的动物医院排名第一）">最有名的动物医院排名（最有名的动物医院排名第一）</a></li>
+                        <li class="py-2"><a href="/html/category/article-4333.htm" title="动物接种疫苗,剂量越大越好吗,为什么?（动物注射疫苗）">动物接种疫苗,剂量越大越好吗,为什么?（动物注射疫苗）</a></li>
+                        <li class="py-2"><a href="/html/category/article-4413.htm" title="动物医院有宠物卖吗现在多少钱（动物医院贵吗）">动物医院有宠物卖吗现在多少钱（动物医院贵吗）</a></li>
+                        <li class="py-2"><a href="/html/category/article-1935.htm" title="JS脚本按顺序依次加载执行">JS脚本按顺序依次加载执行</a></li>
                         <li class="py-2"><a href="/html/category/article-1963.htm" title="C++默认参数报错">C++默认参数报错</a></li>
-                        <li class="py-2"><a href="/html/category/article-1639.htm" title="Spring源码分析Spring BeanFactory 是怎么创建的？">Spring源码分析Spring BeanFactory 是怎么创建的？</a></li>
+                        <li class="py-2"><a href="/html/category/article-4078.htm" title="Android 弹窗设计规范">Android 弹窗设计规范</a></li>
                     </ul>
     </div>
 </div>
@@ -157,7 +157,7 @@ var _hmt = _hmt || [];
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">20</span> <a href="/html/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+                <h4><span class="badge" style="float: right;">24</span> <a href="/html/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
